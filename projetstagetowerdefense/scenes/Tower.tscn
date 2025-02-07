@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3lqxmv5o7krd"]
+
+[ext_resource type="Script" path="res://scripts/tower.gd" id="1_8jdwn"]
+[ext_resource type="Texture2D" uid="uid://dxl056t0x46cp" path="res://assets/tour.png" id="1_k2n2e"]
+[ext_resource type="PackedScene" uid="uid://biy6n5t3o2ow4" path="res://scenes/Projectile.tscn" id="2_wf0v1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xkhp"]
+size = Vector2(84, 125.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6c05u"]
+radius = 600.0
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_8jdwn")
+projectile_scene = ExtResource("2_wf0v1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k2n2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -7.75)
+shape = SubResource("RectangleShape2D_0xkhp")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -41.0
+offset_top = -83.0
+offset_right = 42.0
+offset_bottom = -71.0
+max_value = 200.0
+value = 200.0
+show_percentage = false
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+priority = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6c05u")
+one_way_collision_margin = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

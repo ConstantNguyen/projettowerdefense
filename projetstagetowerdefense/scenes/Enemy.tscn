@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2np1xeygun1b"]
+
+[ext_resource type="Texture2D" uid="uid://dlwaoesc656qg" path="res://assets/enemi.png" id="1_f544e"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_ll1ps"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j8hsa"]
+radius = 15.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ll1ps")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -157)
+scale = Vector2(0.037755, 0.0372449)
+texture = ExtResource("1_f544e")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -19.0
+offset_top = -175.0
+offset_right = 20.0
+offset_bottom = -170.0
+value = 100.0
+show_percentage = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -157)
+shape = SubResource("CircleShape2D_j8hsa")
