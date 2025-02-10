@@ -12,5 +12,5 @@ func _ready():
 
 func spawn_enemy():
 	var enemy = enemy_scene.instantiate() 
-	enemy.position = Vector2(200, 50)  
+	enemy.position = Vector2(randi_range(100, 500), randi_range(50, 300))
 	get_parent().add_child(enemy)
