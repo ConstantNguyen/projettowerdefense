@@ -11,6 +11,7 @@
 script = ExtResource("1_m1qok")
 
 [node name="spawner" type="Node2D" parent="."]
+visible = false
 script = ExtResource("1_rw4n0")
 enemy_scene = ExtResource("2_p15aa")
 
@@ -18,6 +19,7 @@ enemy_scene = ExtResource("2_p15aa")
 wait_time = 0.1
 
 [node name="Tower" parent="." instance=ExtResource("3_5bh76")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -44,81 +46,41 @@ text = "Jouer"
 
 [node name="GameOver" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchor_bottom = 0.029
-offset_left = -8.0
-offset_top = -4.0
-offset_right = 32.0
-offset_bottom = 17.208
+anchors_preset = 0
+offset_left = 67.0
+offset_top = 19.0
+offset_right = 107.0
+offset_bottom = 59.0
 script = ExtResource("6_xti53")
 
 [node name="Score" type="Label" parent="CanvasLayer/GameOver"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 11.999
-anchor_top = 3.262
+anchor_left = 8.951
+anchor_top = 1.0
 anchor_right = 11.999
-anchor_bottom = 3.262
-offset_left = -12.96
-offset_top = -10.48
-offset_right = 56.04
-offset_bottom = 12.52
+anchor_bottom = 3.243
+offset_left = 41.96
+offset_top = 37.0
+offset_right = -39.96
+offset_bottom = -29.72
 
 [node name="BoutonRejouer" type="Button" parent="CanvasLayer/GameOver"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 14.812
-anchor_top = 11.687
-anchor_right = 14.812
-anchor_bottom = 11.687
+anchor_left = 12.662
+anchor_top = 12.112
+anchor_right = 12.662
+anchor_bottom = 12.112
 offset_left = -102.48
 offset_top = -15.48
 offset_right = 102.52
 offset_bottom = 15.52
 text = "Retour au menu principal"
 
-[node name="InfoTour" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 393.0
-offset_top = 533.0
-offset_right = 475.0
-offset_bottom = 577.0
-
-[node name="LabelNom" type="Label" parent="CanvasLayer/InfoTour"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.537
-anchor_top = 0.989
-anchor_right = 1.537
-anchor_bottom = 1.0
-offset_left = -25.034
-offset_top = -11.516
-offset_right = 14.966
-offset_bottom = 11.0
-
-[node name="ProgressBarVie" type="ProgressBar" parent="CanvasLayer/InfoTour"]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 61.0
-offset_right = 280.0
-offset_bottom = 88.0
-max_value = 200.0
-
-[node name="LabelVie" type="Label" parent="CanvasLayer/InfoTour"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 2.371
-anchor_top = 1.0
-anchor_right = 2.371
-anchor_bottom = 1.0
-offset_left = 37.578
-offset_top = -12.0
-offset_right = 77.578
-offset_bottom = 15.0
-grow_vertical = 0
-
 [node name="ChronoScore" type="Timer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 limit_left = -9999989
 limit_top = -9999989

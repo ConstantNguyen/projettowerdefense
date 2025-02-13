@@ -1,25 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3lqxmv5o7krd"]
+[gd_scene load_steps=7 format=3 uid="uid://b3lqxmv5o7krd"]
 
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_8jdwn"]
 [ext_resource type="Texture2D" uid="uid://dxl056t0x46cp" path="res://assets/tour.png" id="1_k2n2e"]
 [ext_resource type="PackedScene" uid="uid://biy6n5t3o2ow4" path="res://scenes/Projectile.tscn" id="2_wf0v1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xkhp"]
-size = Vector2(84, 125.5)
+[ext_resource type="Texture2D" uid="uid://c6m6eobd7u675" path="res://assets/tourCassé.png" id="3_8cnus"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6c05u"]
 radius = 600.0
 
-[node name="Tower" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xkhp"]
+size = Vector2(84, 125.5)
+
+[node name="Tower" type="StaticBody2D"]
+collision_mask = 2
 script = ExtResource("1_8jdwn")
 projectile_scene = ExtResource("2_wf0v1")
+tour_morte_texture = ExtResource("3_8cnus")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
 texture = ExtResource("1_k2n2e")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -7.75)
-shape = SubResource("RectangleShape2D_0xkhp")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -41.0
@@ -38,6 +38,11 @@ priority = 100
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6c05u")
 one_way_collision_margin = 0.0
+debug_color = Color(0, 1, 0.701961, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_0xkhp")
