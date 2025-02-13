@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3icbjq17jm2e"
+path="res://.godot/imported/snow_detail_rocksLarge.obj-31f5c5df326c614e2094286feeee1f7a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snow_detail_rocksLarge.obj-31f5c5df326c614e2094286feeee1f7a.mesh"]
+
+source_file="res://assets/3d/snow_detail_rocksLarge.obj"
+dest_files=["res://.godot/imported/snow_detail_rocksLarge.obj-31f5c5df326c614e2094286feeee1f7a.mesh", "res://.godot/imported/snow_detail_rocksLarge.obj-31f5c5df326c614e2094286feeee1f7a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

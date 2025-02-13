@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1bp0wt7jaht6"
+path="res://.godot/imported/towerRound_bottomB.obj-ea5c075209fbbd5d9cbeb6b434962984.mesh"
+
+[deps]
+
+files=["res://.godot/imported/towerRound_bottomB.obj-ea5c075209fbbd5d9cbeb6b434962984.mesh"]
+
+source_file="res://assets/3d/towerRound_bottomB.obj"
+dest_files=["res://.godot/imported/towerRound_bottomB.obj-ea5c075209fbbd5d9cbeb6b434962984.mesh", "res://.godot/imported/towerRound_bottomB.obj-ea5c075209fbbd5d9cbeb6b434962984.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6n5qyb24fs8g"
+path="res://.godot/imported/tile_wideTransition.obj-723664ce4079c2755320fa5e116f361d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tile_wideTransition.obj-723664ce4079c2755320fa5e116f361d.mesh"]
+
+source_file="res://assets/3d/tile_wideTransition.obj"
+dest_files=["res://.godot/imported/tile_wideTransition.obj-723664ce4079c2755320fa5e116f361d.mesh", "res://.godot/imported/tile_wideTransition.obj-723664ce4079c2755320fa5e116f361d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
