@@ -27,6 +27,7 @@ mesh = ExtResource("1_1yfql")
 shape = SubResource("ConvexPolygonShape3D_x15p2")
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00612116, 0.0328195, -0.0116854)
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
