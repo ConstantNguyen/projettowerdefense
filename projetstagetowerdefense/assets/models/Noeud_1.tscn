@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2vexhqbr0sqo"]
+
+[ext_resource type="Texture2D" uid="uid://bqxrvfuekpw1m" path="res://assets/textures/PNG/Green/texture_01.png" id="1_fuoyo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayy0x"]
+albedo_texture = ExtResource("1_fuoyo")
+uv1_scale = Vector3(1.505, 1.505, 1.505)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yo4hk"]
+material = SubResource("StandardMaterial3D_ayy0x")
+
+[node name="Noeud1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_yo4hk")
