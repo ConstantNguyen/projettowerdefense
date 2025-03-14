@@ -1,21 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://diedl841g4bej"]
+[gd_scene load_steps=2 format=3 uid="uid://gmej37toccew"]
 
-[ext_resource type="Texture2D" uid="uid://tcbmfpdncmtq" path="res://assets/textures/PNG/Dark/texture_02.png" id="1_61y3q"]
-[ext_resource type="PackedScene" uid="uid://b2vexhqbr0sqo" path="res://assets/models/Noeud_1.tscn" id="2_p04yu"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0sf8d"]
-albedo_texture = ExtResource("1_61y3q")
-uv1_scale = Vector3(50.055, 50.055, 50.055)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_j2uwt"]
-material = SubResource("StandardMaterial3D_0sf8d")
-size = Vector2(200, 200)
+[ext_resource type="PackedScene" uid="uid://2qfycqtqpeo" path="res://scenes/grid_map.tscn" id="1_2bw1f"]
 
 [node name="MainScene" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000198483, 0.0169334, 0.00540161)
-mesh = SubResource("PlaneMesh_j2uwt")
-
-[node name="Noeud1" parent="." instance=ExtResource("2_p04yu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01899, 0.495743, 4.71255)
+[node name="GridMap" parent="." instance=ExtResource("1_2bw1f")]

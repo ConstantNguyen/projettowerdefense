@@ -1,0 +1,10 @@
+res://scenes/MainScene.tscn
+res://scenes/node_block_map.tscn
+res://scenes/node_block_map.gd
+res://scenes/test.tscn
+res://scenes/test.gd
+res://scenes/detail_crystal_large.gd
+res://assets/block_map.tres
+res://assets/block_map_1.tres
+res://scenes/grid_map.tscn
+res://assets/block_map_2.tres
