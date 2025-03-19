@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bessrgi01m4eo"]
+
+[ext_resource type="Script" path="res://script/MdpScript.gd.gd" id="1_nf264"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8e1t6"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_tvhgt"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000272155, 0, 0.0551136)
+script = ExtResource("1_nf264")
+tower_life = 100.0
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+layers = 99
+material_override = SubResource("StandardMaterial3D_8e1t6")
+gi_mode = 2
+multimesh = SubResource("MultiMesh_tvhgt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+offset_right = 67.0625
+offset_bottom = 31.0
+expand_to_text_length = true
+clear_button_enabled = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_right = 4.0
+offset_bottom = 27.0
+allow_greater = true
+fill_mode = 3
+
+[connection signal="text_submitted" from="CanvasLayer/LineEdit" to="." method="_on_LineEdit_text_submitted"]
