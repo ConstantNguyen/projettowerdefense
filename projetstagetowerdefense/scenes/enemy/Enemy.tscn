@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://tllb3w05k3yg"]
+[gd_scene load_steps=7 format=3 uid="uid://tllb3w05k3yg"]
 
 [ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="1_hsxq4"]
 [ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="1_mll7h"]
@@ -9,6 +9,8 @@ size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_smhvv"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ak5e5"]
 
 [node name="Enemy" type="CharacterBody3D"]
 collision_layer = 2
@@ -26,7 +28,16 @@ shape = SubResource("BoxShape3D_gv2si")
 transparent_bg = true
 
 [node name="EnemyHealthBar" parent="SubViewport" instance=ExtResource("1_hsxq4")]
+step = 1.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 texture = SubResource("ViewportTexture_smhvv")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_ak5e5")
+
+[node name="Timer" type="Timer" parent="."]
