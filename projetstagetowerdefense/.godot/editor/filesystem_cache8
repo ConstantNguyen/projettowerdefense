@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1742430042
+::res://::1742430835
 icon.svg::CompressedTexture2D::3108111239905498642::1741911679::1741911791::1::::<><>::
-::res://assets/::1742422926
-block_map.tres::MeshLibrary::6880653804785011672::1742422926::0::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
-::res://assets/FBX format/::1741915462
+::res://assets/::1742430835
+block_map.tres::MeshLibrary::6880653804785011672::1742430835::0::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
+::res://assets/FBX format/::1742430835
 detail-crystal-large.fbx::PackedScene::6423666832079564995::1741911736::1741911797::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 detail-crystal.fbx::PackedScene::538969594884782826::1741911736::1741911795::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 detail-dirt-large.fbx::PackedScene::4587663512035565195::1741911736::1741911807::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
@@ -12,7 +12,7 @@ detail-rocks-large.fbx::PackedScene::9036633977490734265::1741911736::1741911806
 detail-rocks.fbx::PackedScene::8813591282146445790::1741911736::1741911805::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 detail-tree-large.fbx::PackedScene::3923353417899413148::1741911736::1741911803::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 detail-tree.fbx::PackedScene::6640149844223711921::1741911736::1741911809::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
-Drone_FuturisticSleek_02.fbx::PackedScene::710978919784107318::1704251720::1741915462::1::::<><>::
+Drone_FuturisticSleek_02.fbx::PackedScene::710978919784107318::1742430835::1742430843::1::::<><>::
 enemy-ufo-a-weapon.fbx::PackedScene::4979115428049886688::1741911736::1741911809::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 enemy-ufo-a.fbx::PackedScene::1474791805566401731::1741911736::1741911808::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 enemy-ufo-b-weapon.fbx::PackedScene::2759493496553637204::1741911736::1741911808::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
@@ -23,7 +23,7 @@ enemy-ufo-c-weapon.fbx::PackedScene::6145374810200801304::1741911737::1741911794
 enemy-ufo-c.fbx::PackedScene::1342400055664932710::1741911737::1741911793::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 enemy-ufo-d-weapon.fbx::PackedScene::7310645614833509889::1741911737::1741911801::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 enemy-ufo-d.fbx::PackedScene::5554632867487920574::1741911737::1741911799::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
-Laser.fbx::PackedScene::1623781380544844631::1741915331::1741915462::1::::<><>::
+Laser.fbx::PackedScene::1623781380544844631::1742430835::1742430844::1::::<><>::
 selection-a.fbx::PackedScene::2367135370482173049::1741911737::1741911796::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 selection-b.fbx::PackedScene::9026866086991049627::1741911737::1741911796::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 snow-detail-crystal-large.fbx::PackedScene::5168214867631557269::1741911737::1741911796::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
@@ -166,27 +166,27 @@ wood-structure-high-part.fbx::PackedScene::4562741911770805210::1741911737::1741
 wood-structure-high.fbx::PackedScene::2440411906109023555::1741911737::1741911801::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 wood-structure-part.fbx::PackedScene::3092122885013268634::1741911737::1741911808::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 wood-structure.fbx::PackedScene::1662304071454949071::1741911737::1741911794::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
-::res://assets/FBX format/Textures/::1741911823
-colormap.png::CompressedTexture2D::7745553431670309369::1741911736::1741911823::1::::<><>::
-::res://assets/Textures/::1742420409
-building.obj::Mesh::6713485596623050038::1742418971::1742419023::1::::<><>::
-drone.obj::Mesh::623692502127996046::1742420376::1742420409::1::::<><>::
-projectile.obj::Mesh::4058466708204765795::1742419837::1742419872::1::::<><>::
+::res://assets/FBX format/Textures/::1742430835
+colormap.png::CompressedTexture2D::7745553431670309369::1741911736::1742430841::1::::<><>::
+::res://assets/Textures/::1742430835
+building.obj::Mesh::6713485596623050038::1742430835::1742430841::1::::<><>::
+drone.obj::Mesh::623692502127996046::1742430835::1742430842::1::::<><>::
+projectile.obj::Mesh::4058466708204765795::1742430835::1742430842::1::::<><>::
 variation-a.png::CompressedTexture2D::2073811613958069978::1741911737::1741911791::1::::<><>::
-::res://scenes/::1742429406
-grid_map.tscn::PackedScene::56719864616417666::1742429405::0::1::::<><>::uid://c5bbmlq8ijpbs::::res://assets/block_map.tres
-MainScene.tscn::PackedScene::446166055962729718::1742429405::0::1::::<><>::uid://2qfycqtqpeo::::res://scenes/grid_map.tscn<>res://scripts/spawner.gd<>uid://tllb3w05k3yg::::res://scenes/enemy/Enemy.tscn<>uid://b5gpexrc7aha4::::res://scenes/tower/Tower.tscn
-node_block_map.gd::GDScript::-1::1741911737::0::1::::MeshLibTool<>Node3D<>::
-node_block_map.tscn::PackedScene::5629145158256571573::1742429406::0::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png<>res://scenes/node_block_map.gd
-::res://scenes/enemy/::1742429407
-Enemy.tscn::PackedScene::1356967362947511926::1742429407::0::1::::<><>::uid://bt7wb878hdo6w::::res://scenes/enemy/enemy_vie.tscn<>uid://i5eeh16n1aao::::res://assets/Textures/drone.obj<>res://scripts/enemy.gd
-enemy_vie.tscn::PackedScene::3787408144793550868::1742429407::0::1::::<><>::
-::res://scenes/tower/::1742429687
-projectile.tscn::PackedScene::8870600786342154112::1742429407::0::1::::<><>::res://scripts/projectile.gd<>uid://bx27ma6gpij5t::::res://assets/Textures/projectile.obj
-Tower.tscn::PackedScene::4505391391857917881::1742429687::0::1::::<><>::uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn<>res://scripts/tower.gd<>uid://c2wcekyu6oluc::::res://assets/Textures/building.obj<>uid://dym8q71lthi2c::::res://scenes/tower/projectile.tscn
-tower_vie.tscn::PackedScene::3974732432421927464::1742429407::0::1::::<><>::
-::res://scripts/::1742429404
-enemy.gd::GDScript::-1::1742428946::0::1::::<>CharacterBody3D<>::
-projectile.gd::GDScript::-1::1742429404::0::1::::<>StaticBody3D<>::
-spawner.gd::GDScript::-1::1742428835::0::1::::<>Node3D<>::
-tower.gd::GDScript::-1::1742428899::0::1::::<>Node3D<>::
+::res://scenes/::1742430835
+grid_map.tscn::PackedScene::56719864616417666::1742430631::0::1::::<><>::uid://c5bbmlq8ijpbs::::res://assets/block_map.tres
+MainScene.tscn::PackedScene::446166055962729718::1742430631::0::1::::<><>::uid://2qfycqtqpeo::::res://scenes/grid_map.tscn<>res://scripts/spawner.gd<>uid://tllb3w05k3yg::::res://scenes/enemy/Enemy.tscn<>uid://b5gpexrc7aha4::::res://scenes/tower/Tower.tscn
+node_block_map.gd::GDScript::-1::1742430835::0::1::::MeshLibTool<>Node3D<>::
+node_block_map.tscn::PackedScene::5629145158256571573::1742430632::0::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png<>res://scenes/node_block_map.gd
+::res://scenes/enemy/::1742430835
+Enemy.tscn::PackedScene::1356967362947511926::1742430835::0::1::::<><>::uid://bt7wb878hdo6w::::res://scenes/enemy/enemy_vie.tscn<>uid://i5eeh16n1aao::::res://assets/Textures/drone.obj<>res://scripts/enemy.gd
+enemy_vie.tscn::PackedScene::3787408144793550868::1742430835::0::1::::<><>::
+::res://scenes/tower/::1742430835
+projectile.tscn::PackedScene::8870600786342154112::1742430835::0::1::::<><>::res://scripts/projectile.gd<>uid://bx27ma6gpij5t::::res://assets/Textures/projectile.obj
+Tower.tscn::PackedScene::4505391391857917881::1742430835::0::1::::<><>::uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn<>res://scripts/tower.gd<>uid://c2wcekyu6oluc::::res://assets/Textures/building.obj<>uid://dym8q71lthi2c::::res://scenes/tower/projectile.tscn
+tower_vie.tscn::PackedScene::3974732432421927464::1742430835::0::1::::<><>::
+::res://scripts/::1742430835
+enemy.gd::GDScript::-1::1742430835::0::1::::<>CharacterBody3D<>::
+projectile.gd::GDScript::-1::1742430835::0::1::::<>StaticBody3D<>::
+spawner.gd::GDScript::-1::1742430835::0::1::::<>Node3D<>::
+tower.gd::GDScript::-1::1742430835::0::1::::<>Node3D<>::
