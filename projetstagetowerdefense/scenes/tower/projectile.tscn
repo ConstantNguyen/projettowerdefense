@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dym8q71lthi2c"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_rv02d"]
+[ext_resource type="ArrayMesh" uid="uid://bx27ma6gpij5t" path="res://assets/Textures/projectile.obj" id="2_v4v2w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6m2f"]
+size = Vector3(0.1, 0.1, 0.5)
+
+[node name="Projectile" type="StaticBody3D"]
+script = ExtResource("1_rv02d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.05, 0, 0, 0)
+mesh = ExtResource("2_v4v2w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.260455)
+shape = SubResource("BoxShape3D_x6m2f")

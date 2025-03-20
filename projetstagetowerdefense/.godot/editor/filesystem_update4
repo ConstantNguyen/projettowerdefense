@@ -1,0 +1,9 @@
+res://scenes/MainScene.tscn
+res://assets/block_map.tres
+res://scenes/grid_map.tscn
+res://scenes/node_block_map.tscn
+res://scenes/tower/Tower.tscn
+res://scenes/tower/projectile.tscn
+res://scenes/tower/tower_vie.tscn
+res://scenes/enemy/Enemy.tscn
+res://scenes/enemy/enemy_vie.tscn

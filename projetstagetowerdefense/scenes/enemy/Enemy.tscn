@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://tllb3w05k3yg"]
+
+[ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="1_hsxq4"]
+[ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="1_mll7h"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_puv3o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gv2si"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_smhvv"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Enemy" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_puv3o")
+
+[node name="EnemyShape" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = ExtResource("1_mll7h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152372, 0)
+shape = SubResource("BoxShape3D_gv2si")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="EnemyHealthBar" parent="SubViewport" instance=ExtResource("1_hsxq4")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+texture = SubResource("ViewportTexture_smhvv")
