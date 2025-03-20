@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://2qfycqtqpeo"]
-
-[ext_resource type="MeshLibrary" uid="uid://c5bbmlq8ijpbs" path="res://assets/block_map.tres" id="1_scc6v"]
-
-[node name="GridMap" type="GridMap"]
-mesh_library = ExtResource("1_scc6v")
