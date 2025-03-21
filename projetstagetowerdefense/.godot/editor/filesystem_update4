@@ -1,5 +1,6 @@
 res://scenes/MainScene.tscn
 res://assets/block_map.tres
+res://scripts/camera_3d.gd
 res://scenes/grid_map.tscn
 res://scenes/node_block_map.tscn
 res://scenes/tower/Tower.tscn

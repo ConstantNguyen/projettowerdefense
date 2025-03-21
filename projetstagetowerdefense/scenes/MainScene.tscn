@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://gmej37toccew"]
+[gd_scene load_steps=6 format=3 uid="uid://gmej37toccew"]
 
 [ext_resource type="PackedScene" uid="uid://2qfycqtqpeo" path="res://scenes/grid_map.tscn" id="1_2bw1f"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="1_wy15o"]
 [ext_resource type="PackedScene" uid="uid://tllb3w05k3yg" path="res://scenes/enemy/Enemy.tscn" id="2_0i3h7"]
 [ext_resource type="PackedScene" uid="uid://b5gpexrc7aha4" path="res://scenes/tower/Tower.tscn" id="3_henjy"]
+[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="3_j5p3u"]
 
 [node name="MainScene" type="Node3D"]
 
@@ -16,6 +17,7 @@ enemy_scene = ExtResource("2_0i3h7")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 3)
+script = ExtResource("3_j5p3u")
 
 [node name="TowerBasic" parent="." instance=ExtResource("3_henjy")]
 
