@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://30qqaj0unrj8"]
+
+[ext_resource type="PackedScene" uid="uid://daf6jnblls6uf" path="res://assets/FBX format/tower-round-base.fbx" id="1_2bdid"]
+
+[node name="tower-round-base" instance=ExtResource("1_2bdid")]

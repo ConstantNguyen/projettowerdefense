@@ -1,3 +1,10 @@
+Control
+Container
+BoxContainer
+Label
+Button
+LineEdit
+VBoxContainer
 CollisionShape3D
 DirectionalLight3D
 Camera3D
@@ -5,9 +12,3 @@ Sprite3D
 SubViewport
 MeshInstance3D
 ProgressBar
-CharacterBody3D
-Timer
-Node3D
-StaticBody3D
-Area3D
-GridMap

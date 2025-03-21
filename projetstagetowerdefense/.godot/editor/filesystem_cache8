@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1742520051
+::res://::1742537973
 icon.svg::CompressedTexture2D::3108111239905498642::1741911679::1741911791::1::::<><>::
-::res://assets/::1742430853
-block_map.tres::MeshLibrary::6880653804785011672::1742430853::0::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
+::res://assets/::1742522471
+block_map.tres::MeshLibrary::6880653804785011672::1742522471::0::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 ::res://assets/FBX format/::1742430844
 detail-crystal-large.fbx::PackedScene::6423666832079564995::1741911736::1741911797::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
 detail-crystal.fbx::PackedScene::538969594884782826::1741911736::1741911795::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png
@@ -173,20 +173,29 @@ building.obj::Mesh::6713485596623050038::1742430835::1742430841::1::::<><>::
 drone.obj::Mesh::623692502127996046::1742430835::1742430842::1::::<><>::
 projectile.obj::Mesh::4058466708204765795::1742430835::1742430842::1::::<><>::
 variation-a.png::CompressedTexture2D::2073811613958069978::1741911737::1741911791::1::::<><>::
-::res://scenes/::1742430893
-grid_map.tscn::PackedScene::56719864616417666::1742430892::0::1::::<><>::uid://c5bbmlq8ijpbs::::res://assets/block_map.tres
-MainScene.tscn::PackedScene::446166055962729718::1742430892::0::1::::<><>::uid://2qfycqtqpeo::::res://scenes/grid_map.tscn<>res://scripts/spawner.gd<>uid://tllb3w05k3yg::::res://scenes/enemy/Enemy.tscn<>uid://b5gpexrc7aha4::::res://scenes/tower/Tower.tscn
+::res://scenes/::1742537721
+grid_map.tscn::PackedScene::56719864616417666::1742537719::0::1::::<><>::uid://c5bbmlq8ijpbs::::res://assets/block_map.tres
+MainScene.tscn::PackedScene::6000404692000874580::1742537721::0::1::::<><>::uid://2qfycqtqpeo::::res://scenes/grid_map.tscn<>res://scripts/main_scene.gd<>res://scripts/camera_3d.gd<>uid://buxm5txnmldeu::::res://scenes/enemy/spawner.tscn<>uid://b5gpexrc7aha4::::res://scenes/tower/Tower.tscn<>res://scripts/path_3d.gd<>res://scripts/mesh_instance_3d.gd
+menu1.tscn::PackedScene::6574731481707342541::1742537721::0::1::::<><>::res://scripts/menu.gd
 node_block_map.gd::GDScript::-1::1742430835::0::1::::MeshLibTool<>Node3D<>::
-node_block_map.tscn::PackedScene::5629145158256571573::1742430893::0::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png<>res://scenes/node_block_map.gd
-::res://scenes/enemy/::1742430894
-Enemy.tscn::PackedScene::1356967362947511926::1742430894::0::1::::<><>::uid://bt7wb878hdo6w::::res://scenes/enemy/enemy_vie.tscn<>uid://i5eeh16n1aao::::res://assets/Textures/drone.obj<>res://scripts/enemy.gd
-enemy_vie.tscn::PackedScene::3787408144793550868::1742430894::0::1::::<><>::
-::res://scenes/tower/::1742430894
-projectile.tscn::PackedScene::8870600786342154112::1742430894::0::1::::<><>::res://scripts/projectile.gd<>uid://bx27ma6gpij5t::::res://assets/Textures/projectile.obj
-Tower.tscn::PackedScene::4505391391857917881::1742430894::0::1::::<><>::uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn<>res://scripts/tower.gd<>uid://c2wcekyu6oluc::::res://assets/Textures/building.obj<>uid://dym8q71lthi2c::::res://scenes/tower/projectile.tscn
-tower_vie.tscn::PackedScene::3974732432421927464::1742430894::0::1::::<><>::
-::res://scripts/::1742430835
-enemy.gd::GDScript::-1::1742430835::0::1::::<>CharacterBody3D<>::
+node_block_map.tscn::PackedScene::5629145158256571573::1742537720::0::1::::<><>::uid://dimaesgmu827f::::res://assets/FBX format/Textures/colormap.png<>res://scenes/node_block_map.gd
+::res://scenes/enemy/::1742537721
+Enemy.tscn::PackedScene::1356967362947511926::1742537721::0::1::::<><>::uid://bt7wb878hdo6w::::res://scenes/enemy/enemy_vie.tscn<>uid://i5eeh16n1aao::::res://assets/Textures/drone.obj<>res://scripts/enemy.gd
+enemy_vie.tscn::PackedScene::3787408144793550868::1742537721::0::1::::<><>::
+spawner.tscn::PackedScene::3838461456608754848::1742522245::0::1::::<><>::uid://dw4qxdd4qievh::::res://assets/FBX format/spawn-square.fbx<>res://scripts/spawner.gd<>uid://tllb3w05k3yg::::res://scenes/enemy/Enemy.tscn
+::res://scenes/tower/::1742537890
+dead_tower.tscn::PackedScene::2017897125369525919::1742537721::0::1::::<><>::uid://daf6jnblls6uf::::res://assets/FBX format/tower-round-base.fbx
+projectile.tscn::PackedScene::8870600786342154112::1742537721::0::1::::<><>::res://scripts/projectile.gd<>uid://bx27ma6gpij5t::::res://assets/Textures/projectile.obj
+Tower.tscn::PackedScene::4505391391857917881::1742537890::0::1::::<><>::uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn<>res://scripts/tower.gd<>uid://c2wcekyu6oluc::::res://assets/Textures/building.obj<>uid://30qqaj0unrj8::::res://scenes/tower/dead_tower.tscn<>res://scripts/ui.gd
+tower_vie.tscn::PackedScene::3974732432421927464::1742537721::0::1::::<><>::
+::res://scripts/::1742537319
+camera_3d.gd::GDScript::-1::1742522532::0::1::::<>Node3D<>::
+enemy.gd::GDScript::-1::1742531456::0::1::::<>CharacterBody3D<>::
+main_scene.gd::GDScript::-1::1742534657::0::1::::<>Node3D<>::
+menu.gd::GDScript::-1::1742522245::0::1::::<>Control<>::
+mesh_instance_3d.gd::GDScript::-1::1742522245::0::1::::<>MeshInstance3D<>::
+path_3d.gd::GDScript::-1::1742522245::0::1::::<>Path3D<>::
 projectile.gd::GDScript::-1::1742430835::0::1::::<>StaticBody3D<>::
-spawner.gd::GDScript::-1::1742430835::0::1::::<>Node3D<>::
-tower.gd::GDScript::-1::1742430835::0::1::::<>Node3D<>::
+spawner.gd::GDScript::-1::1742527090::0::1::::<>Node3D<>::
+tower.gd::GDScript::-1::1742537319::0::1::::<>Node3D<>::
+ui.gd::GDScript::-1::1742523180::0::1::::<>Control<>::

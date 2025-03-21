@@ -29,5 +29,5 @@ func _input(event):
 	if event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		rotation.y -= event.relative.x * look_sensitivity * 0.01
 		rotation_x -= event.relative.y * look_sensitivity * 0.01
-		rotation_x = clamp(rotation_x, -1.5, 1.5)  # Empêche de regarder trop haut/bas
+		rotation_x = clamp(rotation_x, -1.5, 1.5) 
 		rotation = Vector3(rotation_x, rotation.y, 0)
