@@ -1,7 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://gmej37toccew"]
+[gd_scene load_steps=9 format=3 uid="uid://crqv12voetg0s"]
 
 [ext_resource type="PackedScene" uid="uid://2qfycqtqpeo" path="res://scenes/grid_map.tscn" id="1_2bw1f"]
+[ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_vi0dc"]
+[ext_resource type="PackedScene" uid="uid://buxm5txnmldeu" path="res://scenes/enemy/spawner.tscn" id="3_c1un4"]
+[ext_resource type="PackedScene" uid="uid://b5gpexrc7aha4" path="res://scenes/tower/Tower.tscn" id="3_henjy"]
+[ext_resource type="Script" path="res://scripts/path_3d.gd" id="4_llih6"]
+[ext_resource type="Script" path="res://scripts/mesh_instance_3d.gd" id="5_30wgm"]
+
+[sub_resource type="Curve3D" id="Curve3D_kb5yi"]
+bake_interval = 73.76
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5, 0, 0, -2.24918, 0.594803, -0.0731025, 2.24918, -0.594803, 0.0731025, -2.083, 0, -1.121, 0.00866282, 0.0205629, -0.0162859, -0.00866282, -0.0205629, 0.0162859, -0.123, 0, 0.916, 0, 0, 0, 0, 0, 0, 1.252, 0, 0, 0, 0, 0, 0, 0, 0, 3.365, 0, 0, 0, 0, 0, 0, 0, 0, 5.239, 0, 1.802, 0, 0, 0, 0, 0, 0, 3.392, 0, 2.454),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jsbvb"]
+size = Vector2(20, 20)
 
 [node name="MainScene" type="Node3D"]
+script = ExtResource("1_vi0dc")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
 
 [node name="GridMap" parent="." instance=ExtResource("1_2bw1f")]
+collision_layer = 0
+collision_mask = 0
+
+[node name="TowerBasic" parent="." instance=ExtResource("3_henjy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.47, 0, 0)
+
+[node name="Tower" parent="." instance=ExtResource("3_henjy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.392, 0, 2.454)
+
+[node name="spawn-square2" parent="." node_paths=PackedStringArray("path_node") instance=ExtResource("3_c1un4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+path_node = NodePath("../Path3D")
+spawn_interval = 2.0
+
+[node name="Timer" type="Timer" parent="spawn-square2"]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_kb5yi")
+script = ExtResource("4_llih6")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+polygon = PackedVector2Array(-0.5, 0, -0.5, 0.01, 0.5, 0.01, 0.5, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.9
+path_simplify_angle = 14.5
+path_rotation = 1
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_jsbvb")
+script = ExtResource("5_30wgm")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://gmej37toccew"]
+
+[ext_resource type="PackedScene" uid="uid://2qfycqtqpeo" path="res://scenes/grid_map.tscn" id="1_2bw1f"]
+[ext_resource type="PackedScene" uid="uid://buxm5txnmldeu" path="res://scenes/enemy/spawner.tscn" id="3_c1un4"]
+[ext_resource type="PackedScene" uid="uid://b5gpexrc7aha4" path="res://scenes/tower/Tower.tscn" id="3_henjy"]
+[ext_resource type="Script" path="res://scripts/path_3d.gd" id="4_llih6"]
+
+[sub_resource type="Curve3D" id="Curve3D_kb5yi"]
+bake_interval = 73.76
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5, 0, 0, -0.540037, 0, 0.226467, 0.540037, 0, -0.226467, -2.2494, 0, -1.03169, 0, 0, 0, 0, 0, 0, -0.106675, 0, 0.901989, 0, 0, 0, 0, 0, 0, 1.252, 0, 0, 0, 0, 0, 0, 0, 0, 3.465, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="MainScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
+
+[node name="TowerBasic" parent="." instance=ExtResource("3_henjy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.47, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+
+[node name="GridMap" parent="." instance=ExtResource("1_2bw1f")]
+collision_layer = 0
+collision_mask = 0
+
+[node name="spawn-square2" parent="." node_paths=PackedStringArray("path_node") instance=ExtResource("3_c1un4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+path_node = NodePath("../Path3D")
+spawn_interval = 1.0
+
+[node name="Timer" type="Timer" parent="spawn-square2"]
+wait_time = 1.026
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_kb5yi")
+script = ExtResource("4_llih6")
+line_width = 1.0
