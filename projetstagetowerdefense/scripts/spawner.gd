@@ -15,13 +15,4 @@ func _ready():
 
 func spawn_enemy():
 	var enemy = enemy_scene.instantiate()
-	# Crée un PathFollow3D
-	var path_follow = PathFollow3D.new()
-	path_follow.rotation_mode = PathFollow3D.ROTATION_Y  # Pour suivre la rotation du chemin
-	path_follow.progress_ratio = 0.0
-
-	# Instancie l'ennemi et l'ajoute en tant qu'enfant du PathFollow3D
-	path_follow.add_child(enemy)
-
-	# Ajoute PathFollow3D au Path3D
-	path_node.add_child(path_follow)
+	enemy.switch_path(path_node)

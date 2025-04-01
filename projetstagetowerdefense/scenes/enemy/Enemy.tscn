@@ -22,7 +22,6 @@ mesh = ExtResource("1_mll7h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152372, 0)
-visible = false
 shape = SubResource("BoxShape3D_gv2si")
 
 [node name="SubViewport" type="SubViewport" parent="."]

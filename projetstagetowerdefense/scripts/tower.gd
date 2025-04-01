@@ -63,7 +63,6 @@ func _on_enemy_exited(enemy):
 	change_target()
 
 
-		
 
 func change_target():
 	if list_enemies.size() > 0:

@@ -1,14 +1,15 @@
 extends Path3D
 
-@export var line_color: Color = Color.RED
-
-@onready var path = $CSGPolygon3D
+@export var linked_towers : Array[Node3D] = []
 
 func _ready():
-	var material = StandardMaterial3D.new()
+	add_to_group("paths")
 	
-	# Change la couleur d'albédo (couleur de base)
-	material.albedo_color = line_color
 	
-	# Applique le matériau au mesh
-	path.material_override = material
+
+func _process(delta) :
+	if !is_valid() :
+		remove_from_group("paths")
+
+func is_valid():
+	return linked_towers.any(func(tower): return !tower.is_dead)

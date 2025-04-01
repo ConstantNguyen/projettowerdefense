@@ -1,3 +1,8 @@
+CollisionShape3D
+Area3D
+Path3D
+GridMap
+MeshInstance3D
 Control
 Container
 BoxContainer
@@ -5,10 +10,5 @@ Label
 Button
 LineEdit
 VBoxContainer
-CollisionShape3D
 DirectionalLight3D
 Camera3D
-Sprite3D
-SubViewport
-MeshInstance3D
-ProgressBar
