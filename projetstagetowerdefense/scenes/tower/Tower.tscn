@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bwvni6ngprpoy" path="res://scenes/tower/tower_vie.tscn" id="1_a4ejr"]
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_uvmct"]
 [ext_resource type="PackedScene" uid="uid://30qqaj0unrj8" path="res://scenes/tower/dead_tower.tscn" id="2_h0kw5"]
-[ext_resource type="Texture2D" uid="uid://c0yugl1rb5qfg" path="res://assets/city_model/Textures/colormap.png" id="3_ac2rc"]
+[ext_resource type="Texture2D" uid="uid://br8ypaa65yr5i" path="res://assets/city_model/Textures/colormap.png" id="3_ac2rc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haq6l"]
 resource_name = "colormap"
@@ -50,7 +50,7 @@ radius = 0.726811
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jw7ph"]
 height = 10.0
-radius = 6.0
+radius = 1.5
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nl82v"]
 viewport_path = NodePath("SubViewport")
@@ -92,7 +92,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.818, 0)
 texture = SubResource("ViewportTexture_nl82v")
 
 [node name="Panel" type="Panel" parent="."]
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

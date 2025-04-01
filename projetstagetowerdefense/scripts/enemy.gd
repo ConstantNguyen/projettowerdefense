@@ -18,7 +18,7 @@ var pv : float = max_pv
 
 func _ready():
 	detection_area.body_entered.connect(_on_detection_zone_body_entered)
-	health_bar.value = pv/max_pv * 100
+	#health_bar.value = pv/max_pv * 100
 	if get_parent() is PathFollow3D :
 		parent = get_parent()
 	attack_timer.wait_time = attack_interval
@@ -36,27 +36,32 @@ func _physics_process(delta):
 			is_attacking = false
 	else : 
 		parent.progress += speed + delta 
-	
+
+func _on_attack_timer_timeout():
+	if tower != null:
+		start_attack()
+
+func set_tower(t: Node):
+	tower = t
 
 
-func take_damage(amount):
-	pv -= amount
-	health_bar.value = pv/max_pv * 100
+func start_attack():
+	is_attacking = true
+	print("Enemy attacking the tower")
+	tower.take_attack() 
 
-	if pv <= 0:
-		die()  
+func stop_attack():
+	is_attacking = false
+	print("Enemy stopped attacking the towe")
 
 func die():
 	is_dead = true
 	queue_free()
 
 func _on_detection_zone_body_entered(body):
-	print("aaaaa")
-	if body.is_in_group("towers"):  # Vérifie si c'est une tour
-		is_attacking = true
-		tower = body.get_parent().get_parent() 
-		attack(tower)
-	elif body.is_in_group("intersection"):
+
+	
+	if body.is_in_group("intersection"):
 		var possible_paths = body.get_paths()
 		for possibility in possible_paths : 
 			if !possibility.is_in_group("paths") :
@@ -73,13 +78,7 @@ func _on_detection_zone_body_entered(body):
 			if path != origin :
 				switch_path(origin) 
 
-func _on_attack_timer_timeout() : 
-	if is_attacking : 
-		attack(tower)
 
-func attack(target):
-	target.take_damage(50)
-	take_damage(10)
 
 func switch_path(new_path): 
 	if pathfollow :

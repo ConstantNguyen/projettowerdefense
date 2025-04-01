@@ -6,13 +6,27 @@ extends Node3D
 @export var dead_tower: PackedScene
 
 var enemy_target: Node3D = null
-var list_enemies = []
+var ennemies = []
 var is_dead = false
 var pv : float = 200
 var password: String
 var power_password: String
 var password_entered = false 
 var tower_name: String
+var resistance: float = 0.0 
+var decay_rate: float = 0.05
+var min_resistance: float = 5.0  
+
+
+@export var min_password_strength: float = 1.0  # Minimum password strength
+@export var max_password_strength: float = 100.0  # Maximum password strength
+
+@export var length_multiplier: float = 1.5  # Length factor
+@export var diversity_multiplier: float = 2.0  # Diversity factor (lowercase, uppercase, numbers, symbols)
+@export var char_set_boost: float = 20.0  # Boost factor for strong characters (letters and symbols)
+@export var repeat_penalty: float = -5.0  # Penalty for repeated characters
+@export var max_unique_chars: int = 26  # The maximum number of unique characters to count
+@export var decay_acceleration: float = 0.01
 
 @onready var tour_health_bar = $SubViewport/TowerHealthBar
 @onready var body = $MeshInstance3D/StaticBody3D
@@ -59,41 +73,123 @@ func _ready():
 
 func _on_enemy_entered(enemy):
 	if enemy is CharacterBody3D:
-		list_enemies.append(enemy)
-		if enemy_target == null:  
-			change_target()
+		ennemies.append(enemy)
+		enemy.set_tower(self)
+		
 
 func _on_enemy_exited(enemy):
-	list_enemies.erase(enemy)
-	change_target()
+	ennemies.erase(enemy)
+	
+	
+func set_new_password(new_password: String):
+	password = new_password
+	resistance = calculate_password_strength(password)
+	print("New password set: ", password)
+
+# Calculate resistance based on the password strength
+func calculate_password_strength(password: String) -> float:
+	var strength = 0.0
+	var length = password.length()
+
+	# Base strength based on length (longer is stronger)
+	strength += length * length_multiplier
+
+	# Track character categories
+	var has_lower = false
+	var has_upper = false
+	var has_numbers = false
+	var has_symbols = false
+	
+	var lower_chars = {}  # Store unique lowercase characters
+	var upper_chars = {}  # Store unique uppercase characters
+	var number_chars = {}  # Store unique numeric characters
+	var symbol_chars = {}  # Store unique symbol characters
+	
+	# Loop through the password and categorize each character
+	for c in password:
+		if c.to_lower() == c:
+			has_lower = true
+			lower_chars[c] = true
+		elif c.to_upper() == c:
+			has_upper = true
+			upper_chars[c] = true
+		elif c.to_int() != null:
+			has_numbers = true
+			number_chars[c] = true
+		else:
+			has_symbols = true
+			symbol_chars[c] = true
+
+	# Add diversity boost based on character types used
+	var diversity_count = 0
+	if has_lower:
+		diversity_count += 1
+	if has_upper:
+		diversity_count += 1
+	if has_numbers:
+		diversity_count += 1
+	if has_symbols:
+		diversity_count += 1
+	
+	strength += diversity_count * diversity_multiplier
+
+	# Character Set Boost: Increase strength based on number of unique characters in each category
+	strength += len(lower_chars) * char_set_boost
+	strength += len(upper_chars) * char_set_boost
+	strength += len(number_chars) * char_set_boost
+	strength += len(symbol_chars) * char_set_boost
+
+	# Penalty for repeated characters: If a character appears more than once, penalize the password strength
+	var unique_characters = lower_chars.keys() + upper_chars.keys() + number_chars.keys() + symbol_chars.keys()
+	var repeated_characters = password.length() - unique_characters.size()
+	if repeated_characters > 0:
+		strength += repeat_penalty * repeated_characters  # Apply penalty
+
+	# Maximum character set bonus based on the number of unique characters (e.g., 26 unique letters max)
+	var max_unique_chars_limit = min(max_unique_chars, password.length())  # Limit by password length
+	strength = min(strength, max_password_strength)  # Cap the strength to avoid excessive values
+
+	# Clamp strength between min and max values
+	print(strength)
+	return clamp(strength, min_password_strength, max_password_strength)
 
 
-
-func change_target():
-	if list_enemies.size() > 0:
-		enemy_target = list_enemies[0]
-	else:
-		enemy_target = null
-
-func shoot_projectile():
-	if enemy_target == null:
-		return
-
-	if projectile_scene:
-		var projectile = projectile_scene.instantiate()
-		projectile.target = enemy_target
-		get_parent().add_child(projectile)
-		projectile.position = position
+func _process(delta):
+	if resistance > min_resistance:
+		resistance -= decay_rate * delta
+		decay_rate += decay_acceleration * delta
 		
-func take_damage(amount):
-	pv -= amount
-	pv = max(pv, 0) 
-	tour_health_bar.value = pv/max_pv * 100
+		#if resistance <= min_resistance + 10:
+			#prompt_password_change()  # Prompt user to change password when resistance is low
 
-	if pv <= 0:
-		die() 
+
+func prompt_password_change():
+	print("Your password is getting weak! Change it now!")
+
+func take_attack():
+	if resistance > 0:
+		resistance -= decay_rate  
+		print("Tower resisting! Resistance left:", resistance)
+		
+		if resistance <= min_resistance:
+			print("Resistance is critically low!")
+			prompt_password_change()
+	else:
+		print("Tower destroyed!")
+		die()  
+
+
+
+
+
+
+
+
 
 func die():
+	for enemy in ennemies:
+		enemy.set_tower(null)
+		enemy.stop_attack()
 	is_dead = true
 	tour_health_bar.visible = false
 	body.remove_from_group("towers")
@@ -169,76 +265,12 @@ func _on_password_submitted():
 	password_input.visible = false
 	password_button.visible = false
 	
-	self.update_tower_life(password_input.text)
+	self.set_new_password(password_input.text)
 	
 	password = "Mot de passe : " + password_input.text + "\n Votre mot de passe est " + power_password
 
 	
 	password_text_label.text = password
 	password_text_label.visible = true 
-	
-	
-func update_tower_life(password: String):
-	var strength = self.evaluate_password_strength(password)
-	# Logique pour augmenter la vie de la tour en fonction de la force du mot de passe
-	if strength == 0:
-		pass  # Mot de passe très faible, la vie ne change pas
-	elif strength == 1:
-		pv += 5  # Mot de passe faible, la vie augmente un peu
-		power_password = "faible"
-	elif strength == 2:
-		pv += 10  # Mot de passe moyen
-		power_password = "moyen"
-	elif strength == 3:
-		pv += 15  # Mot de passe assez fort
-		power_password = "assez fort"
-	elif strength == 4:
-		pv += 20  # Mot de passe très fort
-		power_password = "très fort"
-	
-	# La vie ne doit jamais descendre en dessous de 50
-	pv = max(pv, 50)	
-	
-	
-
-
-func evaluate_password_strength(password: String) -> int:
-	var strength = 0
-	var upper_count = 0
-	var digit_count = 0
-	var special_count = 0
-	
-	# Longueur du mot de passe (si plus de 8 caractères)
-	if password.length() > 8:
-		strength += 1
-	
-	# Comptabiliser les majuscules
-	for char in password:
-		if char == char.to_upper() and char != char.to_lower():  # Vérifie si le caractère est une majuscule
-			upper_count += 1
-	
-	# Comptabiliser les chiffres
-	for char in password:
-		if char.to_int() != null:  # Vérifie si le caractère peut être converti en entier
-			digit_count += 1
-	
-	# Comptabiliser les caractères spéciaux
-	var special_chars = "!@#$%^&*(),.?\":{}|<>"
-	for char in password:
-		if special_chars.contains(char):  # Vérifie si le caractère est un caractère spécial
-			special_count += 1
-	
-	# Ajouter à la force selon les critères
-	if upper_count > 0:
-		strength += 1
-	if digit_count > 0:
-		strength += 1
-	if special_count > 0:
-		strength += 1
-	
-	return strength
-	
-
-
 	
 	

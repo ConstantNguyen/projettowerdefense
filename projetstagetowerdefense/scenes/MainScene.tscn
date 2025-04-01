@@ -85,12 +85,15 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9.01506, 0, 9.01248)
 [node name="Spawner" parent="." node_paths=PackedStringArray("path_node") instance=ExtResource("3_c1un4")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.3117, 0, -1.09363)
 path_node = NodePath("../Path R")
-spawn_interval = 2.0
+spawn_interval = 20.0
 
 [node name="Timer" type="Timer" parent="Spawner"]
+wait_time = 4096.0
 
 [node name="Routeur" parent="." instance=ExtResource("4_e443a")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.0228, 0, -1.0182)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.0228, 0.0378637, -1.0182)
+max_pv = 2000.0
+max_password_strength = 100000.0
 
 [node name="Path R" type="Path3D" parent="." node_paths=PackedStringArray("linked_towers")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.02, -1)

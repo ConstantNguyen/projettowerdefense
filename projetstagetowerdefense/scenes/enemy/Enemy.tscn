@@ -15,6 +15,7 @@ viewport_path = NodePath("SubViewport")
 [node name="Enemy" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_puv3o")
+attack_interval = 0.5
 
 [node name="EnemyShape" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

@@ -7,6 +7,7 @@ extends Node3D
 @onready var timer = $Timer
 
 func _ready():
+	await get_tree().create_timer(100.0).timeout
 	timer.wait_time = spawn_interval
 	timer.timeout.connect(spawn_enemy)
 	timer.start()
