@@ -27,6 +27,10 @@ var tower_name: String
 @onready var password_button = $UI/ZoneMDP/Button
 @onready var password_text_label = $UI/ZoneMDP/Label
 
+@onready var new_password_label = $UI/ZoneMDP/Label2
+@onready var new_password_input = $UI/ZoneMDP/LineEdit2
+@onready var confirm_password_label = $UI/ZoneMDP/Label3
+@onready var confirm_password_input = $UI/ZoneMDP/LineEdit3
 
 
 
@@ -105,23 +109,29 @@ func die():
 			
 func _on_tower_clicked(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		hide_password_elements() 
-			
+		hide_password_elements()
+
 		info_panel.visible = true
 		password_text_label.visible = true
 		info_label.text = "Vie de la tour: " + str(pv)
 
 		if password_entered:
+			# Mot de passe déjà validé → masquer champ d’entrée
 			password_input.visible = false
 			password_button.visible = false
-			password_text_label.text = self.password	
+			password_text_label.text = self.password
+
+			# Afficher les champs pour changer le mot de passe
+			new_password_label.visible = true
+			new_password_input.visible = true
+			confirm_password_label.visible = true
+			confirm_password_input.visible = true
 		else:
+			# Afficher le champ pour entrer le mot de passe
 			password_input.visible = true
 			password_button.visible = true
 			password_text_label.text = "Saisir un mot de passe pour la tour"
-			
 
-			
 
 
 func _unhandled_input(event):
@@ -143,6 +153,17 @@ func hide_password_elements():
 	password_button.visible = false
 	password_text_label.visible = false
 	info_panel.visible = false
+
+	new_password_label.visible = false
+	new_password_input.visible = false
+	confirm_password_label.visible = false
+	confirm_password_input.visible = false
+
+	password_input.visible = false
+	password_button.visible = false
+	password_text_label.visible = false
+	info_panel.visible = false
+	
 
 					
 func _on_password_submitted():

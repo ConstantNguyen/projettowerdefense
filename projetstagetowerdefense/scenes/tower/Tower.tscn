@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=4 uid="uid://b5gpexrc7aha4"]
 
-[ext_resource type="PackedScene" path="res://scenes/tower/tower_vie.tscn" id="1_a4ejr"]
+[ext_resource type="PackedScene" uid="uid://bwvni6ngprpoy" path="res://scenes/tower/tower_vie.tscn" id="1_a4ejr"]
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_uvmct"]
 [ext_resource type="PackedScene" uid="uid://30qqaj0unrj8" path="res://scenes/tower/dead_tower.tscn" id="2_h0kw5"]
-[ext_resource type="Texture2D" uid="uid://phulxs1q24kr" path="res://assets/city_model/Textures/colormap.png" id="3_ac2rc"]
+[ext_resource type="Texture2D" uid="uid://c0yugl1rb5qfg" path="res://assets/city_model/Textures/colormap.png" id="3_ac2rc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haq6l"]
 resource_name = "colormap"
@@ -121,25 +121,6 @@ offset_top = -34.48
 offset_right = 190.96
 offset_bottom = 58.52
 
-[node name="LineEdit" type="LineEdit" parent="UI/ZoneMDP"]
-layout_mode = 2
-anchor_right = 1.052
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 30.0
-offset_right = -161.448
-offset_bottom = -32.0
-
-[node name="Button" type="Button" parent="UI/ZoneMDP"]
-layout_mode = 2
-anchor_right = 1.108
-anchor_bottom = 1.0
-offset_left = 276.0
-offset_top = 25.0
-offset_right = -37.392
-offset_bottom = -31.0
-text = "Valider"
-
 [node name="Label" type="Label" parent="UI/ZoneMDP"]
 layout_mode = 2
 anchor_left = 0.547
@@ -150,3 +131,48 @@ offset_left = -211.578
 offset_top = -28.491
 offset_right = 211.422
 offset_bottom = 28.509
+text = "Saisir mot de passe"
+
+[node name="LineEdit" type="LineEdit" parent="UI/ZoneMDP"]
+layout_mode = 2
+anchor_right = 1.052
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 30.0
+offset_right = -161.448
+offset_bottom = 4.0
+text = "Champ mot de passe actuel"
+
+[node name="Button" type="Button" parent="UI/ZoneMDP"]
+layout_mode = 2
+anchor_right = 1.108
+anchor_bottom = 1.0
+offset_left = 276.0
+offset_top = 25.0
+offset_right = -37.392
+offset_bottom = -31.0
+text = "Valider le mot de passe"
+
+[node name="Label2" type="Label" parent="UI/ZoneMDP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Nouveau mot de passe"
+
+[node name="LineEdit2" type="LineEdit" parent="UI/ZoneMDP"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+text = "Premier Champ"
+
+[node name="Label3" type="Label" parent="UI/ZoneMDP"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Confirmer nouveau mot de passe :"
+
+[node name="LineEdit3" type="LineEdit" parent="UI/ZoneMDP"]
+layout_mode = 0
+offset_right = 67.0625
+offset_bottom = 31.0
+text = "Deuxième champ"
