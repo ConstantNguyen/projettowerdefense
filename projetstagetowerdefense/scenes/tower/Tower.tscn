@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b5gpexrc7aha4"]
+[gd_scene load_steps=12 format=4 uid="uid://b5gpexrc7aha4"]
 
 [ext_resource type="PackedScene" uid="uid://bwvni6ngprpoy" path="res://scenes/tower/tower_vie.tscn" id="1_a4ejr"]
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_uvmct"]
@@ -55,6 +55,9 @@ radius = 6.0
 [sub_resource type="ViewportTexture" id="ViewportTexture_nl82v"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1o28g"]
+bg_color = Color(0.167259, 0.692922, 0.583564, 1)
+
 [node name="Tower" type="Node3D"]
 script = ExtResource("1_uvmct")
 dead_tower = ExtResource("2_h0kw5")
@@ -63,12 +66,10 @@ dead_tower = ExtResource("2_h0kw5")
 mesh = SubResource("ArrayMesh_k02vk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-visible = false
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.930475, 0)
-visible = false
 shape = SubResource("CylinderShape3D_hlwwt")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -90,89 +91,76 @@ transparent_bg = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.818, 0)
 texture = SubResource("ViewportTexture_nl82v")
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchor_left = 0.107
-anchor_top = 0.062
-anchor_right = 0.107
-anchor_bottom = 0.062
-offset_left = -123.264
-offset_top = -40.176
-offset_right = 6.73599
-offset_bottom = -0.176003
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1o28g")
 
-[node name="InfoTour" type="VBoxContainer" parent="UI"]
-layout_mode = 0
-offset_top = 4.0
-offset_right = 121.0
-offset_bottom = 54.0
-
-[node name="Label" type="Label" parent="UI/InfoTour"]
-layout_mode = 2
-
-[node name="ZoneMDP" type="Control" parent="UI"]
+[node name="UI" type="VBoxContainer" parent="Panel"]
+clip_contents = true
 layout_mode = 1
-anchor_left = 4.408
-anchor_top = 14.962
-anchor_right = 4.408
-anchor_bottom = 14.962
-offset_left = -183.04
-offset_top = -34.48
-offset_right = 190.96
-offset_bottom = 58.52
+anchors_preset = -1
+alignment = 1
 
-[node name="Label" type="Label" parent="UI/ZoneMDP"]
+[node name="InfoTour" type="VBoxContainer" parent="Panel/UI"]
+z_index = 1
 layout_mode = 2
-anchor_left = 0.547
-anchor_top = -0.113
-anchor_right = 0.547
-anchor_bottom = -0.113
-offset_left = -211.578
-offset_top = -28.491
-offset_right = 211.422
-offset_bottom = 28.509
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/UI/InfoTour"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZoneMDP" type="VBoxContainer" parent="Panel/UI"]
+z_index = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/UI/ZoneMDP"]
+layout_mode = 2
 text = "Saisir mot de passe"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="UI/ZoneMDP"]
+[node name="LineEdit" type="LineEdit" parent="Panel/UI/ZoneMDP"]
 layout_mode = 2
-anchor_right = 1.052
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 30.0
-offset_right = -161.448
-offset_bottom = 4.0
-text = "Champ mot de passe actuel"
+placeholder_text = "Champ mot de passe actuel"
+alignment = 1
 
-[node name="Button" type="Button" parent="UI/ZoneMDP"]
+[node name="Button" type="Button" parent="Panel/UI/ZoneMDP"]
 layout_mode = 2
-anchor_right = 1.108
-anchor_bottom = 1.0
-offset_left = 276.0
-offset_top = 25.0
-offset_right = -37.392
-offset_bottom = -31.0
 text = "Valider le mot de passe"
+icon_alignment = 1
 
-[node name="Label2" type="Label" parent="UI/ZoneMDP"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Label2" type="Label" parent="Panel/UI/ZoneMDP"]
+layout_mode = 2
 text = "Nouveau mot de passe"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LineEdit2" type="LineEdit" parent="UI/ZoneMDP"]
-layout_mode = 0
-offset_right = 67.0625
-offset_bottom = 31.0
-text = "Premier Champ"
+[node name="LineEdit2" type="LineEdit" parent="Panel/UI/ZoneMDP"]
+layout_mode = 2
+placeholder_text = "Premier Champ"
 
-[node name="Label3" type="Label" parent="UI/ZoneMDP"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Label3" type="Label" parent="Panel/UI/ZoneMDP"]
+layout_mode = 2
 text = "Confirmer nouveau mot de passe :"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LineEdit3" type="LineEdit" parent="UI/ZoneMDP"]
-layout_mode = 0
-offset_right = 67.0625
-offset_bottom = 31.0
-text = "Deuxième champ"
+[node name="LineEdit3" type="LineEdit" parent="Panel/UI/ZoneMDP"]
+layout_mode = 2
+placeholder_text = "Deuxième champ"
+alignment = 1
+
+[node name="Button2" type="Button" parent="Panel/UI/ZoneMDP"]
+layout_mode = 2
+text = "Valider le nouveau mot de passe"

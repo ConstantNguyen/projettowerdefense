@@ -20,18 +20,19 @@ var tower_name: String
 @onready var detection_area = $Area3D 
 @onready var mesh_instance = $MeshInstance3D
 
-@onready var info_panel = $UI/InfoTour
-@onready var info_label = $UI/InfoTour/Label
+@onready var panel_color = $Panel
+@onready var info_panel = $Panel/UI/InfoTour
+@onready var info_label = $Panel/UI/InfoTour/Label
 
-@onready var password_input = $UI/ZoneMDP/LineEdit
-@onready var password_button = $UI/ZoneMDP/Button
-@onready var password_text_label = $UI/ZoneMDP/Label
+@onready var password_input = $Panel/UI/ZoneMDP/LineEdit
+@onready var password_button = $Panel/UI/ZoneMDP/Button
+@onready var password_text_label = $Panel/UI/ZoneMDP/Label
 
-@onready var new_password_label = $UI/ZoneMDP/Label2
-@onready var new_password_input = $UI/ZoneMDP/LineEdit2
-@onready var confirm_password_label = $UI/ZoneMDP/Label3
-@onready var confirm_password_input = $UI/ZoneMDP/LineEdit3
-
+@onready var new_password_label = $Panel/UI/ZoneMDP/Label2
+@onready var new_password_input = $Panel/UI/ZoneMDP/LineEdit2
+@onready var confirm_password_label = $Panel/UI/ZoneMDP/Label3
+@onready var confirm_password_input = $Panel/UI/ZoneMDP/LineEdit3
+@onready var confirm_password_button = $Panel/UI/ZoneMDP/Button2
 
 
 
@@ -110,7 +111,7 @@ func die():
 func _on_tower_clicked(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		hide_password_elements()
-
+		panel_color.visible = true
 		info_panel.visible = true
 		password_text_label.visible = true
 		info_label.text = "Vie de la tour: " + str(pv)
@@ -126,6 +127,7 @@ func _on_tower_clicked(camera, event, position, normal, shape_idx):
 			new_password_input.visible = true
 			confirm_password_label.visible = true
 			confirm_password_input.visible = true
+			confirm_password_button.visible = true
 		else:
 			# Afficher le champ pour entrer le mot de passe
 			password_input.visible = true
@@ -153,17 +155,13 @@ func hide_password_elements():
 	password_button.visible = false
 	password_text_label.visible = false
 	info_panel.visible = false
+	panel_color.visible = false
 
 	new_password_label.visible = false
 	new_password_input.visible = false
 	confirm_password_label.visible = false
 	confirm_password_input.visible = false
-
-	password_input.visible = false
-	password_button.visible = false
-	password_text_label.visible = false
-	info_panel.visible = false
-	
+	confirm_password_button.visible = false
 
 					
 func _on_password_submitted():
