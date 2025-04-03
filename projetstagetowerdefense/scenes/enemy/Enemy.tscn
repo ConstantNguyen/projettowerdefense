@@ -42,3 +42,6 @@ collision_layer = 2
 shape = SubResource("CylinderShape3D_ak5e5")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-0.0104369, 0, -0.999946, 0, 1, 0, 0.999946, 0, -0.0104369, 0, 1.15821, 0)

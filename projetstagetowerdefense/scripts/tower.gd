@@ -16,7 +16,7 @@ var tower_name: String
 var resistance: float = 0.0 
 var decay_rate: float = 0.05
 var min_resistance: float = 5.0  
-
+var shaking: bool = false
 
 @export var min_password_strength: float = 1.0  # Minimum password strength
 @export var max_password_strength: float = 100.0  # Maximum password strength
@@ -27,6 +27,10 @@ var min_resistance: float = 5.0
 @export var repeat_penalty: float = -5.0  # Penalty for repeated characters
 @export var max_unique_chars: int = 26  # The maximum number of unique characters to count
 @export var decay_acceleration: float = 0.01
+
+@export var shake_intensity: float = 0.1  # Adjust shaking power
+@export var shake_duration: float = 0.5  # Time the shake lasts@onready var original_position: Vector3 = global_transform.origin
+@onready var original_position: Vector3 = global_transform.origin
 
 @onready var tour_health_bar = $SubViewport/TowerHealthBar
 @onready var body = $MeshInstance3D/StaticBody3D
@@ -155,25 +159,37 @@ func calculate_password_strength(password: String) -> float:
 
 
 func _process(delta):
+	if shaking:
+		var offset = Vector3(randf_range(-shake_intensity, shake_intensity), 0, randf_range(-shake_intensity, shake_intensity))
+		global_transform.origin = original_position + offset
 	if resistance > min_resistance:
 		resistance -= decay_rate * delta
 		decay_rate += decay_acceleration * delta
 		
-		#if resistance <= min_resistance + 10:
-			#prompt_password_change()  # Prompt user to change password when resistance is low
+		if resistance <= min_resistance + 10:
+			start_shaking()
+	
 
 
-func prompt_password_change():
-	print("Your password is getting weak! Change it now!")
+func start_shaking():
+	if shaking:
+		return
+	shaking = true
+	var timer = get_tree().create_timer(shake_duration)
+	timer.timeout.connect(stop_shaking)
+	set_process(true)
+
+
+func stop_shaking():
+	shaking = false
+	global_transform.origin = original_position  # Reset position
+	
+
 
 func take_attack():
 	if resistance > 0:
 		resistance -= decay_rate  
 		print("Tower resisting! Resistance left:", resistance)
-		
-		if resistance <= min_resistance:
-			print("Resistance is critically low!")
-			prompt_password_change()
 	else:
 		print("Tower destroyed!")
 		die()  
