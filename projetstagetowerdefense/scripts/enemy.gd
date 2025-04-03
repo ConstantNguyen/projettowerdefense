@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed: float = 0.005
+@export var speed: float = 0.03
 @export var max_pv: float = 20.0
 @export var attack_interval = 1.5
 
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		if tower.is_dead : 
 			is_attacking = false
 	else : 
-		parent.progress += speed + delta 
+		pathfollow.progress += speed 
 
 func _on_attack_timer_timeout():
 	if tower != null:
@@ -59,15 +59,14 @@ func die():
 	queue_free()
 
 func _on_detection_zone_body_entered(body):
-
-	
-	if body.is_in_group("intersection"):
+	if body.get_parent().is_in_group("intersection"):
+		body = body.get_parent()
 		var possible_paths = body.get_paths()
 		for possibility in possible_paths : 
 			if !possibility.is_in_group("paths") :
 				possible_paths.erase(possibility)
-		if possible_paths.size > 0 :
-			var new_path = possible_paths[RandomNumberGenerator.new().randi_range(0, possible_paths.size - 1)]
+		if possible_paths.size() > 0 :
+			var new_path = possible_paths[RandomNumberGenerator.new().randi_range(0, possible_paths.size() - 1)]
 			if speed < 0 : 
 				speed = -speed
 			switch_path(new_path)
@@ -81,15 +80,14 @@ func _on_detection_zone_body_entered(body):
 
 
 func switch_path(new_path): 
-	if pathfollow :
-		pathfollow.queue_free()
+	if pathfollow:  # Vérifie si l'ennemi a déjà un parent
+			pathfollow.remove_child(self)
 	pathfollow = PathFollow3D.new()
 	pathfollow.rotation_mode = PathFollow3D.ROTATION_Y  # Pour suivre la rotation du chemin
 	pathfollow.progress_ratio = 0.0
-
+	
 	# Instancie l'ennemi et l'ajoute en tant qu'enfant du PathFollow3D
 	pathfollow.add_child(self)
-	
 	path = new_path
 	# Ajoute PathFollow3D au Path3D
 	path.add_child(pathfollow)
