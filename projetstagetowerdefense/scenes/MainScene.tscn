@@ -60,12 +60,10 @@ point_count = 6
 script = ExtResource("1_vi0dc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.679434, 9.54015, 24.8161)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.679434, 11.4037, 15.2384)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
-visible = false
 
 [node name="Tower 1" parent="." instance=ExtResource("3_henjy")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.9945, 0, -11.0193)

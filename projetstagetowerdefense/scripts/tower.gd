@@ -215,7 +215,11 @@ func die():
 	
 	# Instancie et ajoute le modèle de la tour morte
 	if dead_tower:
-		mesh_instance.mesh = null
+		var dead_tower_instance = dead_tower.instantiate()
+		get_parent().add_child(dead_tower_instance)
+		dead_tower_instance.global_transform = global_transform
+
+	mesh_instance.queue_free()
 	timer.stop() 
 	get_parent().game_over()
 

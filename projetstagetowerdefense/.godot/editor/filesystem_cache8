@@ -1,218 +1,227 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1743477629
-::res://assets/::1743477999
-block_map.tres::MeshLibrary::6880653804785011672::1743477441::0::1::::<><>::uid://hrw7h3j5i72f::::res://assets/FBX format/Textures/colormap.png
-::res://assets/city_model/::1743477632
-building-garage.glb::PackedScene::8941640983111830671::1743477441::1743477632::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-building-small-a.glb::PackedScene::5734968661125164584::1743477441::1743477631::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-building-small-b.glb::PackedScene::9070680271900467109::1743477441::1743477631::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-building-small-c.glb::PackedScene::910109537770935174::1743477441::1743477630::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-building-small-d.glb::PackedScene::544237896359825190::1743477441::1743477631::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-grass-trees-tall.glb::PackedScene::8901417877509734536::1743477441::1743477632::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-grass-trees.glb::PackedScene::4279016736831286027::1743477441::1743477630::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-grass.glb::PackedScene::6023949765847747366::1743477441::1743477630::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-meshcity.tres::MeshLibrary::2259798903301830040::1743477441::0::1::::<><>::uid://bnn1b2yg61elu::::res://assets/city_model/Textures/colormap.png
-pavement-fountain.glb::PackedScene::2220759560906524099::1743477441::1743477630::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-pavement.glb::PackedScene::5871023111203717819::1743477441::1743477631::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-road-corner.glb::PackedScene::6812590895570335053::1743477441::1743477631::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-road-intersection.glb::PackedScene::323445195459672009::1743477441::1743477631::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-road-split.glb::PackedScene::885299340957293078::1743477441::1743477632::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-road-straight-lightposts.glb::PackedScene::62542462770458023::1743477441::1743477632::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-road-straight.glb::PackedScene::4461518912769304015::1743477441::1743477632::1::::<><>::uid://phulxs1q24kr::::res://assets/city_model/Textures/colormap.png
-::res://assets/city_model/Textures/::1743477634
-colormap.png::CompressedTexture2D::1068518519484517617::1743477441::1743477634::1::::<><>::
-::res://assets/FBX format/::1743477999
-detail-crystal-large.fbx::PackedScene::6423666832079564995::1743451848::1743478032::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-detail-crystal.fbx::PackedScene::538969594884782826::1743451848::1743478031::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-detail-dirt-large.fbx::PackedScene::4587663512035565195::1743451848::1743478031::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-detail-dirt.fbx::PackedScene::8774438430530599755::1743451848::1743478031::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-detail-rocks-large.fbx::PackedScene::9036633977490734265::1743451848::1743478030::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-detail-rocks.fbx::PackedScene::8813591282146445790::1743451848::1743478030::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-detail-tree-large.fbx::PackedScene::3923353417899413148::1743451848::1743478030::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-detail-tree.fbx::PackedScene::6640149844223711921::1743451848::1743478029::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-Drone_FuturisticSleek_02.fbx::PackedScene::710978919784107318::1743451848::1743478029::1::::<><>::
-enemy-ufo-a-weapon.fbx::PackedScene::4979115428049886688::1743451848::1743478035::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-a.fbx::PackedScene::1474791805566401731::1743451848::1743478035::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-b-weapon.fbx::PackedScene::2759493496553637204::1743451848::1743478035::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-b.fbx::PackedScene::6729657759707234906::1743451848::1743478034::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-beam-burst.fbx::PackedScene::9081824015772174212::1743451848::1743478034::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-beam.fbx::PackedScene::7476469084558784938::1743451848::1743478034::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-c-weapon.fbx::PackedScene::6145374810200801304::1743451848::1743478033::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-c.fbx::PackedScene::1342400055664932710::1743451848::1743478033::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-d-weapon.fbx::PackedScene::7310645614833509889::1743451848::1743478033::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-enemy-ufo-d.fbx::PackedScene::5554632867487920574::1743451848::1743478032::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-Laser.fbx::PackedScene::1623781380544844631::1743451848::1743478025::1::::<><>::
-selection-a.fbx::PackedScene::2367135370482173049::1743451848::1743478024::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-selection-b.fbx::PackedScene::9026866086991049627::1743451848::1743478024::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-detail-crystal-large.fbx::PackedScene::5168214867631557269::1743451848::1743478024::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-detail-crystal.fbx::PackedScene::895930872170892174::1743451848::1743478023::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-detail-dirt-large.fbx::PackedScene::2595326065001824088::1743451848::1743478023::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-detail-dirt.fbx::PackedScene::3350410223842861759::1743451848::1743478023::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-detail-rocks-large.fbx::PackedScene::9165454071121571660::1743451848::1743478022::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-detail-rocks.fbx::PackedScene::6379398634025448575::1743451848::1743478022::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-detail-tree-large.fbx::PackedScene::7810820044020208557::1743451848::1743478028::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-detail-tree.fbx::PackedScene::2198021176666338798::1743451848::1743478028::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-bump.fbx::PackedScene::586499287746236572::1743451848::1743478028::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-corner-inner.fbx::PackedScene::7359005715857868162::1743451848::1743478027::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-corner-large.fbx::PackedScene::7880046052000068563::1743451848::1743478027::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-corner-outer.fbx::PackedScene::7865502087806031860::1743451848::1743478027::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-corner-round.fbx::PackedScene::1507617194440945817::1743451848::1743478026::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-corner-square.fbx::PackedScene::1473386237028497044::1743451848::1743478026::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-crossing.fbx::PackedScene::1014610430761688888::1743451848::1743478026::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-crystal.fbx::PackedScene::1159850769345262218::1743451848::1743478025::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-dirt.fbx::PackedScene::1379138169274514257::1743451848::1743478046::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-end-round.fbx::PackedScene::2431039613014652995::1743451848::1743478045::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-end.fbx::PackedScene::4278610635623527726::1743451848::1743478045::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-hill.fbx::PackedScene::8527711785384229387::1743451848::1743478045::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-river-bridge.fbx::PackedScene::62550309273100925::1743451848::1743478044::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-river-corner.fbx::PackedScene::8019006553201364940::1743451848::1743478044::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-river-slope-large.fbx::PackedScene::765876230468555546::1743451848::1743478044::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-river-slope.fbx::PackedScene::5627128304559889932::1743451848::1743478043::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-river-straight.fbx::PackedScene::3763608507698267298::1743451848::1743478043::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-river-transition.fbx::PackedScene::7556111348372594398::1743451848::1743478043::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-river-waterfall.fbx::PackedScene::9055152304288825349::1743451848::1743478042::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-rock.fbx::PackedScene::294381950912646296::1743451848::1743478049::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-slope.fbx::PackedScene::3999371949107505663::1743451848::1743478048::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-spawn-end-round.fbx::PackedScene::5880277891593817862::1743451848::1743478048::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-spawn-end.fbx::PackedScene::5524263579775672171::1743451848::1743478048::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-spawn-round.fbx::PackedScene::6557487903318489994::1743451848::1743478047::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-spawn.fbx::PackedScene::7466654003119641178::1743451848::1743478047::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-split.fbx::PackedScene::1645789706594001541::1743451848::1743478047::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-straight-slope-large.fbx::PackedScene::4155169990707835970::1743451848::1743478046::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-straight-slope.fbx::PackedScene::5448336324865389394::1743451848::1743478046::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-straight.fbx::PackedScene::1222421347558791982::1743451848::1743478046::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-transition.fbx::PackedScene::4724009611085412604::1743451848::1743478039::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-tree-double.fbx::PackedScene::8642261541643276255::1743451848::1743478038::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-tree-quad.fbx::PackedScene::2103643555053261925::1743451848::1743478038::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-tree.fbx::PackedScene::8146476305536700896::1743451848::1743478038::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-wide-corner.fbx::PackedScene::3346488584315884560::1743451848::1743478037::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-wide-split.fbx::PackedScene::5309733631345556472::1743451848::1743478037::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-wide-straight.fbx::PackedScene::8462390987950199205::1743451848::1743478037::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile-wide-transition.fbx::PackedScene::2959721984622687137::1743451848::1743478036::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-tile.fbx::PackedScene::1573542440125757862::1743451848::1743478036::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-wood-structure-high-part.fbx::PackedScene::2134016634261383004::1743451848::1743478036::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-wood-structure-high.fbx::PackedScene::290965778338268479::1743451848::1743478042::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-wood-structure-part.fbx::PackedScene::6395678354452437908::1743451848::1743478042::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-snow-wood-structure.fbx::PackedScene::9104770980229572296::1743451848::1743478041::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-spawn-round.fbx::PackedScene::2926088910666377475::1743451848::1743478041::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-spawn-square.fbx::PackedScene::8764296274671617281::1743451848::1743478041::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-bump.fbx::PackedScene::3625871300879164618::1743451848::1743478040::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-corner-inner.fbx::PackedScene::4606224236914724930::1743451848::1743478040::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-corner-large.fbx::PackedScene::3400040999112463891::1743451848::1743478040::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-corner-outer.fbx::PackedScene::6188802974159497422::1743451848::1743478039::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-corner-round.fbx::PackedScene::3380133700213278112::1743451848::1743478039::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-corner-square.fbx::PackedScene::5647464678155184466::1743451848::1743478039::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-crossing.fbx::PackedScene::7095660581924249392::1743451848::1743478039::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-crystal.fbx::PackedScene::5610916296772970877::1743451848::1743478039::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-dirt.fbx::PackedScene::9113019498164246334::1743451848::1743478040::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-end-round.fbx::PackedScene::8674970890230043896::1743451848::1743478040::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-end.fbx::PackedScene::8875814195587816917::1743451848::1743478040::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-hill.fbx::PackedScene::6393726311047521200::1743451848::1743478041::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-river-bridge.fbx::PackedScene::2255968345494012756::1743451848::1743478041::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-river-corner.fbx::PackedScene::314602225543597058::1743451848::1743478041::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-river-slope-large.fbx::PackedScene::6876478345012370228::1743451848::1743478042::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-river-slope.fbx::PackedScene::6622642676309914223::1743451848::1743478042::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-river-straight.fbx::PackedScene::4371228452300678954::1743451848::1743478036::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-river-transition.fbx::PackedScene::812634758119553243::1743451848::1743478036::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-river-waterfall.fbx::PackedScene::4290800705558353274::1743451848::1743478036::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-rock.fbx::PackedScene::2152010906498740758::1743451848::1743478036::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-slope.fbx::PackedScene::3733640991090810041::1743451848::1743478037::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-spawn-end-round.fbx::PackedScene::8309373923403627737::1743451848::1743478037::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-spawn-end.fbx::PackedScene::9006846315694567483::1743451848::1743478037::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-spawn-round.fbx::PackedScene::3123295158546946463::1743451848::1743478038::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-spawn.fbx::PackedScene::2060014822810562362::1743451848::1743478038::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-split.fbx::PackedScene::6203020174337344024::1743451848::1743478038::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-straight-slope-large.fbx::PackedScene::8991982331554663565::1743451848::1743478046::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-straight-slope.fbx::PackedScene::544208023148142287::1743451848::1743478046::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-straight.fbx::PackedScene::3783872746799025138::1743451848::1743478046::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-transition.fbx::PackedScene::5302515805191699033::1743451848::1743478047::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-tree-double.fbx::PackedScene::4029748557009526464::1743451848::1743478047::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-tree-quad.fbx::PackedScene::1482603611512281027::1743451848::1743478047::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-tree.fbx::PackedScene::5229914033044793031::1743451848::1743478048::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-wide-corner.fbx::PackedScene::3484780931804412649::1743451848::1743478048::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-wide-split.fbx::PackedScene::7994165943726935966::1743451848::1743478048::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-wide-straight.fbx::PackedScene::3241650807003580816::1743451848::1743478049::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile-wide-transition.fbx::PackedScene::9007838936151561225::1743451848::1743478049::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tile.fbx::PackedScene::6992002120095530513::1743451848::1743478042::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-base.fbx::PackedScene::7171482923634096137::1743451848::1743478043::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-bottom-a.fbx::PackedScene::6016159345030662244::1743451848::1743478043::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-bottom-b.fbx::PackedScene::1543274063309364639::1743451848::1743478043::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-bottom-c.fbx::PackedScene::7461645621930209449::1743451848::1743478044::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-build-a.fbx::PackedScene::4136197358772452809::1743451848::1743478044::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-build-b.fbx::PackedScene::2379677483431507372::1743451848::1743478044::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-build-c.fbx::PackedScene::7702033811182137401::1743451848::1743478045::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-build-d.fbx::PackedScene::8993502314819910890::1743451848::1743478045::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-build-e.fbx::PackedScene::1544193784732392372::1743451848::1743478045::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-build-f.fbx::PackedScene::2368968257729235616::1743451848::1743478025::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-crystals.fbx::PackedScene::7322962238913654830::1743451848::1743478026::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-middle-a.fbx::PackedScene::440630667600594445::1743451848::1743478026::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-middle-b.fbx::PackedScene::3781050272353691579::1743451848::1743478026::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-middle-c.fbx::PackedScene::6564925275861225329::1743451848::1743478027::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-roof-a.fbx::PackedScene::7287643691354628688::1743451848::1743478027::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-roof-b.fbx::PackedScene::5729241965737619962::1743451848::1743478027::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-roof-c.fbx::PackedScene::1725430829672262487::1743451848::1743478028::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-top-a.fbx::PackedScene::8668372839914139278::1743451848::1743478028::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-top-b.fbx::PackedScene::8617217530326316484::1743451848::1743478028::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-round-top-c.fbx::PackedScene::1009032718313886212::1743451848::1743478022::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-bottom-a.fbx::PackedScene::7859436939166568963::1743451848::1743478022::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-bottom-b.fbx::PackedScene::6629936159688406436::1743451848::1743478022::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-bottom-c.fbx::PackedScene::3417948795776291824::1743451848::1743478023::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-build-a.fbx::PackedScene::6370722647721681831::1743451848::1743478023::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-build-b.fbx::PackedScene::7171018482853348216::1743451848::1743478023::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-build-c.fbx::PackedScene::5940360069187926157::1743451848::1743478024::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-build-d.fbx::PackedScene::4972053817957961241::1743451848::1743478024::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-build-e.fbx::PackedScene::4818013567969262639::1743451848::1743478025::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-build-f.fbx::PackedScene::7783095558988069655::1743451848::1743478025::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-middle-a.fbx::PackedScene::7264311376913524586::1743451848::1743478032::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-middle-b.fbx::PackedScene::8759140802514883158::1743451848::1743478033::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-middle-c.fbx::PackedScene::2834384566643996997::1743451848::1743478033::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-roof-a.fbx::PackedScene::5613908725896398878::1743451848::1743478033::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-roof-b.fbx::PackedScene::3970839307126324777::1743451848::1743478034::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-roof-c.fbx::PackedScene::5179024278340629481::1743451848::1743478034::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-top-a.fbx::PackedScene::3329339100778634879::1743451848::1743478034::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-top-b.fbx::PackedScene::1838126242301215136::1743451848::1743478035::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-tower-square-top-c.fbx::PackedScene::5369124735776400818::1743451848::1743478035::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-weapon-ammo-arrow.fbx::PackedScene::816388103098045094::1743451848::1743478035::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-weapon-ammo-boulder.fbx::PackedScene::2552218431788628920::1743451848::1743478029::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-weapon-ammo-bullet.fbx::PackedScene::3044026298363885726::1743451848::1743478029::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-weapon-ammo-cannonball.fbx::PackedScene::4064052787282295841::1743451848::1743478030::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-weapon-ballista.fbx::PackedScene::1208094041001503869::1743451848::1743478030::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-weapon-cannon.fbx::PackedScene::6583633902796236931::1743451848::1743478030::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-weapon-catapult.fbx::PackedScene::6979254638498871571::1743451848::1743478031::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-weapon-turret.fbx::PackedScene::9180500183633480370::1743451848::1743478031::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-wood-structure-high-part.fbx::PackedScene::4562741911770805210::1743451848::1743478031::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-wood-structure-high.fbx::PackedScene::2440411906109023555::1743451848::1743478032::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-wood-structure-part.fbx::PackedScene::3092122885013268634::1743451848::1743478032::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-wood-structure.fbx::PackedScene::1662304071454949071::1743451848::1743478032::1::::<><>::uid://ieogwns6vpju::::res://assets/FBX format/Textures/colormap.png
-::res://assets/FBX format/Textures/::1743478004
-colormap.png::CompressedTexture2D::570630189238925722::1743451848::1743478021::1::::<><>::
-::res://assets/Textures/::1743477999
-building.obj::Mesh::6713485596623050038::1743451848::1743478021::1::::<><>::
-drone.obj::Mesh::623692502127996046::1743451848::1743478021::1::::<><>::
-projectile.obj::Mesh::4058466708204765795::1743451848::1743478022::1::::<><>::
-variation-a.png::CompressedTexture2D::2073811613958069978::1743451848::1743478021::1::::<><>::
-::res://scenes/::1743477835
-grid_map.tscn::PackedScene::-1::1743451848::0::1::::<><>::
-MainScene.tscn::PackedScene::6000404692000874580::1743477441::0::1::::<><>::res://scripts/main_scene.gd<>uid://buxm5txnmldeu::::res://scenes/enemy/spawner.tscn<>uid://b5gpexrc7aha4::::res://scenes/tower/Tower.tscn<>uid://do0mjj8tclvh4::::res://scenes/tower/routeur.tscn<>res://scripts/path_3d.gd<>uid://7gws7138wim7::::res://assets/city_model/meshcity.tres<>res://scripts/intersection.gd
-menu1.tscn::PackedScene::-1::1743451848::0::1::::<><>::
-node_block_map.tscn::PackedScene::5629145158256571573::1743477441::0::1::::<><>::uid://hrw7h3j5i72f::::res://assets/FBX format/Textures/colormap.png<>res://scenes/node_block_map.gd
-::res://scenes/enemy/::1743477798
-Enemy.tscn::PackedScene::1356967362947511926::1743477441::0::1::::<><>::uid://bt7wb878hdo6w::::res://scenes/enemy/enemy_vie.tscn<>uid://i5eeh16n1aao::::res://assets/Textures/drone.obj<>res://scripts/enemy.gd
-enemy_vie.tscn::PackedScene::-1::1743451848::0::1::::<><>::
-spawner.tscn::PackedScene::3838461456608754848::1743477441::0::1::::<><>::uid://dw4qxdd4qievh::::res://assets/FBX format/spawn-square.fbx<>res://scripts/spawner.gd<>uid://tllb3w05k3yg::::res://scenes/enemy/Enemy.tscn<>uid://bnn1b2yg61elu::::res://assets/city_model/Textures/colormap.png
-::res://scenes/tower/::1743477867
-dead_tower.tscn::PackedScene::2017897125369525919::1743477441::0::1::::<><>::uid://daf6jnblls6uf::::res://assets/FBX format/tower-round-base.fbx<>uid://bnn1b2yg61elu::::res://assets/city_model/Textures/colormap.png
-projectile.tscn::PackedScene::-1::1743451848::0::1::::<><>::
-routeur.tscn::PackedScene::8194260506476692215::1743477441::0::1::::<><>::uid://bnn1b2yg61elu::::res://assets/city_model/Textures/colormap.png<>res://scripts/tower.gd<>uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn
-Tower.tscn::PackedScene::4505391391857917881::1743477441::0::1::::<><>::uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn<>res://scripts/tower.gd<>uid://30qqaj0unrj8::::res://scenes/tower/dead_tower.tscn<>uid://bnn1b2yg61elu::::res://assets/city_model/Textures/colormap.png
-tower_vie.tscn::PackedScene::-1::1743451848::0::1::::<><>::
-::res://scripts/::1743477915
-camera_3d.gd::GDScript::-1::1743451940::0::1::::<>Node3D<>::
-enemy.gd::GDScript::-1::1743477441::0::1::::<>CharacterBody3D<>::
-intersection.gd::GDScript::-1::1743477441::0::1::::<>Area3D<>::
-main_scene.gd::GDScript::-1::1743477441::0::1::::<>Node3D<>::
-menu.gd::GDScript::-1::1743451940::0::1::::<>Control<>::
-path_3d.gd::GDScript::-1::1743477441::0::1::::<>Path3D<>::
-projectile.gd::GDScript::-1::1743451940::0::1::::<>StaticBody3D<>::
-spawner.gd::GDScript::-1::1743477441::0::1::::<>Node3D<>::
-tower.gd::GDScript::-1::1743477441::0::1::::<>Node3D<>::
+::res://::1743730527
+::res://assets/::1743703295
+block_map.tres::MeshLibrary::6880653804785011672::1743703295::0::1::::<><>::uid://hrw7h3j5i72f::::res://assets/FBX format/Textures/colormap.png
+::res://assets/city_model/::1743730452
+building-garage.glb::PackedScene::8941640983111830671::1743703295::1743703373::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+building-small-a.glb::PackedScene::5734968661125164584::1743703295::1743703376::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+building-small-b.glb::PackedScene::9070680271900467109::1743703295::1743703372::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+building-small-c.glb::PackedScene::910109537770935174::1743703295::1743703380::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+building-small-d.glb::PackedScene::544237896359825190::1743703295::1743703381::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+grass-trees-tall.glb::PackedScene::8901417877509734536::1743703295::1743703376::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+grass-trees.glb::PackedScene::4279016736831286027::1743703295::1743703378::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+grass.glb::PackedScene::6023949765847747366::1743703295::1743703378::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+meshcity.tres::MeshLibrary::2259798903301830040::1743730452::0::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+pavement-fountain.glb::PackedScene::2220759560906524099::1743703295::1743703378::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+pavement.glb::PackedScene::5871023111203717819::1743703295::1743703377::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+road-corner.glb::PackedScene::6812590895570335053::1743703295::1743703377::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+road-intersection.glb::PackedScene::323445195459672009::1743703295::1743703376::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+road-split.glb::PackedScene::885299340957293078::1743703295::1743703381::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+road-straight-lightposts.glb::PackedScene::62542462770458023::1743703295::1743703381::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+road-straight.glb::PackedScene::4461518912769304015::1743703295::1743703380::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+::res://assets/city_model/Textures/::1743703401
+colormap.png::CompressedTexture2D::2327804791471731866::1743703295::1743703401::1::::<><>::
+::res://assets/FBX format/::1743729837
+detail-crystal-large.fbx::PackedScene::6423666832079564995::1743703295::1743703379::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+detail-crystal.fbx::PackedScene::538969594884782826::1743703295::1743703379::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+detail-dirt-large.fbx::PackedScene::4587663512035565195::1743703295::1743703372::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+detail-dirt.fbx::PackedScene::8774438430530599755::1743703295::1743703371::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+detail-rocks-large.fbx::PackedScene::9036633977490734265::1743703295::1743703375::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+detail-rocks.fbx::PackedScene::8813591282146445790::1743703295::1743703374::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+detail-tree-large.fbx::PackedScene::3923353417899413148::1743703295::1743703373::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+detail-tree.fbx::PackedScene::6640149844223711921::1743703295::1743703373::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+Drone_FuturisticSleek_02.fbx::PackedScene::710978919784107318::1743703294::1743703375::1::::<><>::
+enemy-ufo-a-weapon.fbx::PackedScene::4979115428049886688::1743703295::1743703371::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-a.fbx::PackedScene::1474791805566401731::1743703295::1743703392::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-b-weapon.fbx::PackedScene::2759493496553637204::1743703295::1743703392::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-b.fbx::PackedScene::6729657759707234906::1743703295::1743703391::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-beam-burst.fbx::PackedScene::9081824015772174212::1743703295::1743703391::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-beam.fbx::PackedScene::7476469084558784938::1743703295::1743703390::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-c-weapon.fbx::PackedScene::6145374810200801304::1743703295::1743703390::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-c.fbx::PackedScene::1342400055664932710::1743703295::1743703389::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-d-weapon.fbx::PackedScene::7310645614833509889::1743703295::1743703389::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+enemy-ufo-d.fbx::PackedScene::5554632867487920574::1743703295::1743703388::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+Laser.fbx::PackedScene::1623781380544844631::1743703294::1743703397::1::::<><>::
+selection-a.fbx::PackedScene::2367135370482173049::1743703295::1743703397::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+selection-b.fbx::PackedScene::9026866086991049627::1743703295::1743703396::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-detail-crystal-large.fbx::PackedScene::5168214867631557269::1743703295::1743703396::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-detail-crystal.fbx::PackedScene::895930872170892174::1743703295::1743703395::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-detail-dirt-large.fbx::PackedScene::2595326065001824088::1743703295::1743703394::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-detail-dirt.fbx::PackedScene::3350410223842861759::1743703295::1743703393::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-detail-rocks-large.fbx::PackedScene::9165454071121571660::1743703295::1743703393::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-detail-rocks.fbx::PackedScene::6379398634025448575::1743703295::1743703392::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-detail-tree-large.fbx::PackedScene::7810820044020208557::1743703295::1743703385::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-detail-tree.fbx::PackedScene::2198021176666338798::1743703295::1743703384::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-bump.fbx::PackedScene::586499287746236572::1743703295::1743703384::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-corner-inner.fbx::PackedScene::7359005715857868162::1743703295::1743703383::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-corner-large.fbx::PackedScene::7880046052000068563::1743703295::1743703383::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-corner-outer.fbx::PackedScene::7865502087806031860::1743703295::1743703383::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-corner-round.fbx::PackedScene::1507617194440945817::1743703295::1743703382::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-corner-square.fbx::PackedScene::1473386237028497044::1743703295::1743703382::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-crossing.fbx::PackedScene::1014610430761688888::1743703295::1743703388::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-crystal.fbx::PackedScene::1159850769345262218::1743703295::1743703388::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-dirt.fbx::PackedScene::1379138169274514257::1743703295::1743703387::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-end-round.fbx::PackedScene::2431039613014652995::1743703295::1743703387::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-end.fbx::PackedScene::4278610635623527726::1743703295::1743703387::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-hill.fbx::PackedScene::8527711785384229387::1743703295::1743703386::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-river-bridge.fbx::PackedScene::62550309273100925::1743703295::1743703386::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-river-corner.fbx::PackedScene::8019006553201364940::1743703295::1743703385::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-river-slope-large.fbx::PackedScene::765876230468555546::1743703295::1743703385::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-river-slope.fbx::PackedScene::5627128304559889932::1743703295::1743703385::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-river-straight.fbx::PackedScene::3763608507698267298::1743703295::1743703385::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-river-transition.fbx::PackedScene::7556111348372594398::1743703295::1743703385::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-river-waterfall.fbx::PackedScene::9055152304288825349::1743703295::1743703386::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-rock.fbx::PackedScene::294381950912646296::1743703295::1743703386::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-slope.fbx::PackedScene::3999371949107505663::1743703295::1743703386::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-spawn-end-round.fbx::PackedScene::5880277891593817862::1743703295::1743703386::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-spawn-end.fbx::PackedScene::5524263579775672171::1743703295::1743703386::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-spawn-round.fbx::PackedScene::6557487903318489994::1743703295::1743703387::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-spawn.fbx::PackedScene::7466654003119641178::1743703295::1743703387::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-split.fbx::PackedScene::1645789706594001541::1743703295::1743703387::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-straight-slope-large.fbx::PackedScene::4155169990707835970::1743703295::1743703387::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-straight-slope.fbx::PackedScene::5448336324865389394::1743703295::1743703387::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-straight.fbx::PackedScene::1222421347558791982::1743703295::1743703388::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-transition.fbx::PackedScene::4724009611085412604::1743703295::1743703388::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-tree-double.fbx::PackedScene::8642261541643276255::1743703295::1743703388::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-tree-quad.fbx::PackedScene::2103643555053261925::1743703295::1743703388::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-tree.fbx::PackedScene::8146476305536700896::1743703295::1743703382::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-wide-corner.fbx::PackedScene::3346488584315884560::1743703295::1743703382::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-wide-split.fbx::PackedScene::5309733631345556472::1743703295::1743703382::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-wide-straight.fbx::PackedScene::8462390987950199205::1743703295::1743703382::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile-wide-transition.fbx::PackedScene::2959721984622687137::1743703295::1743703382::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-tile.fbx::PackedScene::1573542440125757862::1743703295::1743703383::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-wood-structure-high-part.fbx::PackedScene::2134016634261383004::1743703295::1743703383::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-wood-structure-high.fbx::PackedScene::290965778338268479::1743703295::1743703383::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-wood-structure-part.fbx::PackedScene::6395678354452437908::1743703295::1743703383::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+snow-wood-structure.fbx::PackedScene::9104770980229572296::1743703295::1743703383::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+spawn-round.fbx::PackedScene::2926088910666377475::1743703295::1743703384::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+spawn-square.fbx::PackedScene::8764296274671617281::1743703295::1743703384::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-bump.fbx::PackedScene::3625871300879164618::1743703295::1743703384::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-corner-inner.fbx::PackedScene::4606224236914724930::1743703295::1743703384::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-corner-large.fbx::PackedScene::3400040999112463891::1743703295::1743703384::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-corner-outer.fbx::PackedScene::6188802974159497422::1743703295::1743703385::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-corner-round.fbx::PackedScene::3380133700213278112::1743703295::1743703385::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-corner-square.fbx::PackedScene::5647464678155184466::1743703295::1743703392::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-crossing.fbx::PackedScene::7095660581924249392::1743703295::1743703392::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-crystal.fbx::PackedScene::5610916296772970877::1743703295::1743703393::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-dirt.fbx::PackedScene::9113019498164246334::1743703295::1743703393::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-end-round.fbx::PackedScene::8674970890230043896::1743703295::1743703393::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-end.fbx::PackedScene::8875814195587816917::1743703295::1743703393::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-hill.fbx::PackedScene::6393726311047521200::1743703295::1743703394::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-river-bridge.fbx::PackedScene::2255968345494012756::1743703295::1743703395::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-river-corner.fbx::PackedScene::314602225543597058::1743703295::1743703396::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-river-slope-large.fbx::PackedScene::6876478345012370228::1743703295::1743703396::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-river-slope.fbx::PackedScene::6622642676309914223::1743703295::1743703396::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-river-straight.fbx::PackedScene::4371228452300678954::1743703295::1743703396::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-river-transition.fbx::PackedScene::812634758119553243::1743703295::1743703397::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-river-waterfall.fbx::PackedScene::4290800705558353274::1743703295::1743703397::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-rock.fbx::PackedScene::2152010906498740758::1743703295::1743703397::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-slope.fbx::PackedScene::3733640991090810041::1743703295::1743703398::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-spawn-end-round.fbx::PackedScene::8309373923403627737::1743703295::1743703398::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-spawn-end.fbx::PackedScene::9006846315694567483::1743703295::1743703389::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-spawn-round.fbx::PackedScene::3123295158546946463::1743703295::1743703389::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-spawn.fbx::PackedScene::2060014822810562362::1743703295::1743703389::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-split.fbx::PackedScene::6203020174337344024::1743703295::1743703389::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-straight-slope-large.fbx::PackedScene::8991982331554663565::1743703295::1743703389::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-straight-slope.fbx::PackedScene::544208023148142287::1743703295::1743703390::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-straight.fbx::PackedScene::3783872746799025138::1743703295::1743703390::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-transition.fbx::PackedScene::5302515805191699033::1743703295::1743703390::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-tree-double.fbx::PackedScene::4029748557009526464::1743703295::1743703390::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-tree-quad.fbx::PackedScene::1482603611512281027::1743703295::1743703391::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-tree.fbx::PackedScene::5229914033044793031::1743703295::1743703391::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-wide-corner.fbx::PackedScene::3484780931804412649::1743703295::1743703391::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-wide-split.fbx::PackedScene::7994165943726935966::1743703295::1743703391::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-wide-straight.fbx::PackedScene::3241650807003580816::1743703295::1743703391::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile-wide-transition.fbx::PackedScene::9007838936151561225::1743703295::1743703392::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tile.fbx::PackedScene::6992002120095530513::1743703295::1743703392::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-base.fbx::PackedScene::7171482923634096137::1743703295::1743703392::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-bottom-a.fbx::PackedScene::6016159345030662244::1743703295::1743703371::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-bottom-b.fbx::PackedScene::1543274063309364639::1743703295::1743703375::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-bottom-c.fbx::PackedScene::7461645621930209449::1743703295::1743703374::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-build-a.fbx::PackedScene::4136197358772452809::1743703295::1743703373::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-build-b.fbx::PackedScene::2379677483431507372::1743703295::1743703373::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-build-c.fbx::PackedScene::7702033811182137401::1743703295::1743703373::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-build-d.fbx::PackedScene::8993502314819910890::1743703295::1743703373::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-build-e.fbx::PackedScene::1544193784732392372::1743703295::1743703374::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-build-f.fbx::PackedScene::2368968257729235616::1743703295::1743703374::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-crystals.fbx::PackedScene::7322962238913654830::1743703295::1743703375::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-middle-a.fbx::PackedScene::440630667600594445::1743703295::1743703371::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-middle-b.fbx::PackedScene::3781050272353691579::1743703295::1743703371::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-middle-c.fbx::PackedScene::6564925275861225329::1743703295::1743703371::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-roof-a.fbx::PackedScene::7287643691354628688::1743703295::1743703372::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-roof-b.fbx::PackedScene::5729241965737619962::1743703295::1743703372::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-roof-c.fbx::PackedScene::1725430829672262487::1743703295::1743703372::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-top-a.fbx::PackedScene::8668372839914139278::1743703295::1743703379::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-top-b.fbx::PackedScene::8617217530326316484::1743703295::1743703379::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-round-top-c.fbx::PackedScene::1009032718313886212::1743703295::1743703379::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-bottom-a.fbx::PackedScene::7859436939166568963::1743703295::1743703380::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-bottom-b.fbx::PackedScene::6629936159688406436::1743703295::1743703380::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-bottom-c.fbx::PackedScene::3417948795776291824::1743703295::1743703380::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-build-a.fbx::PackedScene::6370722647721681831::1743703295::1743703380::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-build-b.fbx::PackedScene::7171018482853348216::1743703295::1743703381::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-build-c.fbx::PackedScene::5940360069187926157::1743703295::1743703381::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-build-d.fbx::PackedScene::4972053817957961241::1743703295::1743703381::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-build-e.fbx::PackedScene::4818013567969262639::1743703295::1743703376::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-build-f.fbx::PackedScene::7783095558988069655::1743703295::1743703376::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-middle-a.fbx::PackedScene::7264311376913524586::1743703295::1743703376::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-middle-b.fbx::PackedScene::8759140802514883158::1743703295::1743703377::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-middle-c.fbx::PackedScene::2834384566643996997::1743703295::1743703377::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-roof-a.fbx::PackedScene::5613908725896398878::1743703295::1743703377::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-roof-b.fbx::PackedScene::3970839307126324777::1743703295::1743703378::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-roof-c.fbx::PackedScene::5179024278340629481::1743703295::1743703378::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-top-a.fbx::PackedScene::3329339100778634879::1743703295::1743703378::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-top-b.fbx::PackedScene::1838126242301215136::1743703295::1743703379::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+tower-square-top-c.fbx::PackedScene::5369124735776400818::1743703295::1743703378::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+weapon-ammo-arrow.fbx::PackedScene::816388103098045094::1743703295::1743703377::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+weapon-ammo-boulder.fbx::PackedScene::2552218431788628920::1743703295::1743703377::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+weapon-ammo-bullet.fbx::PackedScene::3044026298363885726::1743703295::1743703376::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+weapon-ammo-cannonball.fbx::PackedScene::4064052787282295841::1743703295::1743703381::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+weapon-ballista.fbx::PackedScene::1208094041001503869::1743703295::1743703380::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+weapon-cannon.fbx::PackedScene::6583633902796236931::1743703295::1743703380::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+weapon-catapult.fbx::PackedScene::6979254638498871571::1743703295::1743703379::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+weapon-turret.fbx::PackedScene::9180500183633480370::1743703295::1743703372::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+wood-structure-high-part.fbx::PackedScene::4562741911770805210::1743703295::1743703372::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+wood-structure-high.fbx::PackedScene::2440411906109023555::1743703295::1743703371::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+wood-structure-part.fbx::PackedScene::3092122885013268634::1743703295::1743703374::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+wood-structure.fbx::PackedScene::1662304071454949071::1743703295::1743703374::1::::<><>::uid://cddmx4wqqw3gr::::res://assets/FBX format/Textures/colormap.png
+::res://assets/FBX format/dead_tower/::1743729852
+floor-tile-pile1.jpg::CompressedTexture2D::6020995055435813226::1743729722::1743729842::1::::<><>::
+floor-tile-pile2.jpg::CompressedTexture2D::2051476332754620801::1743729722::1743729843::1::::<><>::
+floor-tile-pile3.jpg::CompressedTexture2D::1623550612145002549::1743729722::1743729842::1::::<><>::
+floor-tile-pile.fbx::PackedScene::9163208992114568108::1743729722::1743729852::1::::<><>::uid://de0grlyipf35j::::res://assets/FBX format/dead_tower/floor-tile-pile.jpg<>uid://cr1u55w2jbfgs::::res://assets/FBX format/dead_tower/floor-tile-pile1.jpg<>uid://4h0rr5jf1jtx::::res://assets/FBX format/dead_tower/floor-tile-pile2.jpg<>uid://xepv2oy6xtq8::::res://assets/FBX format/dead_tower/floor-tile-pile3.jpg
+floor-tile-pile.jpg::CompressedTexture2D::7492022145151825037::1743729722::1743729843::1::::<><>::
+::res://assets/FBX format/Textures/::1743703401
+colormap.png::CompressedTexture2D::4990372266647585533::1743703294::1743703401::1::::<><>::
+::res://assets/Textures/::1743730387
+building.obj::Mesh::6713485596623050038::1743703295::1743703369::1::::<><>::
+drone.obj::Mesh::623692502127996046::1743703295::1743703370::1::::<><>::
+projectile.obj::Mesh::4058466708204765795::1743703295::1743703370::1::::<><>::
+untitled.obj::Mesh::5832824171272026327::1743730382::1743730536::1::::<><>::
+variation-a.png::CompressedTexture2D::2073811613958069978::1743703295::1743703368::1::::<><>::
+::res://scenes/::1743729600
+grid_map.tscn::PackedScene::56719864616417666::1743703295::0::1::::<><>::uid://c5bbmlq8ijpbs::::res://assets/block_map.tres
+intersection.tscn::PackedScene::1386036746417026923::1743703295::0::1::::<><>::res://scripts/intersection.gd
+MainScene.tscn::PackedScene::6000404692000874580::1743729600::0::1::::<><>::res://scripts/main_scene.gd<>uid://buxm5txnmldeu::::res://scenes/enemy/spawner.tscn<>uid://b5gpexrc7aha4::::res://scenes/tower/Tower.tscn<>uid://do0mjj8tclvh4::::res://scenes/tower/routeur.tscn<>res://scripts/path_3d.gd<>uid://7gws7138wim7::::res://assets/city_model/meshcity.tres<>uid://t0n28b3kpo0j::::res://scenes/intersection.tscn
+menu1.tscn::PackedScene::6574731481707342541::1743711588::0::1::::<><>::res://scripts/menu.gd
+node_block_map.tscn::PackedScene::5629145158256571573::1743703295::0::1::::<><>::uid://hrw7h3j5i72f::::res://assets/FBX format/Textures/colormap.png<>res://scenes/node_block_map.gd
+::res://scenes/enemy/::1743703295
+Enemy.tscn::PackedScene::1356967362947511926::1743703295::0::1::::<><>::res://scenes/enemy/enemy_vie.tscn<>uid://i5eeh16n1aao::::res://assets/Textures/drone.obj<>res://scripts/enemy.gd
+enemy_vie.tscn::PackedScene::3787408144793550868::1743703295::0::1::::<><>::
+spawner.tscn::PackedScene::3838461456608754848::1743703295::0::1::::<><>::uid://dw4qxdd4qievh::::res://assets/FBX format/spawn-square.fbx<>res://scripts/spawner.gd<>uid://tllb3w05k3yg::::res://scenes/enemy/Enemy.tscn<>uid://bnn1b2yg61elu::::res://assets/city_model/Textures/colormap.png
+::res://scenes/tower/::1743730363
+dead_tower.tscn::PackedScene::2017897125369525919::1743711589::0::1::::<><>::uid://daf6jnblls6uf::::res://assets/FBX format/tower-round-base.fbx<>uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+projectile.tscn::PackedScene::8870600786342154112::1743711589::0::1::::<><>::res://scripts/projectile.gd<>uid://bx27ma6gpij5t::::res://assets/Textures/projectile.obj
+routeur.tscn::PackedScene::8194260506476692215::1743711589::0::1::::<><>::uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png<>res://scripts/tower.gd<>uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn
+Tower.tscn::PackedScene::4505391391857917881::1743711588::0::1::::<><>::uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn<>res://scripts/tower.gd<>uid://30qqaj0unrj8::::res://scenes/tower/dead_tower.tscn<>uid://8fuutf2n33ry::::res://assets/city_model/Textures/colormap.png
+tower_vie.tscn::PackedScene::3974732432421927464::1743703295::0::1::::<><>::
+untitled.obj::Mesh::9018276852212986621::1743730363::1743730349::1::::<><>::
+::res://scripts/::1743711210
+camera_3d.gd::GDScript::-1::1743703295::0::1::::<>Node3D<>::
+enemy.gd::GDScript::-1::1743703295::0::1::::<>CharacterBody3D<>::
+intersection.gd::GDScript::-1::1743703295::0::1::::<>Node3D<>::
+main_scene.gd::GDScript::-1::1743703295::0::1::::<>Node3D<>::
+menu.gd::GDScript::-1::1743703295::0::1::::<>Control<>::
+path_3d.gd::GDScript::-1::1743703295::0::1::::<>Path3D<>::
+projectile.gd::GDScript::-1::1743703295::0::1::::<>StaticBody3D<>::
+spawner.gd::GDScript::-1::1743703295::0::1::::<>Node3D<>::
+tower.gd::GDScript::-1::1743711210::0::1::::<>Node3D<>::
