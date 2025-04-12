@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://ey4cy2xg34am"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_v46vx"]
+[ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
+[ext_resource type="Script" path="res://scripts/free_cam.gd" id="3_q8v1s"]
+[ext_resource type="PackedScene" path="res://scenes/TowerButton.tscn" id="4_fsd1c"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 1, 0, 1)
+sky_curve = 0.0100479
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 1, 0, 1)
+ground_curve = 0.0127456
+sun_angle_max = 22.35
+sun_curve = 0.0549031
+
+[sub_resource type="Sky" id="Sky_y4x0r"]
+sky_material = SubResource("ProceduralSkyMaterial_y1hq1")
+
+[sub_resource type="Environment" id="Environment_wmip2"]
+background_mode = 2
+background_color = Color(0.237983, 0.210952, 0.503755, 1)
+background_energy_multiplier = 1.17
+sky = SubResource("Sky_y4x0r")
+sky_custom_fov = 61.5
+ssao_enabled = true
+ssil_enabled = true
+glow_normalized = true
+glow_intensity = 1.13
+glow_strength = 1.5
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_v46vx")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_x2jhn")
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.194673, -0.96642, 0.167732, 0.385333, 0.0819051, 0.919135, -0.902009, 0.243564, 0.356449, 8.04109, 12.1884, 13.8352)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wmip2")
+
+[node name="CameraRig" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 15, 25, 30)
+script = ExtResource("3_q8v1s")
+zoom_speed = 5.0
+
+[node name="CameraPivot" type="Node3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.41858, -33.1507)
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.853986, -0.520296, 0, 0.520296, 0.853986, 0, -10.4059, 17.0797)
+fov = 60.0
+
+[node name="Control" type="Control" parent="CameraRig"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TowerButton" parent="CameraRig/Control" instance=ExtResource("4_fsd1c")]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -12.0
+offset_right = 4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0

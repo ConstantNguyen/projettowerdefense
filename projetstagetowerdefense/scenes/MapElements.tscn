@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://xnoj1qu12bgw"]
+
+[ext_resource type="PackedScene" uid="uid://cr3btp34bp3eg" path="res://assets/models/grass.glb" id="1_7n8gr"]
+[ext_resource type="PackedScene" uid="uid://cpv75mfsda1ml" path="res://assets/models/pavement.glb" id="2_7lkga"]
+[ext_resource type="PackedScene" uid="uid://b4tgtg0j2dgh8" path="res://assets/models/road-straight.glb" id="3_i3k1y"]
+[ext_resource type="PackedScene" uid="uid://cnycdi6t5tj01" path="res://assets/models/building-small-a.glb" id="3_mud55"]
+[ext_resource type="PackedScene" uid="uid://c4ccm2qr5wa58" path="res://assets/models/road-corner.glb" id="4_toh3s"]
+[ext_resource type="PackedScene" uid="uid://d2h51qlls136h" path="res://assets/models/building-small-b.glb" id="4_xj2er"]
+[ext_resource type="PackedScene" uid="uid://m74mvao50wnm" path="res://assets/models/building-small-c.glb" id="5_136kd"]
+[ext_resource type="PackedScene" uid="uid://mu30r6rmht07" path="res://assets/models/road-split.glb" id="7_g7csf"]
+[ext_resource type="PackedScene" uid="uid://6v0t536s83vb" path="res://assets/models/pavement-fountain.glb" id="8_exbkw"]
+[ext_resource type="PackedScene" uid="uid://dy26b1ba2j2v1" path="res://assets/models/grass-trees-tall.glb" id="9_ck30q"]
+[ext_resource type="PackedScene" uid="uid://b1711sieed2u6" path="res://assets/models/grass-trees.glb" id="10_r7m4s"]
+
+[node name="MapElements" type="Node3D"]
+
+[node name="grass" parent="." instance=ExtResource("1_7n8gr")]
+
+[node name="pavement" parent="." instance=ExtResource("2_7lkga")]
+
+[node name="EnemySpawn" parent="." instance=ExtResource("3_mud55")]
+
+[node name="Firewall" parent="." instance=ExtResource("4_xj2er")]
+
+[node name="PC" parent="." instance=ExtResource("5_136kd")]
+
+[node name="road-straight" parent="." instance=ExtResource("3_i3k1y")]
+
+[node name="road-cornerLU" parent="." instance=ExtResource("4_toh3s")]
+
+[node name="road-cornerLD" parent="." instance=ExtResource("4_toh3s")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="road-cornerDR" parent="." instance=ExtResource("4_toh3s")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="road-cornerUR" parent="." instance=ExtResource("4_toh3s")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="road-splitLDR" parent="." instance=ExtResource("7_g7csf")]
+
+[node name="road-splitDRU" parent="." instance=ExtResource("7_g7csf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="road-splitLUR" parent="." instance=ExtResource("7_g7csf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="road-splitULD" parent="." instance=ExtResource("7_g7csf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="pavement-fountain" parent="." instance=ExtResource("8_exbkw")]
+
+[node name="grass-trees" parent="." instance=ExtResource("10_r7m4s")]
+
+[node name="grass-trees-tall" parent="." instance=ExtResource("9_ck30q")]

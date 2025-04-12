@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://do0mjj8tclvh4"]
 
-[ext_resource type="Texture2D" uid="uid://8fuutf2n33ry" path="res://assets/city_model/Textures/colormap.png" id="1_0umdf"]
+[ext_resource type="Texture2D" uid="uid://jxcijhe1vs87" path="res://assets/city_model/Textures/colormap.png" id="1_0umdf"]
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_plktw"]
 [ext_resource type="PackedScene" uid="uid://bwvni6ngprpoy" path="res://scenes/tower/tower_vie.tscn" id="2_uxd3i"]
 
