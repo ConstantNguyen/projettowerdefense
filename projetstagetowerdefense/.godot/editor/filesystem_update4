@@ -7,3 +7,5 @@ res://scenes/tower/routeur.tscn
 res://scenes/tower/projectile.tscn
 res://assets/meshMapCity.tres
 res://scenes/main.tscn
+res://assets/block_map.tres
+res://scenes/MapElements.tscn
