@@ -38,39 +38,38 @@ var shaking: bool = false
 @onready var detection_area = $Area3D 
 @onready var mesh_instance = $MeshInstance3D
 
-@onready var panel_color = $Panel
-@onready var info_panel = $Panel/UI/InfoTour
-@onready var info_label = $Panel/UI/InfoTour/Label
+@onready var password_scene = $CanvasLayer/PasswordScene
+@onready var password_input = $CanvasLayer/PasswordScene/UI/MainContainer/VBox/password_input
+@onready var confirm_password_input_1 = $CanvasLayer/PasswordScene/UI/MainContainer/VBox/password_confirmation_input
+@onready var set_button = $CanvasLayer/PasswordScene/UI/MainContainer/VBox/set_password_button
+@onready var set_info_label = $CanvasLayer/PasswordScene/UI/MainContainer/VBox/info
+@onready var res_label_set = $CanvasLayer/PasswordScene/UI/HBoxContainer/res
 
-@onready var password_input = $Panel/UI/ZoneMDP/LineEdit
-@onready var password_button = $Panel/UI/ZoneMDP/Button
-@onready var password_text_label = $Panel/UI/ZoneMDP/Label
+@onready var change_scene = $CanvasLayer2/PasswordChangeScene
+@onready var old_password_input = $CanvasLayer2/PasswordChangeScene/UI/MainContainer/VBox/old_password_input
+@onready var new_password_input = $CanvasLayer2/PasswordChangeScene/UI/MainContainer/VBox/new_password_input
+@onready var confirm_password_input_2 = $CanvasLayer2/PasswordChangeScene/UI/MainContainer/VBox/confirm_password_input
+@onready var change_button = $CanvasLayer2/PasswordChangeScene/UI/MainContainer/VBox/change_password_button
+@onready var change_info_label = $CanvasLayer2/PasswordChangeScene/UI/MainContainer/VBox/info
+@onready var res_label_change = $CanvasLayer2/PasswordChangeScene/UI/HBoxContainer/res
 
-@onready var new_password_label = $Panel/UI/ZoneMDP/Label2
-@onready var new_password_input = $Panel/UI/ZoneMDP/LineEdit2
-@onready var confirm_password_label = $Panel/UI/ZoneMDP/Label3
-@onready var confirm_password_input = $Panel/UI/ZoneMDP/LineEdit3
-@onready var confirm_password_button = $Panel/UI/ZoneMDP/Button2
 
 
 
 func _ready():
 
 	body.add_to_group("towers")
-	tour_health_bar.value = pv/max_pv * 100
-	#timer.wait_time = shoot_interval  
-	#timer.timeout.connect(shoot_projectile)  
-	#timer.start()  
-	
+	tour_health_bar.value = pv/max_pv * 100	
 	
 	
 	detection_area.body_entered.connect(_on_enemy_entered)
 	detection_area.body_exited.connect(_on_enemy_exited)
 	
 	body.input_event.connect(_on_tower_clicked)
-	password_button.pressed.connect(_on_password_submitted)
 	
-	hide_password_elements()
+	set_button.pressed.connect(_on_password_submit)
+	change_button.pressed.connect(_on_password_change_submit)
+	hide_all_ui()
 	
 
 
@@ -168,6 +167,8 @@ func _process(delta):
 		
 		if resistance <= min_resistance + 10:
 			start_shaking()
+			
+	res_label_change.text = "Vie de la tour : %d" % resistance
 	
 
 
@@ -222,33 +223,18 @@ func die():
 	mesh_instance.queue_free()
 	timer.stop() 
 	get_parent().game_over()
+	hide_all_ui()
 
 			
 func _on_tower_clicked(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		hide_password_elements()
-		panel_color.visible = true
-		info_panel.visible = true
-		password_text_label.visible = true
-		info_label.text = "Vie de la tour: " + str(pv)
-
-		if password_entered:
-			# Mot de passe déjà validé → masquer champ d’entrée
-			password_input.visible = false
-			password_button.visible = false
-			password_text_label.text = self.password
-
-			# Afficher les champs pour changer le mot de passe
-			new_password_label.visible = true
-			new_password_input.visible = true
-			confirm_password_label.visible = true
-			confirm_password_input.visible = true
-			confirm_password_button.visible = true
+		hide_all_ui()
+		if password:
+			show_password_change_scene()
 		else:
-			# Afficher le champ pour entrer le mot de passe
-			password_input.visible = true
-			password_button.visible = true
-			password_text_label.text = "Saisir un mot de passe pour la tour"
+			show_password_scene()
+
+		
 
 
 
@@ -261,36 +247,80 @@ func _unhandled_input(event):
 		var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
 		var result = space_state.intersect_ray(query)
 
-		hide_password_elements()
+		hide_all_ui()
 		
 
 
+func _on_password_submit():
+	var input = password_input.text.strip_edges()
+	var confirm_pw = confirm_password_input_1.text.strip_edges()
 
-func hide_password_elements():
-	password_input.visible = false
-	password_button.visible = false
-	password_text_label.visible = false
-	info_panel.visible = false
-	panel_color.visible = false
-
-	new_password_label.visible = false
-	new_password_input.visible = false
-	confirm_password_label.visible = false
-	confirm_password_input.visible = false
-	confirm_password_button.visible = false
-
-					
-func _on_password_submitted():
+	if input == "" or input != confirm_pw:
+		show_message("Les nouveaux mots de passe ne correspondent pas ou sont vides.", set_info_label)
+		return
+	
+	set_new_password(input)
 	password_entered = true
-	password_input.visible = false
-	password_button.visible = false
-	
-	self.set_new_password(password_input.text)
-	
-	password = "Mot de passe : " + password_input.text + "\n Votre mot de passe est " + power_password
+	show_message("Mot de passe enregistré : " + password, set_info_label)
 
+
+	hide_password_scene(true)
 	
-	password_text_label.text = password
-	password_text_label.visible = true 
+func _on_password_change_submit():
+	var old_pw = old_password_input.text.strip_edges()
+	var new_pw = new_password_input.text.strip_edges()
+	var confirm_pw = confirm_password_input_2.text.strip_edges()
+
+	if old_pw != password:
+		show_message("Ancien mot de passe incorrect.", change_info_label)
+		return
+
+	if new_pw == "" or new_pw != confirm_pw:
+		show_message("Les nouveaux mots de passe ne correspondent pas ou sont vides.", change_info_label)
+		return
+
+	set_new_password(new_pw)
+	show_message("Mot de passe changé avec succès !", change_info_label)
+	hide_password_change_scene(true)
 	
+func show_password_scene():
+	hide_all_ui()
+	password_scene.visible = true
+	res_label_set.text = "Vie de la tour : %d" % resistance
+
+
+func hide_password_scene(delay := false):
+	if delay:
+		await get_tree().create_timer(1.5).timeout
+	password_scene.visible = false
+	password_input.text = ""
+	confirm_password_input_1.text = ""
+
+func show_password_change_scene():
+	hide_all_ui()
+	change_scene.visible = true
+	old_password_input.text = ""
+	new_password_input.text = ""
+	confirm_password_input_2.text = ""
+	res_label_change.text = "Vie de la tour : %d" % resistance
+
+
+func hide_password_change_scene(delay := false):
+	if delay:
+		await get_tree().create_timer(1.5).timeout
+	change_scene.visible = false
+
+func hide_all_ui():
+	password_scene.visible = false
+	change_scene.visible = false
+	empty_inputs()
+
+func empty_inputs():
+	old_password_input.text = "" 
+	new_password_input.text = ""
+	confirm_password_input_1.text = ""
+	confirm_password_input_2.text = ""
 	
+func show_message(text: String, label):
+	label.text = text
+	label.visible = true

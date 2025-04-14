@@ -1,11 +1,10 @@
-res://scenes/tower/Tower.tscn
 res://assets/city_model/meshcity.tres
+res://assets/meshMapCity.tres
+res://scenes/tower/setPassword.tscn
+res://scripts/tower.gd
+res://scenes/tower/changePassword.tscn
+res://scenes/tower/Tower.tscn
 res://scenes/MainScene.tscn
 res://scenes/menu1.tscn
-res://scenes/tower/dead_tower.tscn
-res://scenes/tower/routeur.tscn
-res://scenes/tower/projectile.tscn
-res://assets/meshMapCity.tres
 res://scenes/main.tscn
-res://assets/block_map.tres
-res://scenes/MapElements.tscn
+res://scenes/tower/routeur.tscn

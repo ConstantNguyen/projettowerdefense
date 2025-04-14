@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://b5gpexrc7aha4"]
+[gd_scene load_steps=13 format=4 uid="uid://b5gpexrc7aha4"]
 
 [ext_resource type="PackedScene" uid="uid://bwvni6ngprpoy" path="res://scenes/tower/tower_vie.tscn" id="1_a4ejr"]
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_uvmct"]
 [ext_resource type="PackedScene" uid="uid://30qqaj0unrj8" path="res://scenes/tower/dead_tower.tscn" id="2_h0kw5"]
-[ext_resource type="Texture2D" uid="uid://jxcijhe1vs87" path="res://assets/city_model/Textures/colormap.png" id="3_ac2rc"]
+[ext_resource type="Texture2D" uid="uid://byg2iw08peah7" path="res://assets/city_model/Textures/colormap.png" id="3_ac2rc"]
+[ext_resource type="PackedScene" uid="uid://b8rag1d5l7wf8" path="res://scenes/tower/setPassword.tscn" id="5_80mii"]
+[ext_resource type="PackedScene" uid="uid://dptviga3akn43" path="res://scenes/tower/changePassword.tscn" id="6_q3mro"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haq6l"]
 resource_name = "colormap"
@@ -54,9 +56,6 @@ radius = 1.5
 [sub_resource type="ViewportTexture" id="ViewportTexture_nl82v"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1o28g"]
-bg_color = Color(0.167259, 0.692922, 0.583564, 1)
-
 [node name="Tower" type="Node3D"]
 script = ExtResource("1_uvmct")
 dead_tower = ExtResource("2_h0kw5")
@@ -90,76 +89,10 @@ transparent_bg = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.818, 0)
 texture = SubResource("ViewportTexture_nl82v")
 
-[node name="Panel" type="Panel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -250.0
-offset_right = 200.0
-offset_bottom = 250.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_1o28g")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UI" type="VBoxContainer" parent="Panel"]
-clip_contents = true
-layout_mode = 1
-anchors_preset = -1
-alignment = 1
+[node name="PasswordScene" parent="CanvasLayer" instance=ExtResource("5_80mii")]
 
-[node name="InfoTour" type="VBoxContainer" parent="Panel/UI"]
-z_index = 1
-layout_mode = 2
-alignment = 1
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="Panel/UI/InfoTour"]
-layout_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ZoneMDP" type="VBoxContainer" parent="Panel/UI"]
-z_index = 1
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Panel/UI/ZoneMDP"]
-layout_mode = 2
-text = "Saisir mot de passe"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LineEdit" type="LineEdit" parent="Panel/UI/ZoneMDP"]
-layout_mode = 2
-placeholder_text = "Champ mot de passe actuel"
-alignment = 1
-
-[node name="Button" type="Button" parent="Panel/UI/ZoneMDP"]
-layout_mode = 2
-text = "Valider le mot de passe"
-icon_alignment = 1
-
-[node name="Label2" type="Label" parent="Panel/UI/ZoneMDP"]
-layout_mode = 2
-text = "Nouveau mot de passe"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LineEdit2" type="LineEdit" parent="Panel/UI/ZoneMDP"]
-layout_mode = 2
-placeholder_text = "Premier Champ"
-
-[node name="Label3" type="Label" parent="Panel/UI/ZoneMDP"]
-layout_mode = 2
-text = "Confirmer nouveau mot de passe :"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LineEdit3" type="LineEdit" parent="Panel/UI/ZoneMDP"]
-layout_mode = 2
-placeholder_text = "Deuxième champ"
-alignment = 1
-
-[node name="Button2" type="Button" parent="Panel/UI/ZoneMDP"]
-layout_mode = 2
-text = "Valider le nouveau mot de passe"
+[node name="PasswordChangeScene" parent="CanvasLayer2" instance=ExtResource("6_q3mro")]
