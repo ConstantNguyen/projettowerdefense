@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var timer_label = $CanvasLayer/timer_label
 @onready var game_timer = $game_timer
-@onready var bouton_pause = $button_pause
+@onready var bouton_pause = $CanvasLayer/button_pause
 
 var seconds_passed = 0
 

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1744831726
+::res://::1744833327
 ::res://assets/::1744832276
 block_map.tres::MeshLibrary::6880653804785011672::1744755565::0::1::::<><>::uid://ce663lqle34gb::::res://assets/FBX format/Textures/colormap.png
 error_material.tres::StandardMaterial3D::6431596236273867217::1744755565::0::1::::<><>::
@@ -194,7 +194,7 @@ floor-tile-pile.fbx::PackedScene::9163208992114568108::1744755564::1744755789::1
 floor-tile-pile.jpg::CompressedTexture2D::7492022145151825037::1744755564::1744755768::1::::<><>::
 ::res://assets/FBX format/Textures/::1744755871
 colormap.png::CompressedTexture2D::3735592282956147335::1744755564::1744755871::1::::<><>::
-::res://assets/image/::1744832941
+::res://assets/image/::1744832945
 bouton_pause.png::CompressedTexture2D::4801012514309182553::1744832941::1744832945::1::::<><>::
 tower2.png::CompressedTexture2D::7752765349643037152::1744755565::1744755756::1::::<><>::
 tower.png::CompressedTexture2D::569678443006486525::1744755565::1744755756::1::::<><>::
@@ -204,15 +204,15 @@ drone.obj::Mesh::623692502127996046::1744755565::1744755770::1::::<><>::
 projectile.obj::Mesh::4058466708204765795::1744755565::1744755771::1::::<><>::
 untitled.obj::Mesh::5832824171272026327::1744755565::1744755776::1::::<><>::
 variation-a.png::CompressedTexture2D::2073811613958069978::1744755565::1744755756::1::::<><>::
-::res://scenes/::1744832869
+::res://scenes/::1744833168
 ActionButton.gd::GDScript::-1::1744755565::0::1::::<>Button<>::
 GameController.gd::GDScript::-1::1744755565::0::1::::<>Node3D<>::
 grid_map.tscn::PackedScene::56719864616417666::1744755565::0::1::::<><>::uid://c5bbmlq8ijpbs::::res://assets/block_map.tres
 intersection.tscn::PackedScene::1386036746417026923::1744755565::0::1::::<><>::res://scripts/intersection.gd
-main.tscn::PackedScene::332066108351890912::1744832741::0::1::::<><>::res://scripts/main.gd<>uid://u687vgva8hs3::::res://assets/meshMapCity.tres<>res://scripts/free_cam.gd<>uid://bch3cg53vuuc0::::res://scenes/TowerButton.tscn
-MainScene.tscn::PackedScene::6000404692000874580::1744832869::0::1::::<><>::res://scripts/main_scene.gd<>uid://buxm5txnmldeu::::res://scenes/enemy/spawner.tscn<>uid://b5gpexrc7aha4::::res://scenes/tower/Tower.tscn<>uid://do0mjj8tclvh4::::res://scenes/tower/routeur.tscn<>res://scripts/path_3d.gd<>uid://7gws7138wim7::::res://assets/city_model/meshcity.tres<>uid://t0n28b3kpo0j::::res://scenes/intersection.tscn
+main.tscn::PackedScene::332066108351890912::1744833147::0::1::::<><>::res://scripts/main.gd<>uid://u687vgva8hs3::::res://assets/meshMapCity.tres<>res://scripts/free_cam.gd<>uid://bch3cg53vuuc0::::res://scenes/TowerButton.tscn
+MainScene.tscn::PackedScene::6000404692000874580::1744833168::0::1::::<><>::res://scripts/main_scene.gd<>uid://buxm5txnmldeu::::res://scenes/enemy/spawner.tscn<>uid://b5gpexrc7aha4::::res://scenes/tower/Tower.tscn<>uid://do0mjj8tclvh4::::res://scenes/tower/routeur.tscn<>res://scripts/path_3d.gd<>uid://7gws7138wim7::::res://assets/city_model/meshcity.tres<>uid://t0n28b3kpo0j::::res://scenes/intersection.tscn<>uid://canv8eyt546un::::res://assets/image/bouton_pause.png
 MapElements.tscn::PackedScene::1537388306268729611::1744755565::0::1::::<><>::uid://cr3btp34bp3eg::::res://assets/city_model/grass.glb<>uid://cpv75mfsda1ml::::res://assets/city_model/pavement.glb<>uid://b4tgtg0j2dgh8::::res://assets/city_model/road-straight.glb<>uid://cnycdi6t5tj01::::res://assets/city_model/building-small-a.glb<>uid://c4ccm2qr5wa58::::res://assets/city_model/road-corner.glb<>uid://d2h51qlls136h::::res://assets/city_model/building-small-b.glb<>uid://m74mvao50wnm::::res://assets/city_model/building-small-c.glb<>uid://mu30r6rmht07::::res://assets/city_model/road-split.glb<>uid://6v0t536s83vb::::res://assets/city_model/pavement-fountain.glb<>uid://dy26b1ba2j2v1::::res://assets/city_model/grass-trees-tall.glb<>uid://b1711sieed2u6::::res://assets/city_model/grass-trees.glb
-menu1.tscn::PackedScene::6574731481707342541::1744832741::0::1::::<><>::res://scripts/menu.gd
+menu1.tscn::PackedScene::6574731481707342541::1744833147::0::1::::<><>::res://scripts/menu.gd
 node_block_map.tscn::PackedScene::5629145158256571573::1744755565::0::1::::<><>::uid://hrw7h3j5i72f::::res://assets/FBX format/Textures/colormap.png<>res://scenes/node_block_map.gd
 tower.tscn::PackedScene::3886809874730062122::1744755565::0::1::::<><>::uid://m74mvao50wnm::::res://assets/models/building-small-c.glb
 TowerButton.tscn::PackedScene::2542953025418152605::1744755565::0::1::::<><>::res://scenes/ActionButton.gd<>uid://dipq6a8o35vr1::::res://assets/image/tower2.png<>uid://bvm2gqr5rjyow::::res://scenes/tower.tscn
@@ -220,13 +220,13 @@ TowerButton.tscn::PackedScene::2542953025418152605::1744755565::0::1::::<><>::re
 Enemy.tscn::PackedScene::1356967362947511926::1744755565::0::1::::<><>::res://scenes/enemy/enemy_vie.tscn<>uid://i5eeh16n1aao::::res://assets/Textures/drone.obj<>res://scripts/enemy.gd
 enemy_vie.tscn::PackedScene::3787408144793550868::1744755565::0::1::::<><>::
 spawner.tscn::PackedScene::3838461456608754848::1744755565::0::1::::<><>::uid://dw4qxdd4qievh::::res://assets/FBX format/spawn-square.fbx<>res://scripts/spawner.gd<>uid://tllb3w05k3yg::::res://scenes/enemy/Enemy.tscn<>uid://bnn1b2yg61elu::::res://assets/city_model/Textures/colormap.png
-::res://scenes/tower/::1744832742
-changePassword.tscn::PackedScene::8252607542588961402::1744832742::0::1::::<><>::
+::res://scenes/tower/::1744833148
+changePassword.tscn::PackedScene::8252607542588961402::1744833148::0::1::::<><>::
 dead_tower.tscn::PackedScene::2017897125369525919::1744755565::0::1::::<><>::uid://daf6jnblls6uf::::res://assets/FBX format/tower-round-base.fbx<>uid://cpdp051j4yeep::::res://assets/Textures/untitled.obj
 projectile.tscn::PackedScene::8870600786342154112::1744755565::0::1::::<><>::res://scripts/projectile.gd<>uid://bx27ma6gpij5t::::res://assets/Textures/projectile.obj
-routeur.tscn::PackedScene::8194260506476692215::1744832742::0::1::::<><>::uid://cni3843bd4qy3::::res://assets/city_model/Textures/colormap.png<>uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn
-setPassword.tscn::PackedScene::4737759031951178067::1744832741::0::1::::<><>::
-Tower.tscn::PackedScene::4505391391857917881::1744832741::0::1::::<><>::uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn<>res://scripts/tower.gd<>uid://30qqaj0unrj8::::res://scenes/tower/dead_tower.tscn<>uid://cni3843bd4qy3::::res://assets/city_model/Textures/colormap.png<>uid://b8rag1d5l7wf8::::res://scenes/tower/setPassword.tscn<>uid://dptviga3akn43::::res://scenes/tower/changePassword.tscn
+routeur.tscn::PackedScene::8194260506476692215::1744833148::0::1::::<><>::uid://cni3843bd4qy3::::res://assets/city_model/Textures/colormap.png<>uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn
+setPassword.tscn::PackedScene::4737759031951178067::1744833147::0::1::::<><>::
+Tower.tscn::PackedScene::4505391391857917881::1744833147::0::1::::<><>::uid://bwvni6ngprpoy::::res://scenes/tower/tower_vie.tscn<>res://scripts/tower.gd<>uid://30qqaj0unrj8::::res://scenes/tower/dead_tower.tscn<>uid://cni3843bd4qy3::::res://assets/city_model/Textures/colormap.png<>uid://b8rag1d5l7wf8::::res://scenes/tower/setPassword.tscn<>uid://dptviga3akn43::::res://scenes/tower/changePassword.tscn
 tower_vie.tscn::PackedScene::3974732432421927464::1744755565::0::1::::<><>::
 ::res://scripts/::1744832867
 camera_3d.gd::GDScript::-1::1744755565::0::1::::<>Node3D<>::
