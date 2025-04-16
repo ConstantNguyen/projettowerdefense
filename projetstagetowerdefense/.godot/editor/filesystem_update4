@@ -1,10 +1,10 @@
+res://scenes/MainScene.tscn
 res://assets/city_model/meshcity.tres
 res://assets/meshMapCity.tres
-res://scenes/tower/setPassword.tscn
-res://scripts/tower.gd
-res://scenes/tower/changePassword.tscn
+res://scripts/main_scene.gd
 res://scenes/tower/Tower.tscn
-res://scenes/MainScene.tscn
 res://scenes/menu1.tscn
 res://scenes/main.tscn
+res://scenes/tower/setPassword.tscn
+res://scenes/tower/changePassword.tscn
 res://scenes/tower/routeur.tscn

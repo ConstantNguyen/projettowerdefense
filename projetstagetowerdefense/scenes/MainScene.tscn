@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://crqv12voetg0s"]
+[gd_scene load_steps=15 format=3 uid="uid://crqv12voetg0s"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_vi0dc"]
 [ext_resource type="PackedScene" uid="uid://buxm5txnmldeu" path="res://scenes/enemy/spawner.tscn" id="3_c1un4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/path_3d.gd" id="4_llih6"]
 [ext_resource type="MeshLibrary" uid="uid://7gws7138wim7" path="res://assets/city_model/meshcity.tres" id="5_cnnsi"]
 [ext_resource type="PackedScene" uid="uid://t0n28b3kpo0j" path="res://scenes/intersection.tscn" id="7_s0jcn"]
+[ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="8_6adil"]
 
 [sub_resource type="Curve3D" id="Curve3D_kb5yi"]
 bake_interval = 11.97
@@ -87,8 +88,6 @@ wait_time = 4096.0
 
 [node name="Routeur" parent="." instance=ExtResource("4_e443a")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.0228, 0.0378637, -1.0182)
-max_pv = 2000.0
-max_password_strength = 100000.0
 
 [node name="Path R" type="Path3D" parent="." node_paths=PackedStringArray("linked_towers")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.02, -1)
@@ -144,3 +143,32 @@ paths = [NodePath("../Path R/Path T1"), NodePath("../Path R/Path T2-3"), NodePat
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8048, 0, -0.998511)
 origin_path = NodePath("../Path R/Path T2-3")
 paths = [NodePath("../Path R/Path T2-3/Path T2"), NodePath("../Path R/Path T2-3/Path T3")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_right = 478.0
+offset_bottom = 520.0
+grow_horizontal = 0
+scale = Vector2(0.08, 0.08)
+icon = ExtResource("8_6adil")
+alignment = 2
+icon_alignment = 2
+vertical_icon_alignment = 0
+
+[node name="timer_label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+pivot_offset = Vector2(0, 20)
+horizontal_alignment = 1
+
+[node name="game_timer" type="Timer" parent="."]
