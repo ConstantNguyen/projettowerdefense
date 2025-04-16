@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://t0n28b3kpo0j"]
+[gd_scene load_steps=3 format=3 uid="uid://cvjs7fq2nrk1o"]
 
-[ext_resource type="Script" path="res://scripts/intersection.gd" id="1_nlvgw"]
+[ext_resource type="Script" uid="uid://ccl8ivo6ak8ve" path="res://scripts/intersection.gd" id="1_nlvgw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2es4x"]
 size = Vector3(0, 3, 0)

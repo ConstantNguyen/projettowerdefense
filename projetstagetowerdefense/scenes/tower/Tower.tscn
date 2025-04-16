@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://b5gpexrc7aha4"]
 
 [ext_resource type="PackedScene" uid="uid://bwvni6ngprpoy" path="res://scenes/tower/tower_vie.tscn" id="1_a4ejr"]
-[ext_resource type="Script" path="res://scripts/tower.gd" id="1_uvmct"]
+[ext_resource type="Script" uid="uid://bxwc5xr312jte" path="res://scripts/tower.gd" id="1_uvmct"]
 [ext_resource type="PackedScene" uid="uid://30qqaj0unrj8" path="res://scenes/tower/dead_tower.tscn" id="2_h0kw5"]
 [ext_resource type="Texture2D" uid="uid://cni3843bd4qy3" path="res://assets/city_model/Textures/colormap.png" id="3_ac2rc"]
 [ext_resource type="PackedScene" uid="uid://b8rag1d5l7wf8" path="res://scenes/tower/setPassword.tscn" id="5_80mii"]

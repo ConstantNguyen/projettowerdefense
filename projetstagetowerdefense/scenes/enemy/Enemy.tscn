@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://tllb3w05k3yg"]
 
-[ext_resource type="PackedScene" path="res://scenes/enemy/enemy_vie.tscn" id="1_hsxq4"]
+[ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="1_hsxq4"]
 [ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="1_mll7h"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_puv3o"]
+[ext_resource type="Script" uid="uid://laohuomuolys" path="res://scripts/enemy.gd" id="1_puv3o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gv2si"]
 size = Vector3(0.5, 0.42334, 0.352661)
