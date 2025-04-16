@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://do0mjj8tclvh4"]
+[gd_scene load_steps=8 format=4 uid="uid://do0mjj8tclvh4"]
 
-[ext_resource type="Texture2D" uid="uid://byg2iw08peah7" path="res://assets/city_model/Textures/colormap.png" id="1_0umdf"]
-[ext_resource type="PackedScene" uid="uid://bwvni6ngprpoy" path="res://scenes/tower/tower_vie.tscn" id="2_uxd3i"]
+[ext_resource type="Texture2D" uid="uid://dhldhr4lh4cmk" path="res://assets/city_model/Textures/colormap.png" id="1_0umdf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjq7p"]
 resource_name = "colormap"
@@ -73,11 +72,6 @@ collision_mask = 2
 shape = SubResource("CylinderShape3D_cv1up")
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="SubViewport" type="SubViewport" parent="."]
-transparent_bg = true
-
-[node name="TowerHealthBar" parent="SubViewport" instance=ExtResource("2_uxd3i")]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)

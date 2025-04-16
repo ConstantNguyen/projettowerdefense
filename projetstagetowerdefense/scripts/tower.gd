@@ -53,6 +53,8 @@ var shaking: bool = false
 @onready var change_info_label = $CanvasLayer2/PasswordChangeScene/UI/MainContainer/VBox/info
 @onready var res_label_change = $CanvasLayer2/PasswordChangeScene/UI/HBoxContainer/res
 
+@onready var windows = $WindowLights.get_children()
+var lights_timer = null
 
 
 
@@ -70,6 +72,13 @@ func _ready():
 	set_button.pressed.connect(_on_password_submit)
 	change_button.pressed.connect(_on_password_change_submit)
 	hide_all_ui()
+	
+	lights_timer = Timer.new()
+	timer.wait_time = 1
+	timer.one_shot = false
+	timer.connect("timeout", Callable(self, "activate_lights"))
+	add_child(timer)
+	timer.start()
 	
 
 
@@ -197,12 +206,6 @@ func take_attack():
 
 
 
-
-
-
-
-
-
 func die():
 	for enemy in ennemies:
 		enemy.set_tower(null)
@@ -324,3 +327,10 @@ func empty_inputs():
 func show_message(text: String, label):
 	label.text = text
 	label.visible = true
+	
+func activate_lights() :
+	for window in windows : 
+		window.visible = false
+	var nb_lights = randi() % windows.size() - 2
+	for i in range(nb_lights) :
+		windows[randi() % windows.size()].visible = true
