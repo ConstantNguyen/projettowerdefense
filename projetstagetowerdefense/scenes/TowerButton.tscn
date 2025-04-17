@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bch3cg53vuuc0"]
 
-[ext_resource type="Script" path="res://scenes/ActionButton.gd" id="1_s483j"]
+[ext_resource type="Script" uid="uid://cnbbwfn305s6s" path="res://scenes/ActionButton.gd" id="1_s483j"]
 [ext_resource type="Texture2D" uid="uid://dipq6a8o35vr1" path="res://assets/image/tower2.png" id="2_w7khb"]
 [ext_resource type="PackedScene" uid="uid://bvm2gqr5rjyow" path="res://scenes/tower.tscn" id="3_85m0t"]
 

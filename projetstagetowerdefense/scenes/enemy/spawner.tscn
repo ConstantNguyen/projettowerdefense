@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=4 uid="uid://buxm5txnmldeu"]
 
 [ext_resource type="PackedScene" uid="uid://dw4qxdd4qievh" path="res://assets/FBX format/spawn-square.fbx" id="1_p46ft"]
-[ext_resource type="Script" path="res://scripts/spawner.gd" id="2_xhs8a"]
+[ext_resource type="Script" uid="uid://bcsff58jnc4x3" path="res://scripts/spawner.gd" id="2_xhs8a"]
 [ext_resource type="PackedScene" uid="uid://tllb3w05k3yg" path="res://scenes/enemy/Enemy.tscn" id="3_lsk84"]
-[ext_resource type="Texture2D" uid="uid://bnn1b2yg61elu" path="res://assets/city_model/Textures/colormap.png" id="4_uh5ro"]
+[ext_resource type="Texture2D" uid="uid://cni3843bd4qy3" path="res://assets/city_model/Textures/colormap.png" id="4_uh5ro"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1q4m"]
 resource_name = "colormap"
