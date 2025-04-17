@@ -7,9 +7,10 @@ extends CharacterBody3D
 @onready var health_bar = $SubViewport/EnemyHealthBar  
 @onready var detection_area = $Area3D 
 @onready var attack_timer = $Timer
-@onready var password_label: Label3D = $Label3D  # Label above the enemy
+@onready var password_label: Node3D = $PasswordDisplay  # Label above the enemy
 
 var possible_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()"  
+var colors = [Color.RED,Color.BLUE, Color.GREEN]
 var brute_force_attempt = ""  # Stores the current brute-force password attempt
 
 var pathfollow : PathFollow3D
@@ -27,6 +28,7 @@ func _ready():
 	attack_timer.wait_time = attack_interval
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
 	attack_timer.start()
+	health_bar.value = pv / max_pv * 100
 
 func _physics_process(delta):
 	if is_dead:
@@ -61,22 +63,37 @@ func start_attack():
 			stop_attack()
 			break
 		tower.take_attack()
-		update_brute_force_display()
+		take_damage(2)
+		generate_random_password(6)
 		await get_tree().create_timer(0.5).timeout  # Updates password every 0.5 seconds
+
+func take_damage(amount : int):
+	pv = pv - amount
+	health_bar.value = pv / max_pv * 100
+	if pv == 0 : 
+		print("dead")
+		die()
 
 func stop_attack():
 	is_attacking = false
 	password_label.visible = false  # Hide password attempt when attack stops
 
-func update_brute_force_display():
-	brute_force_attempt = generate_random_password(6)
-	password_label.text = brute_force_attempt
 
-func generate_random_password(length: int) -> String:
+func generate_random_password(length: int):
 	var password = ""
+	for child in password_label.get_children():
+		child.queue_free()
+
 	for i in range(length):
-		password += possible_chars[randi() % possible_chars.length()]
-	return password
+		var char = possible_chars[randi() % possible_chars.length()]
+		var color = colors[randi() % colors.size()]
+
+		var label = Label3D.new()
+		label.text = char
+		label.modulate = color
+		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED # optionnel : toujours face caméra
+		label.position = Vector3(i*0.2, 0, 0) # espacement horizontal
+		password_label.add_child(label)
 
 func die():
 	is_dead = true

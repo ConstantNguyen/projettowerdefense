@@ -1,11 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://tllb3w05k3yg"]
+[gd_scene load_steps=9 format=3 uid="uid://tllb3w05k3yg"]
 
-[ext_resource type="PackedScene" path="res://scenes/enemy/enemy_vie.tscn" id="1_hsxq4"]
+[ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="1_hsxq4"]
 [ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="1_mll7h"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_puv3o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gv2si"]
 size = Vector3(0.5, 0.42334, 0.352661)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcdue"]
+bg_color = Color(0.262089, 2.61711e-07, 9.62615e-08, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0sdc"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_smhvv"]
 viewport_path = NodePath("SubViewport")
@@ -30,7 +44,14 @@ shape = SubResource("BoxShape3D_gv2si")
 transparent_bg = true
 
 [node name="EnemyHealthBar" parent="SubViewport" instance=ExtResource("1_hsxq4")]
+offset_right = 54.248
+offset_bottom = 1.312
+theme_override_styles/background = SubResource("StyleBoxFlat_lcdue")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u0sdc")
 step = 1.0
+value = 100.0
+rounded = true
+show_percentage = false
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349357, 0.752447, 0)
@@ -44,5 +65,5 @@ shape = SubResource("CylinderShape3D_ak5e5")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-0.0104369, 0, -0.999946, 0, 1, 0, 0.999946, 0, -0.0104369, 0, 1.15821, 0)
+[node name="PasswordDisplay" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.158, 0)

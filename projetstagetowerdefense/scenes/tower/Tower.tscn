@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b5gpexrc7aha4"]
+[gd_scene load_steps=22 format=4 uid="uid://b5gpexrc7aha4"]
 
 [ext_resource type="PackedScene" uid="uid://bwvni6ngprpoy" path="res://scenes/tower/tower_vie.tscn" id="1_a4ejr"]
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_uvmct"]
@@ -53,6 +53,20 @@ size = Vector3(0.934082, 1.73877, 0.862427)
 height = 10.0
 radius = 1.5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18cyc"]
+bg_color = Color(0, 0.187449, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvhkv"]
+bg_color = Color(6.01634e-07, 0.610609, 9.62615e-07, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_nl82v"]
 viewport_path = NodePath("SubViewport")
 
@@ -104,6 +118,14 @@ shape = SubResource("CylinderShape3D_jw7ph")
 transparent_bg = true
 
 [node name="TowerHealthBar" parent="SubViewport" instance=ExtResource("1_a4ejr")]
+offset_left = -56.344
+offset_right = 63.656
+offset_bottom = 6.384
+theme_override_styles/background = SubResource("StyleBoxFlat_18cyc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fvhkv")
+value = 100.0
+rounded = true
+show_percentage = false
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.818, 0)

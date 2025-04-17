@@ -87,8 +87,6 @@ wait_time = 4096.0
 
 [node name="Routeur" parent="." instance=ExtResource("4_e443a")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.0228, 0.0378637, -1.0182)
-max_pv = 2000.0
-max_password_strength = 100000.0
 
 [node name="Path R" type="Path3D" parent="." node_paths=PackedStringArray("linked_towers")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.02, -1)
