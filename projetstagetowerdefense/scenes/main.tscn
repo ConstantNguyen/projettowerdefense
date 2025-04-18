@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://ey4cy2xg34am"]
 
-[ext_resource type="Script" uid="uid://bii31l3vmvsaf" path="res://scripts/main.gd" id="1_v46vx"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
-[ext_resource type="Script" uid="uid://cmr6ot1eryrgp" path="res://scripts/free_cam.gd" id="3_q8v1s"]
+[ext_resource type="Script" path="res://scripts/free_cam.gd" id="3_q8v1s"]
 [ext_resource type="PackedScene" uid="uid://bch3cg53vuuc0" path="res://scenes/TowerButton.tscn" id="4_fsd1c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]

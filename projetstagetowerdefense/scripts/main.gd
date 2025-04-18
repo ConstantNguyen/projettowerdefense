@@ -1,8 +1,8 @@
 extends Node3D
 
 @onready var grid_map := $GridMap
-
 @onready var tower_scene = preload("res://scenes/tower.tscn")
+
 var selected_tower_scene: PackedScene = null
 
 const GRID_SIZE = Vector3i(31, 1, 15)
@@ -38,6 +38,7 @@ var tile_score_to_id := {
 }
 
 func _ready():
+	
 	fill_ground()
 	
 	place_special_center()
@@ -50,6 +51,8 @@ func _ready():
 	generate_paths_from_spawners_to_firewall()
 	
 	place_random_decorations()
+	
+	generate_functional_elements()
 	
 	selected_tower_scene = preload("res://scenes/tower.tscn")
 
@@ -242,3 +245,58 @@ func _unhandled_input(event):
 
 			print("Tour placée à :", world_pos)
 			selected_tower_scene = null
+
+# --- AJOUT : logique fonctionnelle du niveau ---
+@onready var spawner_scene: PackedScene = preload("res://scenes/enemy/spawner.tscn")
+var path_points: Array[Vector3] = []
+
+func generate_functional_elements():
+	var tile_path = path_gen.get_path()
+	var world_path: Array[Vector3] = []
+
+	for point in tile_path:
+		var cell_pos = Vector3i(point.x, 0, point.y)
+		var world_pos = grid_map.map_to_local(cell_pos) + Vector3(0.5, 0, 0.5)
+		world_path.append(world_pos)
+
+	for pos in spawn_points:
+		for tower_pos in towers.keys():
+			if tower_pos == pos:
+				towers[tower_pos].queue_free()
+				towers.erase(tower_pos)
+				break
+
+		var spawner_pos = grid_map.map_to_local(pos) + Vector3(0.5, 0, 0.5)
+
+		var path = Path3D.new()
+		var curve = Curve3D.new()
+
+		var start_index = 0
+		var min_distance = INF
+		for i in range(world_path.size()):
+			var d = spawner_pos.distance_to(world_path[i])
+			if d < min_distance:
+				min_distance = d
+				start_index = i
+
+		# Inverser le chemin si besoin (pour que le point le plus proche du spawner soit le point de départ)
+		var partial_path = world_path.slice(start_index, world_path.size())
+		if partial_path.size() > 1 and partial_path[0].distance_to(spawner_pos) > partial_path[-1].distance_to(spawner_pos):
+			partial_path.reverse()
+
+		for point in partial_path:
+			curve.add_point(point)
+
+		path.curve = curve
+		add_child(path)
+
+		var spawner = spawner_scene.instantiate()
+		spawner.position = spawner_pos
+		spawner.enemy_scene = preload("res://scenes/enemy/Enemy.tscn")
+		spawner.path_node = path
+		add_child(spawner)
+
+	if has_node("game_timer"):
+		$game_timer.start()
+	if has_node("CanvasLayer"):
+		$CanvasLayer.visible = true
