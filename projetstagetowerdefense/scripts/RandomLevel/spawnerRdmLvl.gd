@@ -14,17 +14,16 @@ func _ready():
 	spawn_enemy_on_randomLvl()
 
 func spawn_enemy_on_randomLvl():
-	if path_node == null:
-		push_error("Path node non assigné.")
+	if path_node == null or not path_node.curve or path_node.curve.get_point_count() < 2:
+		push_error("Path non défini ou trop court")
 		return
 
-	var path_follow = preload("res://scripts/RandomLevel/EnemyPathFollow.gd").new()
-	path_follow.rotation_mode = PathFollow3D.ROTATION_Y
-	path_follow.progress = 0.0
-
 	var enemy = enemy_scene.instantiate()
+	var baked_points = path_node.curve.get_baked_points()
+	enemy.path_points = baked_points
+	enemy.global_position = baked_points[0]
 
-	path_follow.add_child(enemy)
-	path_node.add_child(path_follow)
+	if enemy.has_method("_manual_ready_path_logic"):
+		enemy._manual_ready_path_logic()
 
-	path_follow.set_progress(0.0)
+	add_child(enemy)

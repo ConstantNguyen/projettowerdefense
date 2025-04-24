@@ -49,8 +49,7 @@ func _ready():
 	
 	place_enemy_spawners()
 	generate_paths_from_spawners_to_firewall()
-	create_path3d_from_path(path_gen.get_path())
-
+	
 	place_random_decorations()
 	
 	generate_functional_elements()
@@ -182,21 +181,6 @@ func generate_paths_from_spawners_to_firewall():
 
 	place_path_from_generator(path_gen.get_path())
 
-func create_path3d_from_path(path: Array[Vector2i]):
-	var path_node = Path3D.new()
-	var curve = Curve3D.new()
-	var tile_size = 1.0  
-
-	for i in range(path.size() - 1, -1, -1):
-		var point = path[i]
-		var pos = Vector3(point.x * tile_size, 0, point.y * tile_size)
-		curve.add_point(pos)
-
-	path_node.curve = curve
-	path_node.name = "EnemyPath"
-	add_child(path_node)
-
-
 func build_path_to_firewall(start: Vector3i) -> Array[Vector2i]:
 	var path: Array[Vector2i] = []
 	var current = Vector2i(start.x, start.z)
@@ -263,66 +247,45 @@ func _unhandled_input(event):
 			selected_tower_scene = null
 
 # --- AJOUT : logique fonctionnelle du niveau ---
-@onready var spawner_scene: PackedScene = preload("res://scenes/enemy/spawner.tscn")
+@onready var spawner_scene: PackedScene = preload("res://scenes/enemy/spawnerRdmLvl.tscn")
 var path_points: Array[Vector3] = []
 
 func generate_functional_elements():
-	var tile_path = path_gen.get_path()
-	var world_path: Array[Vector3] = []
+	var tile_size = 1.0
+	var enemy_scene = preload("res://scenes/enemy/EnemyRdmLvl.tscn")
+	var spawner_scene = preload("res://scenes/enemy/spawnerRdmLvl.tscn")
 
-	for point in tile_path:
-		var cell_pos = Vector3i(point.x, 0, point.y)
-		var world_pos = grid_map.map_to_local(cell_pos) + Vector3(0.5, 0, 0.5)
-		world_path.append(world_pos)
+	for spawner_tile in spawn_points:
+		var world_path: Array[Vector3] = []
 
-	#Inverser le chemin pour qu'il parte du spawner vers le firewall
-	world_path.reverse()
+		var path_tiles = build_path_to_firewall(spawner_tile)  # Array[Vector2i]
+		if path_tiles.size() < 2:
+			push_warning("Chemin trop court pour spawner : %s" % spawner_tile)
+			continue
 
-	for pos in spawn_points:
-		# Supprimer les tours sur les spawners si besoin
-		for tower_pos in towers.keys():
-			if tower_pos == pos:
-				towers[tower_pos].queue_free()
-				towers.erase(tower_pos)
-				break
+		# Générer un chemin en sens spawner → firewall
+		for i in range(path_tiles.size() - 1, -1, -1):
+			var point = path_tiles[i]
+			var world_pos = Vector3(point.x * tile_size, 0.5, point.y * tile_size)
+			world_path.append(world_pos)
 
-		var spawner_pos = grid_map.map_to_local(pos) + Vector3(0.5, 0, 0.5)
-
+		# Créer le Path3D avec courbe
 		var path = Path3D.new()
 		var curve = Curve3D.new()
-
-		var start_index = 0
-		var min_distance = INF
-		for i in range(world_path.size()):
-			var d = spawner_pos.distance_to(world_path[i])
-			if d < min_distance:
-				min_distance = d
-				start_index = i
-
-		var partial_path = world_path.slice(start_index, world_path.size())
-
-		if partial_path.size() < 2:
-			# Fallback : reprendre tout le chemin si possible
-			if world_path.size() >= 2:
-				print("Path trop court, fallback complet pour spawner :", spawner_pos)
-				partial_path = world_path.duplicate()
-			else:
-				print("Chemin inutilisable (trop court). Aucun ennemi ne sera spawn ici :", spawner_pos)
-				continue
-
-		for point in partial_path:
+		for point in world_path:
 			curve.add_point(point)
-
 		path.curve = curve
 		add_child(path)
 
+		# Ajouter un spawner positionné sur sa tile
 		var spawner = spawner_scene.instantiate()
-		spawner.position = spawner_pos
-		spawner.enemy_scene = preload("res://scenes/enemy/Enemy.tscn")
+		spawner.position = Vector3(spawner_tile.x + 0.5, 0.5, spawner_tile.z + 0.5)
+		spawner.enemy_scene = enemy_scene
 		spawner.path_node = path
 		add_child(spawner)
 
-	# Démarrer le jeu si nécessaire
+		print("Spawner placé à %s avec un chemin de %d points" % [spawner.position, world_path.size()])
+
 	if has_node("game_timer"):
 		$game_timer.start()
 	if has_node("CanvasLayer"):

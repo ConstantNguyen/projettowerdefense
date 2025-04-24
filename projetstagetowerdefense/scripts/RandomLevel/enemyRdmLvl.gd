@@ -1,251 +1,163 @@
-extends Node3D
+extends CharacterBody3D
 
-@onready var grid_map := $GridMap
-@onready var tower_scene = preload("res://scenes/tower.tscn")
-@onready var spawner_scene: PackedScene = preload("res://scenes/enemy/spawner.tscn")
+@export var speed: float = 0.03
+@export var max_pv: float = 20.0
+@export var attack_interval = 1.5
 
-const GRID_SIZE = Vector3i(31, 1, 15)
-const GROUND_ID = 0
-const SPECIAL_CENTER_ID = 3
-const BORDER_ID = 1
-const NUM_DECORATIONS = 35
-const SPAWNER_ID = 2
-const MAX_SPAWNERS = 3
+@onready var health_bar = $SubViewport/EnemyHealthBar
+@onready var detection_area = $Area3D
+@onready var attack_timer = $Timer
+@onready var password_label: Node3D = $PasswordDisplay
 
-var selected_tower_scene: PackedScene = null
-var spawn_points: Array[Vector3i] = []
-var firewall_pos: Vector3i
-var path_gen: PathGenerator
-var blocked_positions: Dictionary = {}
-var towers: Dictionary = {}
-var DECORATION_IDS = range(8, 10)
-var tile_score_to_id := {
-	10: 5, 5: 5,
-	3: 6, 6: 6, 12: 6, 9: 6,
-	7: 7, 11: 7, 13: 7, 14: 7,
-	15: 11
-}
+var possible_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()"
+var colors = [Color.RED, Color.BLUE, Color.GREEN]
+var brute_force_attempt = ""
+
+var pathfollow: PathFollow3D = null
+var path: Path3D = null
+var tower: Node = null
+var is_dead: bool = false
+var is_attacking = false
+var pv: float = max_pv
 
 func _ready():
-	fill_ground()
-	place_special_center()
-	blocked_positions.clear()
-	block_center_radius(3)
-	place_border_spawn_zone()
-	place_enemy_spawners()
-	generate_paths_from_spawners_to_firewall()
-	create_path3d_from_path(path_gen.get_path())
-	place_random_decorations()
-	generate_functional_elements()
-	selected_tower_scene = tower_scene
+	detection_area.body_entered.connect(_on_detection_zone_body_entered)
+	if get_parent() is PathFollow3D:
+		pathfollow = get_parent()
+	attack_timer.wait_time = attack_interval
+	attack_timer.timeout.connect(_on_attack_timer_timeout)
+	attack_timer.start()
+	health_bar.value = pv / max_pv * 100
 
-func fill_ground():
-	for x in range(GRID_SIZE.x):
-		for z in range(GRID_SIZE.z):
-			grid_map.set_cell_item(Vector3i(x, 0, z), GROUND_ID)
+func _physics_process(delta):
+	if is_dead:
+		return
 
-func place_special_center():
-	firewall_pos = Vector3i(GRID_SIZE.x / 2, 0, GRID_SIZE.z / 2)
-	grid_map.set_cell_item(firewall_pos, SPECIAL_CENTER_ID)
-	blocked_positions[firewall_pos] = true
+	if path == null and pathfollow != null and pathfollow.get_parent() is Path3D:
+		path = pathfollow.get_parent()
 
-func block_center_radius(radius: int):
-	var center = firewall_pos
-	for dx in range(-radius, radius + 1):
-		for dz in range(-radius, radius + 1):
-			var pos = center + Vector3i(dx, 0, dz)
-			if pos.x >= 0 and pos.x < GRID_SIZE.x and pos.z >= 0 and pos.z < GRID_SIZE.z:
-				blocked_positions[pos] = true
+	if is_attacking:
+		if pathfollow:
+			pathfollow.progress = pathfollow.progress  # gèle la position
+		if tower == null or tower.is_dead:
+			stop_attack()
+	else:
+		if pathfollow:
+			pathfollow.progress += speed
 
-func place_border_spawn_zone():
-	for x in range(GRID_SIZE.x):
-		for z in [0, GRID_SIZE.z - 1]:
-			var pos = Vector3i(x, 0, z)
-			grid_map.set_cell_item(pos, BORDER_ID)
-			blocked_positions[pos] = true
-	for z in range(1, GRID_SIZE.z - 1):
-		for x in [0, GRID_SIZE.x - 1]:
-			var pos = Vector3i(x, 0, z)
-			grid_map.set_cell_item(pos, BORDER_ID)
-			blocked_positions[pos] = true
+func _on_attack_timer_timeout():
+	if tower != null and !tower.is_dead:
+		start_attack()
 
-func place_enemy_spawners():
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	var placed = 0
-	var tries = 0
-	var used_z = []
-	var num_spawners = rng.randi_range(1, MAX_SPAWNERS)
+func set_tower(t: Node):
+	tower = t
 
-	while placed < num_spawners and tries < 200:
-		var x = rng.randi_range(0, 5)
-		var z = rng.randi_range(1, GRID_SIZE.z - 2)
-		var pos = Vector3i(x, 0, z)
+func start_attack():
+	if tower == null or tower.is_dead:
+		stop_attack()
+		return
 
-		if not blocked_positions.has(pos) and not used_z.any(func(i): abs(z - i) <= 1):
-			grid_map.set_cell_item(pos, SPAWNER_ID)
-			blocked_positions[pos] = true
-			spawn_points.append(pos)
-			used_z.append(z)
-			placed += 1
-		tries += 1
+	is_attacking = true
+	password_label.visible = true
 
-	print("Spawners placés :", placed)
+	while is_attacking:
+		if tower == null or tower.is_dead:
+			stop_attack()
+			break
+		tower.take_attack()
+		take_damage(2)
+		generate_random_password(6)
+		await get_tree().create_timer(0.5).timeout
 
-func get_rotation_from_score(score: int) -> float:
-	match score:
-		5: return 0.0
-		10: return 90.0
-		3: return 180.0
-		6: return 90.0
-		9: return 270.0
-		12: return 0.0
-		7: return 0.0
-		11: return 180.0
-		13: return 270.0
-		14: return 90.0
-		15: return 0.0
-		_: return 0.0
+func stop_attack():
+	is_attacking = false
+	password_label.visible = false
 
-func place_rotated_tile(id: int, pos: Vector3i, rotation_deg: float):
-	var tile = MeshInstance3D.new()
-	tile.mesh = grid_map.mesh_library.get_item_mesh(id)
-	var local_pos = grid_map.map_to_local(pos)
-	local_pos.y += 0.07
-	tile.global_transform.origin = local_pos
-	tile.rotate_y(deg_to_rad(rotation_deg))
-	add_child(tile)
-	blocked_positions[pos] = true
+func take_damage(amount: int):
+	pv -= amount
+	health_bar.value = pv / max_pv * 100
+	if pv <= 0:
+		die()
 
-func place_path_from_generator(path: Array[Vector2i]):
-	for pos2d in path:
-		var score = path_gen.get_tile_score(pos2d)
-		if tile_score_to_id.has(score):
-			var tile_id = tile_score_to_id[score]
-			var rotation_deg = get_rotation_from_score(score)
-			var pos = Vector3i(pos2d.x, 0, pos2d.y)
-			if pos != firewall_pos:
-				place_rotated_tile(tile_id, pos, rotation_deg)
+func die():
+	is_dead = true
+	stop_attack()
+	queue_free()
 
-func generate_paths_from_spawners_to_firewall():
-	path_gen = PathGenerator.new(GRID_SIZE.x, GRID_SIZE.z)
-	for spawn in spawn_points:
-		var path = build_path_to_firewall(spawn)
-		path_gen.add_path_segment(path)
-	place_path_from_generator(path_gen.get_path())
+func generate_random_password(length: int):
+	for child in password_label.get_children():
+		child.queue_free()
 
-func build_path_to_firewall(start: Vector3i) -> Array[Vector2i]:
-	var path: Array[Vector2i] = []
-	var current = Vector2i(start.x, start.z)
-	var end = Vector2i(firewall_pos.x, firewall_pos.z)
-	path.append(current)
-	while current.x != end.x:
-		current.x += signi(end.x - current.x)
-		path.append(current)
-	while current.y != end.y:
-		current.y += signi(end.y - current.y)
-		path.append(current)
-	return path
+	for i in range(length):
+		var char = possible_chars[randi() % possible_chars.length()]
+		var color = colors[randi() % colors.size()]
 
-func create_path3d_from_path(path: Array[Vector2i]):
-	var path_node = Path3D.new()
-	var curve = Curve3D.new()
-	for i in range(path.size() - 1, -1, -1):
-		var point = path[i]
-		var pos = Vector3(point.x, 0, point.y)
-		curve.add_point(pos)
-	path_node.curve = curve
-	path_node.name = "EnemyPath"
-	add_child(path_node)
+		var label = Label3D.new()
+		label.text = char
+		label.modulate = color
+		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+		label.position = Vector3(i * 0.2, 0, 0)
+		password_label.add_child(label)
 
-func place_random_decorations():
-	var used_positions = {}
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	var tries = 0
-	while used_positions.size() < NUM_DECORATIONS and tries < 200:
-		var x = rng.randi_range(0, GRID_SIZE.x - 1)
-		var z = rng.randi_range(0, GRID_SIZE.z - 1)
-		var pos = Vector3i(x, 0, z)
-		if not used_positions.has(pos) and not blocked_positions.has(pos):
-			used_positions[pos] = true
-			var deco_id = DECORATION_IDS[rng.randi_range(0, DECORATION_IDS.size() - 1)]
-			grid_map.set_cell_item(pos, deco_id)
-		tries += 1
+func _on_detection_zone_body_entered(body):
+	if body.get_parent().is_in_group("intersection"):
+		body = body.get_parent()
+		var possible_paths = body.get_paths()
+		for possibility in possible_paths:
+			if !possibility.is_in_group("paths"):
+				possible_paths.erase(possibility)
+		if possible_paths.size() > 0:
+			var new_path = possible_paths[RandomNumberGenerator.new().randi_range(0, possible_paths.size() - 1)]
+			if speed < 0:
+				speed = -speed
+			switch_path(new_path)
+	else:
+		if speed > 0:
+			speed = -speed
+		var origin = body.get_origin()
+		if path != origin:
+			switch_path(origin)
 
-func generate_functional_elements():
-	var tile_path = path_gen.get_path()
-	var world_path: Array[Vector3] = []
-	for point in tile_path:
-		var cell_pos = Vector3i(point.x, 0, point.y)
-		var world_pos = grid_map.map_to_local(cell_pos) + Vector3(0.5, 0, 0.5)
-		world_path.append(world_pos)
+func switch_path(new_path):
+	if new_path == null:
+		push_warning("switch_path: path est null")
+		return
 
-	world_path.reverse()
+	path = new_path
+	var new_pathfollow = PathFollow3D.new()
+	new_pathfollow.rotation_mode = PathFollow3D.ROTATION_Y
+	new_pathfollow.progress = 0.0
+	new_pathfollow.add_child(self)
+	path.add_child(new_pathfollow)
+	pathfollow = new_pathfollow
 
-	for pos in spawn_points:
-		for tower_pos in towers.keys():
-			if tower_pos == pos:
-				towers[tower_pos].queue_free()
-				towers.erase(tower_pos)
-				break
+	if path.curve.get_point_count() > 0:
+		var start_pos = path.curve.get_point_position(0)
+		var t = new_pathfollow.transform
+		t.origin = start_pos
+		new_pathfollow.transform = t
 
-		var spawner_pos = grid_map.map_to_local(pos) + Vector3(0.5, 0, 0.5)
-		var path = Path3D.new()
-		var curve = Curve3D.new()
+@export var speed_manual := 2.0
+var path_points: Array[Vector3] = []
+var current_index := 0
 
-		var start_index = 0
-		var min_distance = INF
-		for i in range(world_path.size()):
-			var d = spawner_pos.distance_to(world_path[i])
-			if d < min_distance:
-				min_distance = d
-				start_index = i
+func _manual_ready_path_logic():
+	await get_tree().process_frame
+	if path_points.is_empty():
+		push_error("Aucun point de chemin reçu")
+		return
+	global_position = path_points[0]
 
-		var partial_path = world_path.slice(start_index, world_path.size())
-		if partial_path.size() < 2:
-			if world_path.size() >= 2:
-				print("Path trop court, fallback complet pour spawner :", spawner_pos)
-				partial_path = world_path.duplicate()
-			else:
-				print("Chemin inutilisable. Aucun ennemi ne sera spawn ici :", spawner_pos)
-				continue
+func _manual_process_path_logic(delta):
+	if current_index >= path_points.size():
+		queue_free()
+		return
 
-		for point in partial_path:
-			curve.add_point(point)
+	var target = path_points[current_index]
+	var direction = (target - global_position).normalized()
+	var distance = global_position.distance_to(target)
 
-		path.curve = curve
-		add_child(path)
-
-		var spawner = spawner_scene.instantiate()
-		spawner.position = spawner_pos
-		spawner.enemy_scene = preload("res://scenes/enemy/Enemy.tscn")
-		spawner.path_node = path
-		add_child(spawner)
-
-	if has_node("game_timer"):
-		$game_timer.start()
-	if has_node("CanvasLayer"):
-		$CanvasLayer.visible = true
-
-func _on_tower_button_pressed():
-	selected_tower_scene = tower_scene
-
-func _unhandled_input(event):
-	if selected_tower_scene and event is InputEventMouseButton and event.pressed:
-		var camera = $CameraRig/CameraPivot/Camera3D
-		var from = camera.project_ray_origin(event.position)
-		var to = from + camera.project_ray_normal(event.position) * 1000.0
-		var ray_params = PhysicsRayQueryParameters3D.new()
-		ray_params.from = from
-		ray_params.to = to
-		var result = get_world_3d().direct_space_state.intersect_ray(ray_params)
-
-		if result.size() > 0:
-			var position = result["position"]
-			var grid_pos = grid_map.world_to_map(position)
-			var world_pos = grid_map.map_to_world(grid_pos)
-			var tower = selected_tower_scene.instantiate()
-			tower.global_transform.origin = world_pos
-			add_child(tower)
-			selected_tower_scene = null
+	if distance < 0.1:
+		current_index += 1
+	else:
+		global_position += direction * speed_manual * delta
