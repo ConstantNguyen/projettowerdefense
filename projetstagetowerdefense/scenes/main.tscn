@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=10 format=3 uid="uid://ey4cy2xg34am"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_v46vx"]
+[ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
 [ext_resource type="Script" path="res://scripts/free_cam.gd" id="3_q8v1s"]
 [ext_resource type="PackedScene" uid="uid://bch3cg53vuuc0" path="res://scenes/TowerButton.tscn" id="4_fsd1c"]
+[ext_resource type="Script" path="res://scripts/RandomLevel/EnemyPathFollow.gd" id="5_s3jqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -29,6 +30,8 @@ ssil_enabled = true
 glow_normalized = true
 glow_intensity = 1.13
 glow_strength = 1.5
+
+[sub_resource type="Curve3D" id="Curve3D_asddl"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_v46vx")
@@ -85,3 +88,9 @@ offset_right = 4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_asddl")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+script = ExtResource("5_s3jqo")
