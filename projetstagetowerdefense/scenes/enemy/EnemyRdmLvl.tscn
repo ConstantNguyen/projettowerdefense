@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ds8x3bq8i2spv"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_jq1ol"]
+[ext_resource type="Script" path="res://scripts/RandomLevel/enemyRdmLvl.gd" id="1_bb6dd"]
 [ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="2_vcx1o"]
 [ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="3_h527r"]
 
@@ -29,8 +29,7 @@ radius = 0.352531
 
 [node name="Enemy" type="CharacterBody3D"]
 collision_layer = 2
-script = ExtResource("1_jq1ol")
-attack_interval = 0.5
+script = ExtResource("1_bb6dd")
 
 [node name="EnemyShape" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

@@ -1,10 +1,12 @@
 extends Control
 
 @export var game_scene_path: String = "res://scenes/MainScene.tscn"
+@export var random_game_scene_path: String = "res://scenes/main.tscn"
 @export var is_game_over: bool = false
 
 func _ready():
 	$Button.connect("pressed", Callable(self, "_on_play_pressed"))
+	$ButtonRdmLvl.connect("pressed", Callable(self, "_on_play_random_pressed"))
 	$Button2.connect("pressed", Callable(self, "_on_quit_pressed"))
 	$Button3.connect("pressed", Callable(self, "_on_play_pressed"))
 	
@@ -21,6 +23,11 @@ func _ready():
 func _on_play_pressed():
 	print("change")
 	get_tree().change_scene_to_file(game_scene_path)
+	queue_free()
+	
+func _on_play_random_pressed():
+	print("change")
+	get_tree().change_scene_to_file(random_game_scene_path)
 	queue_free()
 
 func _on_quit_pressed():
