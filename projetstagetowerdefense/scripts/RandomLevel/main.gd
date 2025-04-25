@@ -2,6 +2,12 @@ extends Node3D
 
 @onready var grid_map := $GridMap
 @onready var tower_scene = preload("res://scenes/tower.tscn")
+@onready var timer_label = $CanvasLayer/timer_label
+@onready var game_timer = $game_timer
+@onready var bouton_pause = $CanvasLayer/button_pause
+
+var seconds_passed = 0
+var is_paused = false
 
 var selected_tower_scene: PackedScene = null
 
@@ -51,6 +57,11 @@ func _ready():
 	generate_paths_from_spawners_to_firewall()
 	
 	place_random_decorations()
+	
+	game_timer.timeout.connect(_on_game_timer_timeout)
+	bouton_pause.pressed.connect(_on_pause_button_pressed)
+	game_timer.start()
+	update_timer_display()
 	
 	generate_functional_elements()
 	
@@ -249,6 +260,29 @@ func _unhandled_input(event):
 # --- AJOUT : logique fonctionnelle du niveau ---
 @onready var spawner_scene: PackedScene = preload("res://scenes/enemy/spawnerRdmLvl.tscn")
 var path_points: Array[Vector3] = []
+
+func _on_pause_button_pressed():
+	if is_paused:
+		is_paused = false
+		get_tree().paused = false
+		bouton_pause.text = "Pause"
+		print("Jeu repris !")
+	else:
+		is_paused = true
+		get_tree().paused = true
+		bouton_pause.text = "Reprendre"  
+		print("Jeu en pause !")  
+
+func _on_game_timer_timeout():
+	if not is_paused:
+		seconds_passed += 1
+		update_timer_display()
+
+func update_timer_display():
+	var minutes = seconds_passed / 60
+	var seconds = seconds_passed % 60
+	var formatted_time = "%02d:%02d" % [minutes, seconds]
+	timer_label.text = formatted_time
 
 func generate_functional_elements():
 	var tile_size = 1.0

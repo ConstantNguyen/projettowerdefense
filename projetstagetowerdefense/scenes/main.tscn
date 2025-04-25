@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=11 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
 [ext_resource type="Script" path="res://scripts/free_cam.gd" id="3_q8v1s"]
 [ext_resource type="PackedScene" uid="uid://bch3cg53vuuc0" path="res://scenes/TowerButton.tscn" id="4_fsd1c"]
 [ext_resource type="Script" path="res://scripts/RandomLevel/EnemyPathFollow.gd" id="5_s3jqo"]
+[ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="5_x8bep"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -94,3 +95,33 @@ curve = SubResource("Curve3D_asddl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 script = ExtResource("5_s3jqo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="button_pause" type="Button" parent="CanvasLayer"]
+process_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_right = 478.0
+offset_bottom = 520.0
+grow_horizontal = 0
+scale = Vector2(0.08, 0.08)
+icon = ExtResource("5_x8bep")
+alignment = 2
+icon_alignment = 2
+vertical_icon_alignment = 0
+
+[node name="timer_label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+pivot_offset = Vector2(0, 20)
+horizontal_alignment = 1
+
+[node name="game_timer" type="Timer" parent="."]

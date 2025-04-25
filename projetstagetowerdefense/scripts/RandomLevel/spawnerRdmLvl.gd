@@ -9,21 +9,11 @@ extends Node3D
 func _ready():
 	await get_tree().create_timer(3.0).timeout
 	timer.wait_time = spawn_interval
-	timer.timeout.connect(spawn_enemy_on_randomLvl)
+	timer.timeout.connect(spawn_enemy)
 	timer.start()
-	spawn_enemy_on_randomLvl()
+	spawn_enemy()
 
-func spawn_enemy_on_randomLvl():
-	if path_node == null or not path_node.curve or path_node.curve.get_point_count() < 2:
-		push_error("Path non défini ou trop court")
-		return
 
+func spawn_enemy():
 	var enemy = enemy_scene.instantiate()
-	var baked_points = path_node.curve.get_baked_points()
-	enemy.path_points = baked_points
-	enemy.global_position = baked_points[0]
-
-	if enemy.has_method("_manual_ready_path_logic"):
-		enemy._manual_ready_path_logic()
-
-	add_child(enemy)
+	enemy.switch_path(path_node)
