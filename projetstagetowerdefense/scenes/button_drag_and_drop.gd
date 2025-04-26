@@ -2,7 +2,7 @@ extends Button
 
 @export var scene_to_instantiate: PackedScene
 @export var grid_map_node: NodePath  # ← pour savoir quelle gridmap viser
-@export var grid_y_level: float = 0.2  # ← niveau Y où poser l'objet
+@export var grid_y_level: float = 0.01  # ← niveau Y où poser l'objet
 
 var is_dragging: bool = false
 var dragged_instance: Node3D
@@ -44,8 +44,8 @@ func _physics_process(_delta):
 			
 			# Aligner à la grille
 			var cell_size = grid_map.cell_size
-			position.x = round(position.x / cell_size.x) * cell_size.x
-			position.z = round(position.z / cell_size.z) * cell_size.z
+			position.x = round(position.x / cell_size.x) * cell_size.x + 1
+			position.z = round(position.z / cell_size.z) * cell_size.z + 1
 			position.y = grid_y_level  # Forcer la hauteur voulue
 			
 			dragged_instance.global_position = position
