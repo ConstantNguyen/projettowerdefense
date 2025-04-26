@@ -18,7 +18,7 @@ func add_path_segment(segment: Array[Vector2i]):
 		if not _path.has(p):
 			_path.append(p)
 
-func generate_path() -> Array[Vector2i]:
+func generate_path(reverse := false) -> Array[Vector2i]:
 	_path.clear()
 	var x = 0
 	var y = int(_grid_height / 2)
@@ -36,7 +36,14 @@ func generate_path() -> Array[Vector2i]:
 		elif choice == 2 and y > 1 and not _path.has(Vector2i(x, y - 1)):
 			y -= 1
 
-	return _path
+	if reverse:
+		var reversed_path: Array[Vector2i] = []
+		for i in range(_path.size() - 1, -1, -1):
+			reversed_path.append(_path[i])
+		return reversed_path
+	else:
+		return _path
+
 
 func get_tile_score(tile: Vector2i) -> int:
 	var score = 0

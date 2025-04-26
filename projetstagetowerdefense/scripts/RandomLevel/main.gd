@@ -2,6 +2,12 @@ extends Node3D
 
 @onready var grid_map := $GridMap
 @onready var tower_scene = preload("res://scenes/tower.tscn")
+@onready var timer_label = $CanvasLayer/timer_label
+@onready var game_timer = $game_timer
+@onready var bouton_pause = $CanvasLayer/button_pause
+
+var seconds_passed = 0
+var is_paused = false
 
 var selected_tower_scene: PackedScene = null
 
@@ -51,6 +57,11 @@ func _ready():
 	generate_paths_from_spawners_to_firewall()
 	
 	place_random_decorations()
+	
+	game_timer.timeout.connect(_on_game_timer_timeout)
+	bouton_pause.pressed.connect(_on_pause_button_pressed)
+	game_timer.start()
+	update_timer_display()
 	
 	generate_functional_elements()
 	
@@ -247,54 +258,67 @@ func _unhandled_input(event):
 			selected_tower_scene = null
 
 # --- AJOUT : logique fonctionnelle du niveau ---
-@onready var spawner_scene: PackedScene = preload("res://scenes/enemy/spawner.tscn")
+@onready var spawner_scene: PackedScene = preload("res://scenes/enemy/spawnerRdmLvl.tscn")
 var path_points: Array[Vector3] = []
 
+func _on_pause_button_pressed():
+	if is_paused:
+		is_paused = false
+		get_tree().paused = false
+		bouton_pause.text = "Pause"
+		print("Jeu repris !")
+	else:
+		is_paused = true
+		get_tree().paused = true
+		bouton_pause.text = "Reprendre"  
+		print("Jeu en pause !")  
+
+func _on_game_timer_timeout():
+	if not is_paused:
+		seconds_passed += 1
+		update_timer_display()
+
+func update_timer_display():
+	var minutes = seconds_passed / 60
+	var seconds = seconds_passed % 60
+	var formatted_time = "%02d:%02d" % [minutes, seconds]
+	timer_label.text = formatted_time
+
 func generate_functional_elements():
-	var tile_path = path_gen.get_path()
-	var world_path: Array[Vector3] = []
+	var tile_size = 1.0
+	var enemy_scene = preload("res://scenes/enemy/EnemyRdmLvl.tscn")
+	var spawner_scene = preload("res://scenes/enemy/spawnerRdmLvl.tscn")
 
-	for point in tile_path:
-		var cell_pos = Vector3i(point.x, 0, point.y)
-		var world_pos = grid_map.map_to_local(cell_pos) + Vector3(0.5, 0, 0.5)
-		world_path.append(world_pos)
+	for spawner_tile in spawn_points:
+		var world_path: Array[Vector3] = []
 
-	for pos in spawn_points:
-		for tower_pos in towers.keys():
-			if tower_pos == pos:
-				towers[tower_pos].queue_free()
-				towers.erase(tower_pos)
-				break
+		var path_tiles = build_path_to_firewall(spawner_tile)  # Array[Vector2i]
+		if path_tiles.size() < 2:
+			push_warning("Chemin trop court pour spawner : %s" % spawner_tile)
+			continue
 
-		var spawner_pos = grid_map.map_to_local(pos) + Vector3(0.5, 0, 0.5)
+		# Générer un chemin en sens spawner → firewall
+		for i in range(path_tiles.size() - 1, -1, -1):
+			var point = path_tiles[i]
+			var world_pos = Vector3(point.x * tile_size, 0.5, point.y * tile_size)
+			world_path.append(world_pos)
 
+		# Créer le Path3D avec courbe
 		var path = Path3D.new()
 		var curve = Curve3D.new()
-
-		var start_index = 0
-		var min_distance = INF
-		for i in range(world_path.size()):
-			var d = spawner_pos.distance_to(world_path[i])
-			if d < min_distance:
-				min_distance = d
-				start_index = i
-
-		# Inverser le chemin si besoin (pour que le point le plus proche du spawner soit le point de départ)
-		var partial_path = world_path.slice(start_index, world_path.size())
-		if partial_path.size() > 1 and partial_path[0].distance_to(spawner_pos) > partial_path[-1].distance_to(spawner_pos):
-			partial_path.reverse()
-
-		for point in partial_path:
+		for point in world_path:
 			curve.add_point(point)
-
 		path.curve = curve
 		add_child(path)
 
+		# Ajouter un spawner positionné sur sa tile
 		var spawner = spawner_scene.instantiate()
-		spawner.position = spawner_pos
-		spawner.enemy_scene = preload("res://scenes/enemy/Enemy.tscn")
+		spawner.position = Vector3(spawner_tile.x + 0.5, 0.5, spawner_tile.z + 0.5)
+		spawner.enemy_scene = enemy_scene
 		spawner.path_node = path
 		add_child(spawner)
+
+		print("Spawner placé à %s avec un chemin de %d points" % [spawner.position, world_path.size()])
 
 	if has_node("game_timer"):
 		$game_timer.start()
