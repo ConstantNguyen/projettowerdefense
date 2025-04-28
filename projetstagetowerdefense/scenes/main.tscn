@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=13 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
 [ext_resource type="Script" path="res://scripts/free_cam.gd" id="3_q8v1s"]
 [ext_resource type="PackedScene" uid="uid://bch3cg53vuuc0" path="res://scenes/TowerButton.tscn" id="4_fsd1c"]
+[ext_resource type="PackedScene" uid="uid://bvm2gqr5rjyow" path="res://scenes/tower.tscn" id="5_c6yn6"]
 [ext_resource type="Script" path="res://scripts/RandomLevel/EnemyPathFollow.gd" id="5_s3jqo"]
 [ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="5_x8bep"]
-[ext_resource type="PackedScene" uid="uid://4yq7yod58kkl" path="res://scenes/pause.tscn" id="7_1kvh8"]
+[ext_resource type="PackedScene" path="res://scenes/pause.tscn" id="7_1kvh8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -90,6 +91,9 @@ offset_right = 4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
+scene_to_instantiate = ExtResource("5_c6yn6")
+grid_map_node = NodePath("../../../GridMap")
+grid_y_level = 0.1
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_asddl")
@@ -140,3 +144,5 @@ offset_bottom = 42.0
 text = "Start"
 
 [node name="game_timer" type="Timer" parent="."]
+
+[connection signal="button_down" from="CameraRig/Control/TowerButton" to="CameraRig/Control/TowerButton" method="_on_button_down"]

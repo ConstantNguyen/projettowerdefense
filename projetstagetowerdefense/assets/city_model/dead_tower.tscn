@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://30qqaj0unrj8"]
+
+[ext_resource type="PackedScene" uid="uid://daf6jnblls6uf" path="res://assets/FBX format/tower-round-base.fbx" id="1_2bdid"]
+[ext_resource type="ArrayMesh" uid="uid://cpdp051j4yeep" path="res://assets/Textures/untitled.obj" id="2_8qodp"]
+
+[node name="tower-round-base" instance=ExtResource("1_2bdid")]
+
+[node name="tower-round-base" parent="." index="0"]
+transform = Transform3D(0.15, 0, 0, 0, 0.056191, -0.139078, 0, 0.139078, 0.056191, 0, 0, 0)
+mesh = ExtResource("2_8qodp")

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvjs7fq2nrk1o" path="res://scenes/intersection.tscn" id="7_s0jcn"]
 [ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="8_6adil"]
 [ext_resource type="Script" path="res://scripts/free_cam.gd" id="9_bhvit"]
-[ext_resource type="PackedScene" uid="uid://4yq7yod58kkl" path="res://scenes/pause.tscn" id="10_p2scw"]
+[ext_resource type="PackedScene" path="res://scenes/pause.tscn" id="10_p2scw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8y87v"]
 panorama = ExtResource("2_kdba0")
@@ -208,29 +208,3 @@ offset_left = 369.556
 offset_top = 152.577
 offset_right = 369.556
 offset_bottom = 152.577
-
-[node name="Control" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchor_right = 0.999
-anchor_bottom = 1.0
-offset_right = 0.151855
-offset_bottom = 2.0
-
-[node name="Button" type="Button" parent="Control"]
-visible = false
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -116.0
-offset_right = 48.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[connection signal="button_down" from="Control/Button" to="Control/Button" method="_on_button_down"]
