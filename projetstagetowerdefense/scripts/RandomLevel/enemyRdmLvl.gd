@@ -36,7 +36,7 @@ func set_path(path: Path3D):
 	if path:
 		path_follow = PathFollow3D.new()
 		path.add_child(path_follow)
-		path_follow.rotation_mode = PathFollow3D.ROTATION_NONE
+		path_follow.rotation_mode = PathFollow3D.ROTATION_Y
 		
 		path_follow.add_child(self)
 		self.global_transform.origin = path_follow.position
@@ -135,7 +135,7 @@ func _on_detection_zone_body_entered(body):
 				speed = -speed
 			var origin = body.get_origin()
 			if path != origin:
-				switch_path(origin)
+				switch_path(origin)	
 
 
 

@@ -6,6 +6,8 @@ var started := false
 func _ready():
 	await get_tree().process_frame
 	started = true
+	rotation_mode = PathFollow3D.ROTATION_Y  
+
 
 func _physics_process(delta):
 	if started:
