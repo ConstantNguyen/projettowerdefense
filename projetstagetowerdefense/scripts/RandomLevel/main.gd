@@ -268,21 +268,29 @@ func _unhandled_input(event):
 
 			print("Tour placée à :", world_pos)
 			selected_tower_scene = null
+			
+	# Quand on appuie sur la touche "échap" le menu pause apparait
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_ESCAPE:
+			_toggle_pause_menu()
 
 # --- AJOUT : logique fonctionnelle du niveau ---
 @onready var spawner_scene: PackedScene = preload("res://scenes/enemy/spawnerRdmLvl.tscn")
 var path_points: Array[Vector3] = []
 
+func _toggle_pause_menu():
+	is_paused = not is_paused
+	get_tree().paused = is_paused
+	pause_menu.visible = is_paused
+
 func _on_pause_button_pressed():
 	is_paused = not is_paused
 	get_tree().paused = is_paused
 	bouton_pause.text = "Reprendre" if is_paused else "Pause"
-	pause_menu.visible = is_paused
 
 func _on_continue_pressed():
 	is_paused = false
 	get_tree().paused = false
-	bouton_pause.text = "Pause"
 	pause_menu.visible = false
 
 func _on_restart_pressed():
@@ -290,7 +298,10 @@ func _on_restart_pressed():
 	get_tree().reload_current_scene()
 
 func _on_quit_pressed():
-	get_tree().quit()
+	get_tree().paused = false
+	var menu_scene = preload("res://scenes/menu1.tscn").instantiate()
+	get_tree().root.add_child(menu_scene)
+	queue_free()
 
 func _on_game_timer_timeout():
 	if not is_paused:

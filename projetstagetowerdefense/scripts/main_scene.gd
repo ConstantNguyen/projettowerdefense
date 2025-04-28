@@ -37,24 +37,29 @@ func _ready():
 		get_tree().paused = false
 		get_tree().reload_current_scene()
 	)
+	
 	quit_button.pressed.connect(func():
 		get_tree().paused = false
 		var menu_scene = preload("res://scenes/menu1.tscn").instantiate()
 		get_tree().root.add_child(menu_scene)
 		queue_free()
 	)
-	
 
+	pause_menu.visible = false
 
 func _on_pause_button_pressed():
-	is_paused = true
-	get_tree().paused = true
-	pause_menu.visible = true
+	is_paused = not is_paused
+	get_tree().paused = is_paused
+	bouton_pause.text = "Reprendre" if is_paused else "Pause"
 
-func _on_continue_button_pressed() : 
-	is_paused = false
-	pause_menu.visible = false
-	get_tree().paused = false
+func _unhandled_input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		_toggle_pause_menu()
+
+func _toggle_pause_menu():
+	is_paused = not is_paused
+	get_tree().paused = is_paused
+	pause_menu.visible = is_paused
 
 func _on_game_timer_timeout():
 	if not is_paused:
@@ -68,7 +73,7 @@ func update_timer_display():
 	timer_label.text = formatted_time
 	
 func game_over():
-	if get_tree().get_nodes_in_group("towers").size() == 0 : 
+	if get_tree().get_nodes_in_group("towers").size() == 0: 
 		var menu_scene = preload("res://scenes/menu1.tscn").instantiate()
 		menu_scene.get_child(0).is_game_over = true
 		get_tree().root.add_child(menu_scene)
