@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=12 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bch3cg53vuuc0" path="res://scenes/TowerButton.tscn" id="4_fsd1c"]
 [ext_resource type="Script" path="res://scripts/RandomLevel/EnemyPathFollow.gd" id="5_s3jqo"]
 [ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="5_x8bep"]
+[ext_resource type="PackedScene" uid="uid://4yq7yod58kkl" path="res://scenes/pause.tscn" id="7_1kvh8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -56,7 +57,7 @@ script = ExtResource("3_q8v1s")
 zoom_speed = 5.0
 
 [node name="CameraPivot" type="Node3D" parent="CameraRig"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.41858, -33.1507)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 13.4808, -36.6507)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig/CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.853986, -0.520296, 0, 0.520296, 0.853986, 0, -10.4059, 17.0797)
@@ -123,5 +124,12 @@ offset_bottom = 23.0
 grow_horizontal = 2
 pivot_offset = Vector2(0, 20)
 horizontal_alignment = 1
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("7_1kvh8")]
+visible = false
+offset_left = 308.0
+offset_top = 89.0
+offset_right = 308.0
+offset_bottom = 89.0
 
 [node name="game_timer" type="Timer" parent="."]

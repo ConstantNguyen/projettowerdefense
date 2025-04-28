@@ -27,7 +27,13 @@ func _ready():
 		return
 
 	# Centrer le pivot sur la map si besoin
-	pivot.global_transform.origin = Vector3(0, 0, 0)
+	var current_scene_path = get_tree().current_scene.scene_file_path
+	# Map aléatoire
+	if current_scene_path.ends_with("main.tscn"):
+		pivot.global_transform.origin = Vector3(15, 0, 7)
+	# Map prédéfini
+	else:
+		pivot.global_transform.origin = Vector3.ZERO
 	_update_camera_position()
 
 

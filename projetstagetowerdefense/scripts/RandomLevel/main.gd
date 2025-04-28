@@ -4,7 +4,12 @@ extends Node3D
 @onready var tower_scene = preload("res://scenes/tower.tscn")
 @onready var timer_label = $CanvasLayer/timer_label
 @onready var game_timer = $game_timer
+
 @onready var bouton_pause = $CanvasLayer/button_pause
+@onready var pause_menu = $CanvasLayer/Pause
+@onready var continue_button = $CanvasLayer/Pause/ContinueButton
+@onready var restart_button = $CanvasLayer/Pause/RestartButton
+@onready var quit_button = $CanvasLayer/Pause/QuitButton
 
 var seconds_passed = 0
 var is_paused = false
@@ -64,6 +69,13 @@ func _ready():
 	update_timer_display()
 	
 	generate_functional_elements()
+	
+	bouton_pause.pressed.connect(_on_pause_button_pressed)
+	continue_button.pressed.connect(_on_continue_pressed)
+	restart_button.pressed.connect(_on_restart_pressed)
+	quit_button.pressed.connect(_on_quit_pressed)
+	
+	pause_menu.visible = false
 	
 	selected_tower_scene = preload("res://scenes/tower.tscn")
 
@@ -262,16 +274,23 @@ func _unhandled_input(event):
 var path_points: Array[Vector3] = []
 
 func _on_pause_button_pressed():
-	if is_paused:
-		is_paused = false
-		get_tree().paused = false
-		bouton_pause.text = "Pause"
-		print("Jeu repris !")
-	else:
-		is_paused = true
-		get_tree().paused = true
-		bouton_pause.text = "Reprendre"  
-		print("Jeu en pause !")  
+	is_paused = not is_paused
+	get_tree().paused = is_paused
+	bouton_pause.text = "Reprendre" if is_paused else "Pause"
+	pause_menu.visible = is_paused
+
+func _on_continue_pressed():
+	is_paused = false
+	get_tree().paused = false
+	bouton_pause.text = "Pause"
+	pause_menu.visible = false
+
+func _on_restart_pressed():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+func _on_quit_pressed():
+	get_tree().quit()
 
 func _on_game_timer_timeout():
 	if not is_paused:

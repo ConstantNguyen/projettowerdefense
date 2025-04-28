@@ -204,7 +204,6 @@ text = "Start"
 [node name="game_timer" type="Timer" parent="."]
 
 [node name="Pause" parent="." instance=ExtResource("10_p2scw")]
-visible = false
 offset_left = 369.556
 offset_top = 152.577
 offset_right = 369.556
