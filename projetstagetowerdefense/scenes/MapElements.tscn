@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://mu30r6rmht07" path="res://assets/city_model/road-split.glb" id="7_g7csf"]
 [ext_resource type="PackedScene" uid="uid://6v0t536s83vb" path="res://assets/city_model/pavement-fountain.glb" id="8_exbkw"]
 [ext_resource type="PackedScene" uid="uid://dy26b1ba2j2v1" path="res://assets/city_model/grass-trees-tall.glb" id="9_ck30q"]
-[ext_resource type="PackedScene" uid="uid://b1711sieed2u6" path="res://assets/city_model/grass-trees.glb" id="10_r7m4s"]
+[ext_resource type="PackedScene" uid="uid://b1711sieed2u6" path="res://scenes/grass-trees.glb" id="10_r7m4s"]
 
 [node name="MapElements" type="Node3D"]
 

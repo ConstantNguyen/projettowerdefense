@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=14 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bvm2gqr5rjyow" path="res://scenes/tower.tscn" id="5_c6yn6"]
 [ext_resource type="Script" path="res://scripts/RandomLevel/EnemyPathFollow.gd" id="5_s3jqo"]
 [ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="5_x8bep"]
+[ext_resource type="Texture2D" uid="uid://id7rx7t5y686" path="res://assets/image/tower.png" id="6_3ur8w"]
 [ext_resource type="PackedScene" path="res://scenes/pause.tscn" id="7_1kvh8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
@@ -78,7 +79,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="TowerButton" parent="CameraRig/Control" instance=ExtResource("4_fsd1c")]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -93,7 +94,8 @@ grow_horizontal = 2
 grow_vertical = 0
 scene_to_instantiate = ExtResource("5_c6yn6")
 grid_map_node = NodePath("../../../GridMap")
-grid_y_level = 0.1
+grid_y_level = 0.6
+button_texture = ExtResource("6_3ur8w")
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_asddl")
