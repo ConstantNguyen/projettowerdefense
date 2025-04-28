@@ -1,8 +1,9 @@
 extends CharacterBody3D
 
-@export var speed: float = 0.03
+@export var speed: float = 0.8
 @export var max_pv: float = 20.0
 @export var attack_interval = 1.5
+var path_follow: PathFollow3D = null
 
 @onready var health_bar = $SubViewport/EnemyHealthBar  
 @onready var detection_area = $Area3D 
@@ -20,6 +21,7 @@ var is_dead: bool = false
 var is_attacking = false
 var parent = null
 var pv : float = max_pv
+var ready_to_move = false
 
 func _ready():
 	detection_area.body_entered.connect(_on_detection_zone_body_entered)
@@ -30,7 +32,23 @@ func _ready():
 	attack_timer.start()
 	health_bar.value = pv / max_pv * 100
 
+func set_path(path: Path3D):
+	if path:
+		path_follow = PathFollow3D.new()
+		path.add_child(path_follow)
+		path_follow.rotation_mode = PathFollow3D.ROTATION_NONE
+		
+		path_follow.add_child(self)
+		self.global_transform.origin = path_follow.position
+		path_follow.progress = 0.0
+		
+		ready_to_move = true
+	else:
+		push_error("Aucun Path3D fourni à set_path() !")
+		
 func _physics_process(delta):
+	if path_follow:
+		path_follow.progress += speed * delta
 	if is_dead:
 		return
 	if path and !path.is_in_group("paths") and speed > 0:
@@ -39,8 +57,8 @@ func _physics_process(delta):
 		parent.progress = parent.progress
 		if tower == null or tower.is_dead: 
 			stop_attack()
-	else:
-		pathfollow.progress += speed 
+	if ready_to_move and path_follow:
+		path_follow.progress += speed * delta
 
 
 func _on_attack_timer_timeout():

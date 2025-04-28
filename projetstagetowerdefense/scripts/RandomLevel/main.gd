@@ -2,8 +2,10 @@ extends Node3D
 
 @onready var grid_map := $GridMap
 @onready var tower_scene = preload("res://scenes/tower.tscn")
+
 @onready var timer_label = $CanvasLayer/timer_label
 @onready var game_timer = $game_timer
+@onready var bouton_start = $CanvasLayer/start_button
 
 @onready var bouton_pause = $CanvasLayer/button_pause
 @onready var pause_menu = $CanvasLayer/Pause
@@ -13,6 +15,7 @@ extends Node3D
 
 var seconds_passed = 0
 var is_paused = false
+var started = false
 
 var selected_tower_scene: PackedScene = null
 
@@ -78,6 +81,20 @@ func _ready():
 	pause_menu.visible = false
 	
 	selected_tower_scene = preload("res://scenes/tower.tscn")
+	
+	bouton_start.pressed.connect(_on_start_button_pressed)
+	bouton_start.visible = true
+	game_timer.stop() 
+
+func _on_start_button_pressed():
+	started = true
+	bouton_start.visible = false
+	game_timer.start()
+	
+	# Démarrer tous les spawners
+	for spawner in get_tree().get_nodes_in_group("spawners"):
+		spawner.start_spawning()
+
 
 func fill_ground():
 	for x in range(GRID_SIZE.x):
@@ -313,43 +330,68 @@ func update_timer_display():
 	var seconds = seconds_passed % 60
 	var formatted_time = "%02d:%02d" % [minutes, seconds]
 	timer_label.text = formatted_time
-
+	
 func generate_functional_elements():
 	var tile_size = 1.0
 	var enemy_scene = preload("res://scenes/enemy/EnemyRdmLvl.tscn")
 	var spawner_scene = preload("res://scenes/enemy/spawnerRdmLvl.tscn")
-
+	
 	for spawner_tile in spawn_points:
-		var world_path: Array[Vector3] = []
+		var full_path: Array[Vector3] = []
+		
+		#Du spawner au firewall
+		var path_to_firewall = build_path_to_firewall(spawner_tile)
+		for point in path_to_firewall:
+			full_path.append(Vector3(point.x * tile_size, 0.5, point.y * tile_size))
+		
+		# Depuis firewall vers les 4 tours alliées (ATTENTION: TEMPORAIRE A MODIFIER)
+		var firewall_2d = Vector2i(firewall_pos.x, firewall_pos.z)
+		var middle_split_pos = firewall_2d + Vector2i(2, 0)
+		var split_targets = [
+			Vector2i(GRID_SIZE.x - 1, 2),
+			Vector2i(GRID_SIZE.x - 1, 5),
+			Vector2i(GRID_SIZE.x - 1, 8),
+			Vector2i(GRID_SIZE.x - 1, 11),
+		]
+		
+		#Choix de la target random par un spawner:
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		var target = split_targets[rng.randi_range(0, split_targets.size() - 1)]
 
-		var path_tiles = build_path_to_firewall(spawner_tile)  # Array[Vector2i]
-		if path_tiles.size() < 2:
-			push_warning("Chemin trop court pour spawner : %s" % spawner_tile)
-			continue
+		var path_from_firewall = []
+		var current = firewall_2d
+		
+		# Split des chemin à partir du firewall (ATTENTION: A MODIFIER AUSSI)
+		while current.x < middle_split_pos.x:
+			current.x += 1
+			path_from_firewall.append(current)
+		while current.y != target.y:
+			current.y += signi(target.y - current.y)
+			path_from_firewall.append(current)
+		while current.x != target.x:
+			current.x += signi(target.x - current.x)
+			path_from_firewall.append(current)
+		
+		for point in path_from_firewall:
+			full_path.append(Vector3(point.x * tile_size, 0.5, point.y * tile_size))
 
-		# Générer un chemin en sens spawner → firewall
-		for i in range(path_tiles.size() - 1, -1, -1):
-			var point = path_tiles[i]
-			var world_pos = Vector3(point.x * tile_size, 0.5, point.y * tile_size)
-			world_path.append(world_pos)
-
-		# Créer le Path3D avec courbe
+		# Création de Path3D
 		var path = Path3D.new()
 		var curve = Curve3D.new()
-		for point in world_path:
+		for point in full_path:
 			curve.add_point(point)
 		path.curve = curve
 		add_child(path)
 
-		# Ajouter un spawner positionné sur sa tile
+		# Créer le spawner lié à CE chemin précis
 		var spawner = spawner_scene.instantiate()
 		spawner.position = Vector3(spawner_tile.x + 0.5, 0.5, spawner_tile.z + 0.5)
 		spawner.enemy_scene = enemy_scene
 		spawner.path_node = path
+		spawner.add_to_group("spawners")
 		add_child(spawner)
-
-		print("Spawner placé à %s avec un chemin de %d points" % [spawner.position, world_path.size()])
-
+		
 	if has_node("game_timer"):
 		$game_timer.start()
 	if has_node("CanvasLayer"):

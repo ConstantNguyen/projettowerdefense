@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://dhmd3h6cbua45"]
+[gd_scene load_steps=8 format=4 uid="uid://dhmd3h6cbua45"]
 
 [ext_resource type="PackedScene" uid="uid://dw4qxdd4qievh" path="res://assets/FBX format/spawn-square.fbx" id="1_mhswm"]
 [ext_resource type="Script" path="res://scripts/RandomLevel/spawnerRdmLvl.gd" id="2_iebbh"]
+[ext_resource type="PackedScene" uid="uid://ds8x3bq8i2spv" path="res://scenes/enemy/EnemyRdmLvl.tscn" id="3_fdrjt"]
 [ext_resource type="Texture2D" uid="uid://frivt8nwc16n" path="res://assets/city_model/Textures/colormap.png" id="4_xstnk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1q4m"]
@@ -45,6 +46,7 @@ shadow_mesh = SubResource("ArrayMesh_bgn5j")
 
 [node name="spawn-square" instance=ExtResource("1_mhswm")]
 script = ExtResource("2_iebbh")
+enemy_scene = ExtResource("3_fdrjt")
 
 [node name="spawn-square" parent="." index="0"]
 mesh = SubResource("ArrayMesh_fe5s5")

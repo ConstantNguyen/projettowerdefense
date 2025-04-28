@@ -132,4 +132,11 @@ offset_top = 89.0
 offset_right = 308.0
 offset_bottom = 89.0
 
+[node name="start_button" type="Button" parent="CanvasLayer"]
+offset_left = 931.0
+offset_top = 11.0
+offset_right = 977.0
+offset_bottom = 42.0
+text = "Start"
+
 [node name="game_timer" type="Timer" parent="."]
