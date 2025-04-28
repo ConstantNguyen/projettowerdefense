@@ -44,24 +44,23 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 13.341
 anchor_bottom = 5.1
-offset_left = 316.0
+offset_left = 313.0
 offset_top = 225.0
-offset_right = 38.36
+offset_right = 35.36
 offset_bottom = 68.0
 text = "Quitter"
 
 [node name="Button3" type="Button" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 2.695
 anchor_right = 1.0
 anchor_bottom = 2.695
-offset_left = 288.0
-offset_top = 25.2
-offset_right = 551.0
-offset_bottom = 66.2
+offset_left = 270.0
+offset_top = -2.8
+offset_right = 533.0
+offset_bottom = 38.2
 text = "Rejouer"
 
 [node name="Label" type="Label" parent="Control"]

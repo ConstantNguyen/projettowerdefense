@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://4yq7yod58kkl"]
+
+[node name="Pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 24.805)
+layout_mode = 0
+offset_left = 184.0
+offset_top = 84.0
+offset_right = 371.0
+offset_bottom = 122.0
+text = "La partie est en pause !"
+
+[node name="QuitButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 186.0
+offset_top = 294.0
+offset_right = 360.0
+offset_bottom = 340.0
+text = "Quitter"
+
+[node name="RestartButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 186.0
+offset_top = 220.0
+offset_right = 360.0
+offset_bottom = 266.0
+text = "Recommencer"
+
+[node name="ContinueButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 185.0
+offset_top = 152.0
+offset_right = 359.0
+offset_bottom = 198.0
+text = "Reprendre"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 88.0
+offset_top = 31.0
+offset_right = 457.0
+offset_bottom = 406.0
+mouse_filter = 2
+color = Color(0.207512, 0.207512, 0.207512, 1)

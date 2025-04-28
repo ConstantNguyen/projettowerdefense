@@ -27,7 +27,7 @@ func _ready():
 		return
 
 	# Centrer le pivot sur la map si besoin
-	pivot.global_transform.origin = Vector3(15, 0, 7)
+	pivot.global_transform.origin = Vector3(0, 0, 0)
 	_update_camera_position()
 
 
