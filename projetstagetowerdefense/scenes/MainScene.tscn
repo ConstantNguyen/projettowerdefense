@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvjs7fq2nrk1o" path="res://scenes/intersection.tscn" id="7_s0jcn"]
 [ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="8_6adil"]
 [ext_resource type="Script" path="res://scripts/free_cam.gd" id="9_bhvit"]
-[ext_resource type="PackedScene" path="res://scenes/pause.tscn" id="10_p2scw"]
+[ext_resource type="PackedScene" uid="uid://4yq7yod58kkl" path="res://scenes/pause.tscn" id="10_p2scw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8y87v"]
 panorama = ExtResource("2_kdba0")

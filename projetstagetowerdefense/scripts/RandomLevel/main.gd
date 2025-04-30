@@ -260,32 +260,7 @@ func _on_tower_button_pressed():
 	selected_tower_scene = tower_scene
 
 func _unhandled_input(event):
-	if selected_tower_scene and event is InputEventMouseButton and event.pressed:
-		var camera = $CameraRig/CameraPivot/Camera3D
-		var from = camera.project_ray_origin(event.position)
-		var to = from + camera.project_ray_normal(event.position) * 1000.0
-
-		var ray_params = PhysicsRayQueryParameters3D.new()
-		ray_params.from = from
-		ray_params.to = to
-
-		var space_state = get_world_3d().direct_space_state
-		var result = space_state.intersect_ray(ray_params)
-
-		if result.size() > 0:
-			var position = result["position"]
-			print("Raycast hit at: ", position)
-
-			var grid_pos = $GridMap.world_to_map(position)
-			var world_pos = $GridMap.map_to_world(grid_pos)
-
-			var tower = selected_tower_scene.instantiate()
-			tower.global_transform.origin = world_pos
-			add_child(tower)
-
-			print("Tour placée à :", world_pos)
-			selected_tower_scene = null
-			
+		
 	# Quand on appuie sur la touche "échap" le menu pause apparait
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
