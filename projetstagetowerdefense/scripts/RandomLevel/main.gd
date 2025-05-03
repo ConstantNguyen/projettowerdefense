@@ -306,6 +306,13 @@ func update_timer_display():
 	var formatted_time = "%02d:%02d" % [minutes, seconds]
 	timer_label.text = formatted_time
 	
+func game_over():
+	if get_tree().get_nodes_in_group("towers").size() == 0: 
+		var menu_scene = preload("res://scenes/menu1.tscn").instantiate()
+		menu_scene.get_child(0).is_game_over = true
+		get_tree().root.add_child(menu_scene)
+		queue_free()
+	
 func generate_functional_elements():
 	var tile_size = 1.0
 	var enemy_scene = preload("res://scenes/enemy/EnemyRdmLvl.tscn")
