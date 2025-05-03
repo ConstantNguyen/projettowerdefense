@@ -4,7 +4,7 @@
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
 [ext_resource type="Script" path="res://scripts/free_cam.gd" id="3_q8v1s"]
 [ext_resource type="PackedScene" uid="uid://bch3cg53vuuc0" path="res://scenes/TowerButton.tscn" id="4_fsd1c"]
-[ext_resource type="PackedScene" uid="uid://bvm2gqr5rjyow" path="res://scenes/tower.tscn" id="5_c6yn6"]
+[ext_resource type="PackedScene" uid="uid://bjy5i1muvkilq" path="res://scenes/tower/TowerRdmLvl.tscn" id="5_hh1fc"]
 [ext_resource type="Script" path="res://scripts/RandomLevel/EnemyPathFollow.gd" id="5_s3jqo"]
 [ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="5_x8bep"]
 [ext_resource type="Texture2D" uid="uid://id7rx7t5y686" path="res://assets/image/tower.png" id="6_3ur8w"]
@@ -93,9 +93,10 @@ offset_right = 4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
-scene_to_instantiate = ExtResource("5_c6yn6")
+scene_to_instantiate = ExtResource("5_hh1fc")
 grid_map_node = NodePath("../../../GridMap")
-grid_y_level = 0.6
+grid_y_level = 0.5
+allowed_tiles = Array[int]([0])
 button_texture = ExtResource("6_3ur8w")
 
 [node name="Path3D" type="Path3D" parent="."]
