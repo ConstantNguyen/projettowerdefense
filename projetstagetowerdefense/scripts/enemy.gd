@@ -22,6 +22,7 @@ var parent = null
 var pv : float = max_pv
 
 func _ready():
+	add_to_group("enemies")
 	detection_area.body_entered.connect(_on_detection_zone_body_entered)
 	if get_parent() is PathFollow3D:
 		parent = get_parent()
@@ -42,6 +43,13 @@ func _physics_process(delta):
 	else:
 		pathfollow.progress += speed 
 
+func pause():
+	set_physics_process(false)
+	attack_timer.paused = true
+
+func resume():
+	set_physics_process(true)
+	attack_timer.paused = false
 
 func _on_attack_timer_timeout():
 	if tower != null and !tower.is_dead:

@@ -32,6 +32,7 @@ func _ready():
 	attack_timer.start()
 	health_bar.value = pv / max_pv * 100
 
+	
 func set_path(path: Path3D):
 	if path:
 		path_follow = PathFollow3D.new()

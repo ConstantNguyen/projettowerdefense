@@ -50,7 +50,7 @@ func _ready():
 func _on_pause_button_pressed():
 	is_paused = not is_paused
 	get_tree().paused = is_paused
-	bouton_pause.text = "Reprendre" if is_paused else "Pause"
+
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:

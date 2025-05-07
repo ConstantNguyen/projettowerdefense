@@ -278,7 +278,6 @@ func _toggle_pause_menu():
 func _on_pause_button_pressed():
 	is_paused = not is_paused
 	get_tree().paused = is_paused
-	bouton_pause.text = "Reprendre" if is_paused else "Pause"
 
 func _on_continue_pressed():
 	is_paused = false
