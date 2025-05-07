@@ -18,12 +18,12 @@ var is_paused = false
 func _ready():
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	bouton_pause.pressed.connect(_on_pause_button_pressed)
-	game_timer.start()
 	update_timer_display()
 	
 	bouton_start.pressed.connect(func(): 
 		started = true
 		bouton_start.visible = false
+		game_timer.start()
 	)
 	
 	continue_button.pressed.connect(func(): 
@@ -49,7 +49,23 @@ func _ready():
 
 func _on_pause_button_pressed():
 	is_paused = not is_paused
-	get_tree().paused = is_paused
+	
+	if is_paused:
+		game_timer.stop()
+		if started:
+			_pause_enemies()
+	else:
+		game_timer.start()
+		if started:
+			_resume_enemies()
+
+func _pause_enemies():
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		enemy.set_physics_process(false)
+
+func _resume_enemies():
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		enemy.set_physics_process(true)
 
 
 func _unhandled_input(event):
