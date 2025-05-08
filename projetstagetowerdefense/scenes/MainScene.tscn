@@ -195,10 +195,17 @@ pivot_offset = Vector2(0, 20)
 horizontal_alignment = 1
 
 [node name="start_button" type="Button" parent="CanvasLayer"]
-offset_left = 1056.0
-offset_top = 9.0
-offset_right = 1102.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Start"
 
 [node name="game_timer" type="Timer" parent="."]

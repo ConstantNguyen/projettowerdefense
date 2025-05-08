@@ -65,3 +65,8 @@ projetstagetowerdefense/.godot/shader_cache/SubsurfaceScatteringShaderRD/43df251
 projetstagetowerdefense/.godot/shader_cache/VolumetricFogProcessShaderRD/2c2d7b3b51e66f06069290afb842fc1ee9ee4f60f06a5168b0cee5bd380366bc/087916079fba7c625e62b0c2cca570e0fb87c99a.vulkan.cache
 .godot/shader_cache/
 .godot/
+.import/
+*.import
+*.translation
+*.converted.res
+*.import
