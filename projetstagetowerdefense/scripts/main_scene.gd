@@ -1,6 +1,8 @@
 extends Node3D
 
 @export var game_scene_path: String = "res://scenes/MainScene.tscn"
+@onready var pause_icon: Texture2D = load("res://assets/image/bouton_pause.png")
+@onready var paused_icon: Texture2D = load("res://assets/image/bouton_paused.png")
 
 @onready var timer_label = $CanvasLayer/timer_label
 @onready var game_timer = $game_timer
@@ -23,6 +25,7 @@ func _ready():
 	bouton_start.pressed.connect(func(): 
 		started = true
 		bouton_start.visible = false
+		bouton_pause.visible = true
 		game_timer.start()
 	)
 	
@@ -46,10 +49,12 @@ func _ready():
 	)
 
 	pause_menu.visible = false
+	bouton_pause.visible = false
 
 func _on_pause_button_pressed():
 	is_paused = not is_paused
-	
+	bouton_pause.icon = paused_icon if is_paused else pause_icon
+
 	if is_paused:
 		game_timer.stop()
 		if started:

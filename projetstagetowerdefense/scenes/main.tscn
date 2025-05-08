@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=18 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
@@ -37,6 +37,12 @@ glow_intensity = 1.13
 glow_strength = 1.5
 
 [sub_resource type="Curve3D" id="Curve3D_asddl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slw5u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pusj6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy23x"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_v46vx")
@@ -117,10 +123,11 @@ offset_right = 478.0
 offset_bottom = 520.0
 grow_horizontal = 0
 scale = Vector2(0.08, 0.08)
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_slw5u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pusj6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dy23x")
 icon = ExtResource("5_x8bep")
-alignment = 2
-icon_alignment = 2
-vertical_icon_alignment = 0
 
 [node name="timer_label" type="Label" parent="CanvasLayer"]
 anchors_preset = 5
@@ -152,6 +159,7 @@ offset_right = 23.0
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 text = "Start"
 
 [node name="game_timer" type="Timer" parent="."]

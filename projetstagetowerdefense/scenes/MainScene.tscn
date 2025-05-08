@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://crqv12voetg0s"]
+[gd_scene load_steps=24 format=3 uid="uid://crqv12voetg0s"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_vi0dc"]
 [ext_resource type="Texture2D" uid="uid://d1kdo2sjs3imm" path="res://assets/image/background.png" id="2_kdba0"]
@@ -69,6 +69,12 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10rcf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kgd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3krj"]
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_vi0dc")
@@ -178,6 +184,10 @@ offset_right = 478.0
 offset_bottom = 520.0
 grow_horizontal = 0
 scale = Vector2(0.08, 0.08)
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxEmpty_10rcf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2kgd2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f3krj")
 icon = ExtResource("8_6adil")
 alignment = 2
 icon_alignment = 2
@@ -206,6 +216,7 @@ offset_right = 23.0
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 text = "Start"
 
 [node name="game_timer" type="Timer" parent="."]

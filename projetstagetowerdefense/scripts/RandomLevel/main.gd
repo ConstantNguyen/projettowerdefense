@@ -2,6 +2,9 @@ extends Node3D
 
 @onready var grid_map := $GridMap
 @onready var tower_scene = preload("res://scenes/tower.tscn")
+@onready var pause_icon: Texture2D = load("res://assets/image/bouton_pause.png")
+@onready var paused_icon: Texture2D = load("res://assets/image/bouton_paused.png")
+
 
 @onready var timer_label = $CanvasLayer/timer_label
 @onready var game_timer = $game_timer
@@ -52,6 +55,8 @@ var tile_score_to_id := {
 }
 
 func _ready():
+
+
 	
 	fill_ground()
 	
@@ -84,11 +89,17 @@ func _ready():
 	
 	bouton_start.pressed.connect(_on_start_button_pressed)
 	bouton_start.visible = true
+	
+	bouton_pause.visible = false
+  	
 	game_timer.stop() 
 
 func _on_start_button_pressed():
 	started = true
 	bouton_start.visible = false
+	bouton_pause.visible = true
+	bouton_pause.disabled = false
+
 	game_timer.start()
 	
 	# Démarrer tous les spawners
@@ -278,6 +289,8 @@ func _toggle_pause_menu():
 func _on_pause_button_pressed():
 	is_paused = not is_paused
 	get_tree().paused = is_paused
+	bouton_pause.icon = paused_icon if is_paused else pause_icon
+
 
 func _on_continue_pressed():
 	is_paused = false
