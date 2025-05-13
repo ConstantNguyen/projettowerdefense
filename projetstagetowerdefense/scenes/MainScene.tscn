@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://crqv12voetg0s"]
+[gd_scene load_steps=25 format=3 uid="uid://crqv12voetg0s"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_vi0dc"]
 [ext_resource type="Texture2D" uid="uid://d1kdo2sjs3imm" path="res://assets/image/background.png" id="2_kdba0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="8_6adil"]
 [ext_resource type="Script" path="res://scripts/free_cam.gd" id="9_bhvit"]
 [ext_resource type="PackedScene" uid="uid://4yq7yod58kkl" path="res://scenes/pause.tscn" id="10_p2scw"]
+[ext_resource type="AudioStream" uid="uid://q7lig7nmsahr" path="res://assets/audio/backgroud_audio_menu.ogg" id="12_iqap5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8y87v"]
 panorama = ExtResource("2_kdba0")
@@ -226,3 +227,7 @@ offset_left = 369.556
 offset_top = 152.577
 offset_right = 369.556
 offset_bottom = 152.577
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_iqap5")
+autoplay = true

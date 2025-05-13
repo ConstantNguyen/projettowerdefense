@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0w34qfs8teif"]
+[gd_scene load_steps=3 format=3 uid="uid://c0w34qfs8teif"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_yc27o"]
+[ext_resource type="AudioStream" uid="uid://c6ohi8mg58n0e" path="res://assets/audio/menu_audio.ogg" id="2_6wp2e"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -78,3 +79,9 @@ offset_left = 239.0
 offset_top = 87.0
 offset_right = -212.88
 offset_bottom = -277.04
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6wp2e")
+volume_db = 1.0
+autoplay = true
+parameters/looping = true

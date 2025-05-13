@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=23 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://id7rx7t5y686" path="res://assets/image/tower.png" id="6_3ur8w"]
 [ext_resource type="PackedScene" uid="uid://4yq7yod58kkl" path="res://scenes/pause.tscn" id="7_1kvh8"]
 [ext_resource type="Script" path="res://scripts/GameController.gd" id="10_2wpvl"]
+[ext_resource type="AudioStream" uid="uid://q7lig7nmsahr" path="res://assets/audio/backgroud_audio_menu.ogg" id="12_2h6ih"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -178,5 +179,10 @@ text = "Start"
 
 [node name="GameController" type="Node3D" parent="." groups=["game_controller"]]
 script = ExtResource("10_2wpvl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_2h6ih")
+volume_db = 1.0
+autoplay = true
 
 [connection signal="button_down" from="CameraRig/Control/TowerButton" to="CameraRig/Control/TowerButton" method="_on_button_down"]
