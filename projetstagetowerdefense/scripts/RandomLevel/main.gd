@@ -4,21 +4,25 @@ extends Node3D
 @onready var tower_scene = preload("res://scenes/tower.tscn")
 @onready var pause_icon: Texture2D = load("res://assets/image/bouton_pause.png")
 @onready var paused_icon: Texture2D = load("res://assets/image/bouton_paused.png")
-
+@onready var sound_on_icon = preload("res://assets/image/sound_on.png")
+@onready var sound_off_icon = preload("res://assets/image/sound_off.png")
 
 @onready var timer_label = $CanvasLayer/timer_label
 @onready var game_timer = $game_timer
 @onready var bouton_start = $CanvasLayer/start_button
 
+@onready var sound_control = $CanvasLayer/sound_control
 @onready var bouton_pause = $CanvasLayer/button_pause
 @onready var pause_menu = $CanvasLayer/Pause
 @onready var continue_button = $CanvasLayer/Pause/ContinueButton
 @onready var restart_button = $CanvasLayer/Pause/RestartButton
 @onready var quit_button = $CanvasLayer/Pause/QuitButton
+@onready var music_player = $music_player
 
 var seconds_passed = 0
 var is_paused = false
 var started = false
+var is_muted = false
 
 var selected_tower_scene: PackedScene = null
 
@@ -73,11 +77,13 @@ func _ready():
 	
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	bouton_pause.pressed.connect(_on_pause_button_pressed)
+	
 	game_timer.start()
 	update_timer_display()
 	
 	generate_functional_elements()
 	
+	sound_control.pressed.connect(_on_button_sound_pressed)
 	bouton_pause.pressed.connect(_on_pause_button_pressed)
 	continue_button.pressed.connect(_on_continue_pressed)
 	restart_button.pressed.connect(_on_restart_pressed)
@@ -390,3 +396,10 @@ func generate_functional_elements():
 		$game_timer.start()
 	if has_node("CanvasLayer"):
 		$CanvasLayer.visible = true
+
+
+func _on_button_sound_pressed():
+	is_muted = not is_muted
+	sound_control.icon = sound_off_icon if is_muted else sound_on_icon
+
+	music_player.stream_paused = is_muted

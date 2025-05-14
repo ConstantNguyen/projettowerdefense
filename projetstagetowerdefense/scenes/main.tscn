@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=32 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://id7rx7t5y686" path="res://assets/image/tower.png" id="6_3ur8w"]
 [ext_resource type="PackedScene" uid="uid://4yq7yod58kkl" path="res://scenes/pause.tscn" id="7_1kvh8"]
 [ext_resource type="Script" path="res://scripts/GameController.gd" id="10_2wpvl"]
+[ext_resource type="Texture2D" uid="uid://stybrar18t53" path="res://assets/image/sound_on.png" id="11_8862g"]
 [ext_resource type="AudioStream" uid="uid://q7lig7nmsahr" path="res://assets/audio/backgroud_audio_menu.ogg" id="12_2h6ih"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
@@ -55,6 +56,22 @@ sky = SubResource("Sky_frm12")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pusj6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy23x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khfmh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqimf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dbpv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kkdbo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_quaxu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6e2s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py2cq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v674q"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_v46vx")
@@ -175,14 +192,35 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 text = "Start"
 
+[node name="sound_control" type="Button" parent="CanvasLayer"]
+offset_left = 1066.0
+offset_top = -1.0
+offset_right = 1109.0
+offset_bottom = 46.0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_khfmh")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cqimf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8dbpv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kkdbo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_quaxu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o6e2s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_py2cq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v674q")
+icon = ExtResource("11_8862g")
+icon_alignment = 2
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="game_timer" type="Timer" parent="."]
 
 [node name="GameController" type="Node3D" parent="." groups=["game_controller"]]
 script = ExtResource("10_2wpvl")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="music_player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_2h6ih")
 volume_db = 1.0
 autoplay = true
+parameters/looping = true
 
 [connection signal="button_down" from="CameraRig/Control/TowerButton" to="CameraRig/Control/TowerButton" method="_on_button_down"]
+[connection signal="pressed" from="CanvasLayer/sound_control" to="." method="_on_button_sound_pressed"]

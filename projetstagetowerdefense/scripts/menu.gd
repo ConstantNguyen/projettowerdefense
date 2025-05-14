@@ -3,6 +3,12 @@ extends Control
 @export var game_scene_path: String = "res://scenes/MainScene.tscn"
 @export var random_game_scene_path: String = "res://scenes/main.tscn"
 @export var is_game_over: bool = false
+@onready var sound_on_icon = preload("res://assets/image/sound_on.png")
+@onready var sound_off_icon = preload("res://assets/image/sound_off.png")
+@onready var sound_control = $CanvasLayer/sound_control
+@onready var music_player = $music_player
+
+var is_muted = false
 
 func _ready():
 	$Button.connect("pressed", Callable(self, "_on_play_pressed"))
@@ -32,3 +38,10 @@ func _on_play_random_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_sound_control_pressed():
+	is_muted = not is_muted
+	sound_control.icon = sound_off_icon if is_muted else sound_on_icon
+
+	music_player.stream_paused = is_muted

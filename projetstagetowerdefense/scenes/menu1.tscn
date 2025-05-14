@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0w34qfs8teif"]
+[gd_scene load_steps=12 format=3 uid="uid://c0w34qfs8teif"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_yc27o"]
 [ext_resource type="AudioStream" uid="uid://c6ohi8mg58n0e" path="res://assets/audio/menu_audio.ogg" id="2_6wp2e"]
+[ext_resource type="Texture2D" uid="uid://stybrar18t53" path="res://assets/image/sound_on.png" id="2_x0hh7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pog4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgnqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdh7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu3af"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onafb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1huq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g20s6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2llww"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -80,8 +97,31 @@ offset_top = 87.0
 offset_right = -212.88
 offset_bottom = -277.04
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="sound_control" type="Button" parent="Control/CanvasLayer"]
+offset_left = 1109.0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 49.0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5pog4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fgnqx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdh7p")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yu3af")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_onafb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s1huq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g20s6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2llww")
+icon = ExtResource("2_x0hh7")
+icon_alignment = 2
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="music_player" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("2_6wp2e")
 volume_db = 1.0
 autoplay = true
 parameters/looping = true
+
+[connection signal="pressed" from="Control/CanvasLayer/sound_control" to="Control" method="_on_sound_control_pressed"]

@@ -3,7 +3,10 @@ extends Node3D
 @export var game_scene_path: String = "res://scenes/MainScene.tscn"
 @onready var pause_icon: Texture2D = load("res://assets/image/bouton_pause.png")
 @onready var paused_icon: Texture2D = load("res://assets/image/bouton_paused.png")
+@onready var sound_on_icon = preload("res://assets/image/sound_on.png")
+@onready var sound_off_icon = preload("res://assets/image/sound_off.png")
 
+@onready var sound_control = $CanvasLayer/sound_control
 @onready var timer_label = $CanvasLayer/timer_label
 @onready var game_timer = $game_timer
 @onready var bouton_pause = $CanvasLayer/button_pause
@@ -12,10 +15,13 @@ extends Node3D
 @onready var restart_button = $Pause/RestartButton
 @onready var quit_button = $Pause/QuitButton
 @onready var bouton_start = $CanvasLayer/start_button
+@onready var music_player = $music_player
 
 var started = false
 var seconds_passed = 0
 var is_paused = false
+var is_muted = false
+
 
 func _ready():
 	game_timer.timeout.connect(_on_game_timer_timeout)
@@ -99,3 +105,9 @@ func game_over():
 		menu_scene.get_child(0).is_game_over = true
 		get_tree().root.add_child(menu_scene)
 		queue_free()
+		
+func _on_button_sound_pressed():
+	is_muted = not is_muted
+	sound_control.icon = sound_off_icon if is_muted else sound_on_icon
+
+	music_player.stream_paused = is_muted
