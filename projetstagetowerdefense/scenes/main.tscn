@@ -4,7 +4,7 @@
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
 [ext_resource type="Script" path="res://scripts/free_cam.gd" id="3_q8v1s"]
 [ext_resource type="PackedScene" uid="uid://bch3cg53vuuc0" path="res://scenes/TowerButton.tscn" id="4_fsd1c"]
-[ext_resource type="Texture2D" uid="uid://d1kdo2sjs3imm" path="res://assets/image/background.png" id="4_jffga"]
+[ext_resource type="Texture2D" uid="uid://vket0juhxye5" path="res://assets/image/fond_menu_3_robots.png" id="4_qeql6"]
 [ext_resource type="PackedScene" uid="uid://bjy5i1muvkilq" path="res://scenes/tower/TowerRdmLvl.tscn" id="5_hh1fc"]
 [ext_resource type="Script" path="res://scripts/RandomLevel/EnemyPathFollow.gd" id="5_s3jqo"]
 [ext_resource type="Texture2D" uid="uid://canv8eyt546un" path="res://assets/image/bouton_pause.png" id="5_x8bep"]
@@ -40,7 +40,7 @@ glow_intensity = 1.13
 glow_strength = 1.5
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e4kmw"]
-panorama = ExtResource("4_jffga")
+panorama = ExtResource("4_qeql6")
 
 [sub_resource type="Sky" id="Sky_frm12"]
 sky_material = SubResource("PanoramaSkyMaterial_e4kmw")

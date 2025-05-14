@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0w34qfs8teif"]
+[gd_scene load_steps=13 format=3 uid="uid://c0w34qfs8teif"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_yc27o"]
 [ext_resource type="AudioStream" uid="uid://c6ohi8mg58n0e" path="res://assets/audio/menu_audio.ogg" id="2_6wp2e"]
+[ext_resource type="Texture2D" uid="uid://dutcwvo5mqjn" path="res://assets/image/fond_menu_5_robots.png" id="2_t2b3b"]
 [ext_resource type="Texture2D" uid="uid://stybrar18t53" path="res://assets/image/sound_on.png" id="2_x0hh7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pog4"]
@@ -30,6 +31,20 @@ offset_top = 75.0
 offset_right = 158.0
 offset_bottom = 115.0
 script = ExtResource("1_yc27o")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+offset_left = -119.0
+offset_top = -151.0
+offset_right = 1417.0
+offset_bottom = 873.0
+texture = ExtResource("2_t2b3b")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control/TextureRect"]
+layout_mode = 0
+offset_right = 608.0
+offset_bottom = 320.0
+autoplay = true
+loop = true
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 1
