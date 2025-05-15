@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=39 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://4yq7yod58kkl" path="res://scenes/pause.tscn" id="7_1kvh8"]
 [ext_resource type="Script" path="res://scripts/GameController.gd" id="10_2wpvl"]
 [ext_resource type="Texture2D" uid="uid://stybrar18t53" path="res://assets/image/sound_on.png" id="11_8862g"]
+[ext_resource type="Texture2D" uid="uid://b0n0p3d134o7t" path="res://assets/image/button_start.png" id="11_vnam2"]
 [ext_resource type="AudioStream" uid="uid://q7lig7nmsahr" path="res://assets/audio/backgroud_audio_menu.ogg" id="12_2h6ih"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
@@ -56,6 +57,19 @@ sky = SubResource("Sky_frm12")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pusj6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy23x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sliwc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbnlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fhc26"]
+content_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03u12"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elw1v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhxby"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khfmh"]
 
@@ -183,14 +197,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -15.5
-offset_right = 23.0
-offset_bottom = 15.5
+offset_left = -72.0
+offset_top = -48.0
+offset_right = 70.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-text = "Start"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sliwc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lbnlo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fhc26")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_03u12")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_elw1v")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhxby")
+icon = ExtResource("11_vnam2")
+expand_icon = true
 
 [node name="sound_control" type="Button" parent="CanvasLayer"]
 offset_left = 1066.0

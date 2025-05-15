@@ -21,10 +21,18 @@ func _ready():
 		$Button.visible = false
 		$Button3.visible = true
 		$Label.text = "Game Over !"
+		$Background.offset_left = -176.0
+		$Background.offset_top = -153.0
+		$Background.offset_right = 1360.0
+		$Background.offset_bottom = 871.0
+		$Background.texture = preload("res://assets/image/game_over.png")
+
 	else:
 		$Button.visible = true
 		$Button3.visible = false
 		$Label.text = "Bienvenue dans le jeu !"
+		$Background.texture = preload("res://assets/image/fond_menu_5_robots.png")
+		
 
 func _on_play_pressed():
 	print("change")

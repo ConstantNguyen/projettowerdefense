@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ds8x3bq8i2spv"]
+[gd_scene load_steps=10 format=3 uid="uid://ds8x3bq8i2spv"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/enemyRdmLvl.gd" id="1_bb6dd"]
 [ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="2_vcx1o"]
 [ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="3_h527r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0io0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gv2si"]
 size = Vector3(0.5, 0.42334, 0.352661)
@@ -34,6 +36,7 @@ script = ExtResource("1_bb6dd")
 [node name="EnemyShape" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = ExtResource("2_vcx1o")
+surface_material_override/0 = SubResource("StandardMaterial3D_k0io0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190702, -0.00921631)
