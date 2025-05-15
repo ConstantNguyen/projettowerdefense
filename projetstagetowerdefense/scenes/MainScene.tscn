@@ -1,8 +1,8 @@
 [gd_scene load_steps=43 format=3 uid="uid://crqv12voetg0s"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_vi0dc"]
-[ext_resource type="Texture2D" uid="uid://d1kdo2sjs3imm" path="res://assets/image/background.png" id="2_kdba0"]
 [ext_resource type="PackedScene" uid="uid://buxm5txnmldeu" path="res://scenes/enemy/spawner.tscn" id="3_c1un4"]
+[ext_resource type="Texture2D" uid="uid://vket0juhxye5" path="res://assets/image/fond_menu_3_robots.png" id="3_efom2"]
 [ext_resource type="PackedScene" uid="uid://b5gpexrc7aha4" path="res://scenes/tower/Tower.tscn" id="3_henjy"]
 [ext_resource type="PackedScene" uid="uid://do0mjj8tclvh4" path="res://scenes/tower/routeur.tscn" id="4_e443a"]
 [ext_resource type="Script" path="res://scripts/path_3d.gd" id="4_llih6"]
@@ -19,7 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://cn1fp115dqgp8" path="res://assets/audio/hover_sound.mp3" id="15_wnjqx"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8y87v"]
-panorama = ExtResource("2_kdba0")
+panorama = ExtResource("3_efom2")
 
 [sub_resource type="Sky" id="Sky_8fra5"]
 sky_material = SubResource("PanoramaSkyMaterial_8y87v")
