@@ -11,6 +11,10 @@ extends Control
 var is_muted = false
 
 func _ready():
+	for button in get_tree().get_nodes_in_group("menu_buttons"):
+		button.connect("pressed", Callable(self, "_play_click"))
+		button.connect("mouse_entered", Callable(self, "_play_hover"))
+
 	$Button.connect("pressed", Callable(self, "_on_play_pressed"))
 	$ButtonRdmLvl.connect("pressed", Callable(self, "_on_play_random_pressed"))
 	$Button2.connect("pressed", Callable(self, "_on_quit_pressed"))
@@ -32,6 +36,7 @@ func _ready():
 
 func _on_play_pressed():
 	print("change")
+	$click_sound.play()
 	get_tree().change_scene_to_file(game_scene_path)
 	queue_free()
 	
@@ -49,3 +54,12 @@ func _on_sound_control_pressed():
 	sound_control.icon = sound_off_icon if is_muted else sound_on_icon
 
 	music_player.stream_paused = is_muted
+func _play_click():
+	$click_sound.play()
+	print("play click")
+
+func _play_hover():
+	print("play hover2")
+
+	$hover_sound.play()
+	print("play hover")

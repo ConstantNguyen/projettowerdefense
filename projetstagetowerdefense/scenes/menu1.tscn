@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c0w34qfs8teif"]
+[gd_scene load_steps=36 format=3 uid="uid://c0w34qfs8teif"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_yc27o"]
 [ext_resource type="AudioStream" uid="uid://c6ohi8mg58n0e" path="res://assets/audio/menu_audio.ogg" id="2_6wp2e"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dm2ufuoij3ly" path="res://assets/image/button quit.png" id="5_tkmf1"]
 [ext_resource type="Texture2D" uid="uid://bru230sdfsap3" path="res://assets/image/button_replay.png" id="6_t7x8o"]
 [ext_resource type="FontFile" uid="uid://dhqegqptcyfeq" path="res://assets/fonts/PressStart2P-Regular.ttf" id="7_2kvux"]
+[ext_resource type="AudioStream" uid="uid://ccivtwk5crbmy" path="res://assets/audio/click_sound.mp3" id="10_65bpf"]
+[ext_resource type="AudioStream" uid="uid://cn1fp115dqgp8" path="res://assets/audio/hover_sound.mp3" id="11_xuhk5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlyvk"]
 
@@ -93,7 +95,7 @@ offset_bottom = 320.0
 autoplay = true
 loop = true
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Button" type="Button" parent="Control" groups=["menu_buttons"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -114,7 +116,7 @@ icon = ExtResource("3_rvc8u")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ButtonRdmLvl" type="Button" parent="Control"]
+[node name="ButtonRdmLvl" type="Button" parent="Control" groups=["menu_buttons"]]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,7 +139,7 @@ icon = ExtResource("4_jenx3")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="Button2" type="Button" parent="Control" groups=["menu_buttons"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 13.341
@@ -154,7 +156,7 @@ icon = ExtResource("5_tkmf1")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="Button3" type="Button" parent="Control" groups=["menu_buttons"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -214,5 +216,11 @@ stream = ExtResource("2_6wp2e")
 volume_db = 1.0
 autoplay = true
 parameters/looping = true
+
+[node name="click_sound" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("10_65bpf")
+
+[node name="hover_sound" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("11_xuhk5")
 
 [connection signal="pressed" from="Control/CanvasLayer/sound_control" to="Control" method="_on_sound_control_pressed"]

@@ -5,6 +5,9 @@ extends Node3D
 @onready var paused_icon: Texture2D = load("res://assets/image/bouton_paused.png")
 @onready var sound_on_icon = preload("res://assets/image/sound_on.png")
 @onready var sound_off_icon = preload("res://assets/image/sound_off.png")
+@onready var click_sound = $CanvasLayer/click_sound
+@onready var hover_sound = $CanvasLayer/hover_sound
+@onready var start_button = $CanvasLayer/start_button  
 
 @onready var sound_control = $CanvasLayer/sound_control
 @onready var timer_label = $CanvasLayer/timer_label
@@ -27,6 +30,9 @@ func _ready():
 	game_timer.timeout.connect(_on_game_timer_timeout)
 	bouton_pause.pressed.connect(_on_pause_button_pressed)
 	update_timer_display()
+	
+	bouton_start.connect("pressed", Callable(self, "_play_click"))
+	bouton_start.connect("mouse_entered", Callable(self, "_play_hover"))
 	
 	bouton_start.pressed.connect(func(): 
 		show_intro_image()
@@ -124,3 +130,8 @@ func show_intro_image():
 	timer.timeout.connect(func(): img.visible = false)
 	add_child(timer)
 	timer.start()
+func _play_click():
+	click_sound.play()
+
+func _play_hover():
+	hover_sound.play()
