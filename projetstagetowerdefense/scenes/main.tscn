@@ -144,6 +144,7 @@ offset_right = 4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_default_cursor_shape = 2
 scene_to_instantiate = ExtResource("5_hh1fc")
 grid_map_node = NodePath("../../../GridMap")
 grid_y_level = 0.5

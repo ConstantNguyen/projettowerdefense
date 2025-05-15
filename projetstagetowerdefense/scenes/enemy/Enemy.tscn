@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://tllb3w05k3yg"]
+[gd_scene load_steps=11 format=3 uid="uid://tllb3w05k3yg"]
 
 [ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="1_hsxq4"]
 [ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="1_mll7h"]
-[ext_resource type="Script" uid="uid://laohuomuolys" path="res://scripts/enemy.gd" id="1_puv3o"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_puv3o"]
+[ext_resource type="AudioStream" uid="uid://ddyb6iy7yagw6" path="res://assets/audio/robots_sound.ogg" id="4_3amdt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_im8x8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gv2si"]
 size = Vector3(0.5, 0.42334, 0.352661)
@@ -35,6 +38,7 @@ attack_interval = 0.5
 [node name="EnemyShape" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = ExtResource("1_mll7h")
+surface_material_override/0 = SubResource("StandardMaterial3D_im8x8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190702, -0.00921631)
@@ -67,3 +71,12 @@ shape = SubResource("CylinderShape3D_ak5e5")
 
 [node name="PasswordDisplay" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.158, 0)
+
+[node name="movementSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_3amdt")
+attenuation_model = 2
+unit_size = 4.65
+autoplay = true
+max_distance = 70.0
+doppler_tracking = 1
+parameters/looping = true

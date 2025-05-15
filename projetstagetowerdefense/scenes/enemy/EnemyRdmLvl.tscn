@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ds8x3bq8i2spv"]
+[gd_scene load_steps=11 format=3 uid="uid://ds8x3bq8i2spv"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/enemyRdmLvl.gd" id="1_bb6dd"]
 [ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="2_vcx1o"]
 [ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="3_h527r"]
+[ext_resource type="AudioStream" uid="uid://ddyb6iy7yagw6" path="res://assets/audio/robots_sound.ogg" id="4_oq6hj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0io0"]
 
@@ -69,3 +70,12 @@ shape = SubResource("CylinderShape3D_ak5e5")
 
 [node name="PasswordDisplay" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.158, 0)
+
+[node name="movementSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_oq6hj")
+attenuation_model = 2
+unit_size = 3.76
+autoplay = true
+max_distance = 73.14
+doppler_tracking = 1
+parameters/looping = true
