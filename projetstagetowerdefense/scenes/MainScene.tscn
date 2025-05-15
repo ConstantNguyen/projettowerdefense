@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://crqv12voetg0s"]
+[gd_scene load_steps=41 format=3 uid="uid://crqv12voetg0s"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_vi0dc"]
 [ext_resource type="Texture2D" uid="uid://d1kdo2sjs3imm" path="res://assets/image/background.png" id="2_kdba0"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0n0p3d134o7t" path="res://assets/image/button_start.png" id="11_0ue8x"]
 [ext_resource type="Texture2D" uid="uid://stybrar18t53" path="res://assets/image/sound_on.png" id="11_8kpi6"]
 [ext_resource type="AudioStream" uid="uid://q7lig7nmsahr" path="res://assets/audio/backgroud_audio_menu.ogg" id="12_iqap5"]
+[ext_resource type="Texture2D" uid="uid://dcg43n4wcls1a" path="res://assets/image/bulle_info.png" id="13_50xvp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8y87v"]
 panorama = ExtResource("2_kdba0")
@@ -274,6 +275,15 @@ icon = ExtResource("11_8kpi6")
 icon_alignment = 2
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="IntroImage" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = -3.0
+offset_top = -9.0
+offset_right = 370.0
+offset_bottom = 213.0
+texture = ExtResource("13_50xvp")
+expand_mode = 1
 
 [node name="game_timer" type="Timer" parent="."]
 

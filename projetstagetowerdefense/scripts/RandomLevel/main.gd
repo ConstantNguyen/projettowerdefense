@@ -60,7 +60,7 @@ var tile_score_to_id := {
 
 func _ready():
 
-
+	show_info_bulle()
 	
 	fill_ground()
 	
@@ -403,3 +403,13 @@ func _on_button_sound_pressed():
 	sound_control.icon = sound_off_icon if is_muted else sound_on_icon
 
 	music_player.stream_paused = is_muted
+func show_info_bulle():
+	var bubble = $CanvasLayer/info_bulle
+	bubble.visible = true
+
+	var timer = Timer.new()
+	timer.one_shot = true
+	timer.wait_time = 5.0
+	timer.timeout.connect(func(): bubble.visible = false)
+	add_child(timer)
+	timer.start()

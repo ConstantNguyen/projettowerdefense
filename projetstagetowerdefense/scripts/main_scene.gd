@@ -29,6 +29,8 @@ func _ready():
 	update_timer_display()
 	
 	bouton_start.pressed.connect(func(): 
+		show_intro_image()
+
 		started = true
 		bouton_start.visible = false
 		bouton_pause.visible = true
@@ -111,3 +113,14 @@ func _on_button_sound_pressed():
 	sound_control.icon = sound_off_icon if is_muted else sound_on_icon
 
 	music_player.stream_paused = is_muted
+	
+func show_intro_image():
+	var img = $CanvasLayer/IntroImage
+	img.visible = true
+	
+	var timer = Timer.new()
+	timer.wait_time = 5.0
+	timer.one_shot = true
+	timer.timeout.connect(func(): img.visible = false)
+	add_child(timer)
+	timer.start()

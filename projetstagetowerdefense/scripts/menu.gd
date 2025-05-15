@@ -26,7 +26,7 @@ func _ready():
 	else:
 		$Button.visible = true
 		$Button3.visible = false
-		$Label.text = "Bienvenue dans le jeu !"
+		#$Label.text = "Bienvenue dans le jeu !"
 		$Background.texture = preload("res://assets/image/fond_menu_5_robots.png")
 		
 

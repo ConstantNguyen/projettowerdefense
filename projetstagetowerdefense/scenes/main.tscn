@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://ey4cy2xg34am"]
+[gd_scene load_steps=40 format=3 uid="uid://ey4cy2xg34am"]
 
 [ext_resource type="Script" path="res://scripts/RandomLevel/main.gd" id="1_v46vx"]
 [ext_resource type="MeshLibrary" uid="uid://u687vgva8hs3" path="res://assets/meshMapCity.tres" id="2_x2jhn"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://stybrar18t53" path="res://assets/image/sound_on.png" id="11_8862g"]
 [ext_resource type="Texture2D" uid="uid://b0n0p3d134o7t" path="res://assets/image/button_start.png" id="11_vnam2"]
 [ext_resource type="AudioStream" uid="uid://q7lig7nmsahr" path="res://assets/audio/backgroud_audio_menu.ogg" id="12_2h6ih"]
+[ext_resource type="Texture2D" uid="uid://cxglu6487132" path="res://assets/image/info_bulle_rdm.png" id="13_o54oy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1hq1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -231,6 +232,12 @@ icon = ExtResource("11_8862g")
 icon_alignment = 2
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="info_bulle" type="TextureRect" parent="CanvasLayer"]
+offset_right = 418.0
+offset_bottom = 274.0
+texture = ExtResource("13_o54oy")
+expand_mode = 1
 
 [node name="game_timer" type="Timer" parent="."]
 
