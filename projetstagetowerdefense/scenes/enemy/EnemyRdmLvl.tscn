@@ -76,6 +76,6 @@ stream = ExtResource("4_oq6hj")
 attenuation_model = 2
 unit_size = 3.76
 autoplay = true
-max_distance = 73.14
+max_distance = 109.71
 doppler_tracking = 1
 parameters/looping = true
