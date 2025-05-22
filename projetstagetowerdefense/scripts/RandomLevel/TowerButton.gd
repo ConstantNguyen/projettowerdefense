@@ -1,8 +1,7 @@
-
 extends Button
 
 @export var activity_draggable: PackedScene
-
+var gestion_tour = preload("res://scripts/RandomLevel/TowerManager.gd").new()
 var _is_dragging: bool = false
 var _draggable: Node3D
 var _is_valid_location: bool = false
@@ -11,6 +10,7 @@ var _cam: Camera3D
 const RAYCAST_LENGTH: float = 100
 
 func _ready():
+	add_to_group("towers")
 	connect("button_down", Callable(self, "_on_button_down"))
 	connect("button_up", Callable(self, "_on_button_up"))
 	_cam = get_tree().current_scene.get_node("CameraRig/CameraPivot/Camera3D")
@@ -32,6 +32,8 @@ func _on_button_up():
 		var placed_tower = activity_draggable.instantiate()
 		placed_tower.global_position = _last_valid_location
 		get_tree().current_scene.add_child(placed_tower)
+
+		gestion_tour.add_tower(placed_tower)
 	if _draggable:
 		_draggable.queue_free()
 
@@ -51,5 +53,8 @@ func _physics_process(_delta):
 
 	if result.size() > 0:
 		_last_valid_location = result["position"]
+		_is_valid_location = true
 		if _draggable:
 			_draggable.global_position = _last_valid_location
+	else:
+		_is_valid_location = false

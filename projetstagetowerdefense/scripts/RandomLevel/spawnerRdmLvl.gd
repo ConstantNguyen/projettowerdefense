@@ -2,7 +2,7 @@ extends Node3D
 
 @export var enemy_scene: PackedScene
 @export var path_node: Path3D
-@export var max_active_enemies := 5  # Limite maximale d'ennemis présents
+@export var max_active_enemies := 3  # Limite maximale d'ennemis présents
 
 @onready var spawn_timer = $Timer
 

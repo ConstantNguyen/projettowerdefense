@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bt7wb878hdo6w" path="res://scenes/enemy/enemy_vie.tscn" id="1_hsxq4"]
 [ext_resource type="ArrayMesh" uid="uid://i5eeh16n1aao" path="res://assets/Textures/drone.obj" id="1_mll7h"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_puv3o"]
-[ext_resource type="AudioStream" uid="uid://ddyb6iy7yagw6" path="res://assets/audio/robots_sound.ogg" id="4_3amdt"]
+[ext_resource type="Script" uid="uid://laohuomuolys" path="res://scripts/enemy.gd" id="1_puv3o"]
+[ext_resource type="AudioStream" uid="uid://baqmedkbuf5rc" path="res://assets/audio/robots_sound.ogg" id="4_3amdt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_im8x8"]
 
